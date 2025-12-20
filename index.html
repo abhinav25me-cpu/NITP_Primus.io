@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robotics Club NIT Patna | Innovation • Projects • Competitions</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'robotics-blue': '#0a1a3a',
+                        'robotics-light-blue': '#00b4d8',
+                        'robotics-gold': '#ffd700',
+                        'robotics-dark': '#0f172a',
+                    },
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'system-ui', '-apple-system', 'sans-serif'],
+                        'roboto': ['Roboto', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.8s ease forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'slide-in-left': 'slideInLeft 1s ease-out',
+                        'slide-in-right': 'slideInRight 1s ease-out',
+                        'gradient-shift': 'gradientShift 3s ease infinite',
+                        'typing': 'typing 3.5s steps(40, end)',
+                        'blink-caret': 'blinkCaret 0.75s step-end infinite',
+                        'kenburns': 'kenburns 20s ease infinite',
+                        'particle-float': 'particleFloat 15s linear infinite',
+                        'glitch': 'glitch 0.3s linear infinite',
+                        'scanline': 'scanline 8s linear infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            'from': { opacity: '0', transform: 'translateY(30px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateY(-20px) rotate(10deg)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': {
+                                boxShadow: '0 0 20px rgba(255, 215, 0, 0.3)',
+                                filter: 'brightness(1)'
+                            },
+                            '50%': {
+                                boxShadow: '0 0 40px rgba(255, 215, 0, 0.6)',
+                                filter: 'brightness(1.2)'
+                            },
+                        },
+                        slideInLeft: {
+                            'from': { opacity: '0', transform: 'translateX(-50px) scale(0.9)' },
+                            'to': { opacity: '1', transform: 'translateX(0) scale(1)' },
+                        },
+                        slideInRight: {
+                            'from': { opacity: '0', transform: 'translateX(50px) scale(0.9)' },
+                            'to': { opacity: '1', transform: 'translateX(0) scale(1)' },
+                        },
+                        gradientShift: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        typing: {
+                            'from': { width: '0' },
+                            'to': { width: '100%' }
+                        },
+                        blinkCaret: {
+                            'from, to': { 'border-color': 'transparent' },
+                            '50%': { 'border-color': '#ffd700' }
+                        },
+                        kenburns: {
+                            '0%': { transform: 'scale(1) translateX(0) translateY(0)' },
+                            '50%': { transform: 'scale(1.1) translateX(-5%) translateY(-5%)' },
+                            '100%': { transform: 'scale(1) translateX(0) translateY(0)' },
+                        },
+                        particleFloat: {
+                            '0%': { transform: 'translateY(100vh) translateX(0) rotate(0deg)' },
+                            '100%': { transform: 'translateY(-100px) translateX(100px) rotate(360deg)' },
+                        },
+                        glitch: {
+                            '0%, 100%': { transform: 'translate(0)' },
+                            '20%': { transform: 'translate(-2px, 2px)' },
+                            '40%': { transform: 'translate(-2px, -2px)' },
+                            '60%': { transform: 'translate(2px, 2px)' },
+                            '80%': { transform: 'translate(2px, -2px)' },
+                        },
+                        scanline: {
+                            '0%': { transform: 'translateY(-100%)' },
+                            '100%': { transform: 'translateY(100vh)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="./css/components/navbar.css">
+    <link rel="stylesheet" href="./css/components/footer.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- index page specific CSS -->
+    <link rel="stylesheet" href="./css/pages/home.css">
+</head>
+
+<body class="font-roboto bg-gray-900 text-white flex flex-col min-h-screen">
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-16">
+
+
+
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <!-- Animated Background Layers -->
+            <div class="background-layer background-main"></div>
+            <div class="background-layer background-secondary"></div>
+
+            <!-- Gradient Overlays -->
+            <div class="gradient-overlay"></div>
+            <div class="radial-gradient"></div>
+
+            <!-- Animated Particles -->
+            <div class="particles-container" id="particles-container">
+                <!-- Particles will be generated by JavaScript -->
+            </div>
+
+            <!-- Scanline Effect -->
+            <div class="scanline"></div>
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <div class="container mx-auto px-4 md:px-8 lg:px-12">
+                    <div class="max-w-6xl">
+                        <!-- Badge -->
+                        <div
+                            class="inline-flex items-center gap-3 bg-robotics-blue/80 backdrop-blur-sm border border-robotics-gold/30 rounded-full px-6 py-3 mb-8 animate-fade-in-up">
+                            <div class="w-2 h-2 bg-robotics-gold rounded-full animate-pulse"></div>
+                            <span class="font-orbitron text-robotics-gold text-sm tracking-widest">NIT PATNA ROBOTICS
+                                CLUB</span>
+                        </div>
+
+                        <!-- Main Heading with Glitch Effect -->
+                        <h1 class="main-heading">
+                            <span class="heading-line line-1">
+                                <span class="text-gradient">INNOVATING</span>
+                            </span>
+                            <span class="heading-line line-2 glitch-container">
+                                <span class="text-highlight glitch-text" data-text="THE FUTURE">
+                                    THE FUTURE
+                                    <span class="highlight-underline"></span>
+                                </span>
+                            </span>
+                            <span class="heading-line line-3">
+                                WITH <span class="text-gradient">ROBOTICS</span>
+                            </span>
+                        </h1>
+
+                        <!-- Tagline -->
+                        <div class="tagline-container">
+                            <p class="tagline">
+                                Where cutting-edge technology meets limitless imagination. Pioneering the next
+                                generation of robotics innovation at NIT Patna since 2015-16. Empowering minds, building
+                                futures.
+                            </p>
+                        </div>
+
+                        <!-- CTA Buttons -->
+                        <div class="cta-container">
+                            <a href="./about.html" class="cta-button primary">
+                                <span>Explore Club</span>
+                                <i class="fas fa-arrow-right cta-icon"></i>
+                            </a>
+
+                            <a href="./contact.html" class="cta-button secondary">
+                                <i class="fas fa-play-circle cta-icon"></i>
+                                <span>Watch Our Story</span>
+                            </a>
+                        </div>
+
+                        <!-- Animated Stats -->
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="20">0</div>
+                                <div class="stat-label">Active Members</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="15">0</div>
+                                <div class="stat-label">Projects Completed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="5">0</div>
+                                <div class="stat-label">National Awards</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-number" data-count="10">0</div>
+                                <div class="stat-label">Years of Excellence</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </br>
+        </section>
+
+
+
+
+
+
+
+
+        <!-- ====================
+     QUICK NAVIGATION SECTION (UPDATED)
+     ===================== -->
+        <section id="quick-navigation" class="py-20 bg-gradient-to-b from-gray-900 to-robotics-blue">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16">
+                    <div class="inline-flex items-center gap-3 mb-4">
+                        <div class="w-12 h-1 bg-gradient-to-r from-robotics-light-blue to-robotics-gold rounded-full">
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white">
+                            <span class="text-robotics-gold">Explore</span> Our Club
+                        </h2>
+                        <div class="w-12 h-1 bg-gradient-to-r from-robotics-gold to-robotics-light-blue rounded-full">
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                        Discover everything about Robotics Club NIT Patna through our comprehensive sections
+                    </p>
+                </div>
+
+                <!-- Navigation Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                    <!-- Card 1: About -->
+                    <a href="./about.html" class="group card-hover">
+                        <div class="relative">
+                            <div class="card-icon">
+                                <div class="card-icon-bg">
+                                    <i class="fas fa-info-circle card-icon-main"></i>
+                                </div>
+                                <div class="card-icon-ring"></div>
+                            </div>
+
+                            <div class="card-content">
+                                <h3 class="card-title">About Us</h3>
+                                <p class="card-description">
+                                    Learn about our mission, vision, history, and activities. Discover what makes us
+                                    unique.
+                                </p>
+                            </div>
+
+                            <div class="absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-arrow-right text-robotics-gold text-xl"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 2: Projects -->
+                    <a href="./projects.html" class="group card-hover">
+                        <div class="relative">
+                            <div class="card-icon">
+                                <div class="card-icon-bg">
+                                    <i class="fas fa-robot card-icon-main"></i>
+                                </div>
+                                <div class="card-icon-ring"></div>
+                            </div>
+
+                            <div class="card-content">
+                                <h3 class="card-title">Projects</h3>
+                                <p class="card-description">
+                                    Explore our innovative robotics projects, from drones to AI-powered robots.
+                                </p>
+                            </div>
+
+                            <div class="absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-arrow-right text-robotics-gold text-xl"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 3: Events -->
+                    <a href="./events.html" class="group card-hover">
+                        <div class="relative">
+                            <div class="card-icon">
+                                <div class="card-icon-bg">
+                                    <i class="fas fa-calendar-alt card-icon-main"></i>
+                                </div>
+                                <div class="card-icon-ring"></div>
+                            </div>
+
+                            <div class="card-content">
+                                <h3 class="card-title">Events</h3>
+                                <p class="card-description">
+                                    Join workshops, competitions, and tech sessions. Never miss an event.
+                                </p>
+                            </div>
+
+                            <div class="absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-arrow-right text-robotics-gold text-xl"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 4: Team -->
+                    <a href="./team.html" class="group card-hover">
+                        <div class="relative">
+                            <div class="card-icon">
+                                <div class="card-icon-bg">
+                                    <i class="fas fa-users card-icon-main"></i>
+                                </div>
+                                <div class="card-icon-ring"></div>
+                            </div>
+
+                            <div class="card-content">
+                                <h3 class="card-title">Our Team</h3>
+                                <p class="card-description">
+                                    Meet our talented faculty and passionate student members driving innovation.
+                                </p>
+                            </div>
+
+                            <div class="absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-arrow-right text-robotics-gold text-xl"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 5: News -->
+                    <a href="./news.html" class="group card-hover">
+                        <div class="relative">
+                            <div class="card-icon">
+                                <div class="card-icon-bg">
+                                    <i class="fas fa-newspaper card-icon-main"></i>
+                                </div>
+                                <div class="card-icon-ring"></div>
+                            </div>
+
+                            <div class="card-content">
+                                <h3 class="card-title">News & Updates</h3>
+                                <p class="card-description">
+                                    Stay updated with club announcements and latest robotics industry news.
+                                </p>
+                            </div>
+
+                            <div class="absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-arrow-right text-robotics-gold text-xl"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 6: Achievements -->
+                    <a href="./achievements.html" class="group card-hover">
+                        <div class="relative">
+                            <div class="card-icon">
+                                <div class="card-icon-bg">
+                                    <i class="fas fa-trophy card-icon-main"></i>
+                                </div>
+                                <div class="card-icon-ring"></div>
+                            </div>
+
+                            <div class="card-content">
+                                <h3 class="card-title">Achievements</h3>
+                                <p class="card-description">
+                                    Celebrate our competition wins, research papers, and prestigious awards.
+                                </p>
+                            </div>
+
+                            <div class="absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-arrow-right text-robotics-gold text-xl"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- Card 7: Contact -->
+                    <a href="./contact.html" class="group card-hover">
+                        <div class="relative">
+                            <div class="card-icon">
+                                <div class="card-icon-bg">
+                                    <i class="fas fa-envelope card-icon-main"></i>
+                                </div>
+                                <div class="card-icon-ring"></div>
+                            </div>
+
+                            <div class="card-content">
+                                <h3 class="card-title">Contact Us</h3>
+                                <p class="card-description">
+                                    Get in touch, visit our lab, or join our community. We'd love to connect!
+                                </p>
+                            </div>
+
+                            <div class="absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-arrow-right text-robotics-gold text-xl"></i>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- ====================
+     CLUB HIGHLIGHTS SECTION
+     ===================== -->
+        <section id="highlights" class="py-20 bg-gradient-to-b from-robotics-blue to-gray-900 relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute inset-0 opacity-5">
+                <div class="absolute inset-0"
+                    style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffd700\' fill-opacity=\'0.4\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+                </div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <!-- Section Header -->
+                <div class="text-center mb-16">
+                    <div class="badge badge-primary mx-auto mb-6">
+                        <div class="badge-dot"></div>
+                        <span>Our Highlights</span>
+                    </div>
+
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-orbitron font-bold text-white mb-6">
+                        <span class="text-robotics-gold">Club</span> Highlights
+                    </h2>
+
+                    <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                        Discover what makes Robotics Club NIT Patna the premier destination for robotics enthusiasts
+                    </p>
+                </div>
+
+                <!-- Highlights Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                    <!-- Highlight 1: Cutting-Edge Projects -->
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <div class="icon-bg icon-bg-gold">
+                                <i class="fas fa-microchip icon-lg icon-gold"></i>
+                            </div>
+                            <div class="highlight-number">01</div>
+                        </div>
+
+                        <h3 class="highlight-title">Cutting-Edge Projects</h3>
+                        <p class="highlight-description">
+                            Work on real-world robotics projects using the latest robotics technologies like Arduino,
+                            AI, IoT, and
+                            computer vision.
+                        </p>
+
+                        <div class="highlight-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <span>Arduino & ESP32</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <span>IoT Integration</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <span>Autonomous Systems</span>
+                            </div>
+                        </div>
+
+                        <a href="./projects.html" class="highlight-link">
+                            <span>View Projects</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Highlight 2: Expert Guidance -->
+                    <div class="highlight-card featured">
+                        <div class="highlight-badge">Most Valued</div>
+
+                        <div class="highlight-icon">
+                            <div class="icon-bg icon-bg-blue">
+                                <i class="fas fa-user-graduate icon-lg icon-blue"></i>
+                            </div>
+                            <div class="highlight-number">02</div>
+                        </div>
+
+                        <h3 class="highlight-title">Expert Guidance</h3>
+                        <p class="highlight-description">
+                            Learn from experienced faculty mentors and senior members.
+                        </p>
+
+                        <div class="highlight-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <span>Faculty Mentorship</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <span>Peer Learning</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <span>Industry Workshops</span>
+                            </div>
+                        </div>
+
+                        <a href="./team.html" class="highlight-link">
+                            <span>Meet Mentors</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Highlight 3: State-of-the-Art Lab -->
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <div class="icon-bg icon-bg-gold">
+                                <i class="fas fa-flask icon-lg icon-gold"></i>
+                            </div>
+                            <div class="highlight-number">03</div>
+                        </div>
+
+                        <h3 class="highlight-title">Advanced Lab Facilities</h3>
+                        <p class="highlight-description">
+                            Access our fully-equipped robotics lab with 3D printers, drones, sensors, and development
+                            kits.
+                        </p>
+
+                        <div class="highlight-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <span>3D Printing Station</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <span>Drone Testing Area</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <span>Electronics Workbench</span>
+                            </div>
+                        </div>
+
+                        <a href="./about.html#facilities" class="highlight-link">
+                            <span>Explore Lab</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Highlight 4: Competition & Events -->
+                    <div class="highlight-card">
+                        <div class="highlight-icon">
+                            <div class="icon-bg icon-bg-blue">
+                                <i class="fas fa-trophy icon-lg icon-blue"></i>
+                            </div>
+                            <div class="highlight-number">04</div>
+                        </div>
+
+                        <h3 class="highlight-title">Competitions & Events</h3>
+                        <p class="highlight-description">
+                            Participate in national competitions, hackathons, and tech fests to showcase your skills.
+                        </p>
+
+                        <div class="highlight-features">
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <span>National Competitions</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <span>Workshops</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-check-circle feature-icon"></i>
+                                <span>Hands-on experience</span>
+                            </div>
+                        </div>
+
+                        <a href="./events.html" class="highlight-link">
+                            <span>View Events</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <!-- ====================
+     SIMPLE IMAGE SLIDER
+     ===================== -->
+        <section id="image-slider" class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white mb-4">
+                        <span class="text-robotics-gold">Club</span> Moments
+                    </h2>
+                    <p class="text-gray-300 max-w-2xl mx-auto">
+                        A glimpse into our robotics journey through the years
+                    </p>
+                </div>
+
+                <!-- Slider Container -->
+                <div class="slider-wrapper max-w-6xl mx-auto">
+                    <!-- Main Slider -->
+                    <div class="slider-main relative overflow-hidden rounded-xl bg-gray-800">
+                        <!-- Slides Container -->
+                        <div class="slides-container" id="slides-container">
+                            <!-- Slides will be loaded dynamically from JSON -->
+                            <div class="text-center py-12 text-gray-400">
+                                Loading gallery...
+                            </div>
+                        </div>
+
+                        <!-- Navigation Buttons -->
+                        <button class="slider-btn slider-prev absolute left-4 top-1/2 -translate-y-1/2 
+                              w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/60 backdrop-blur-sm 
+                              border border-robotics-gold/30 text-white flex items-center justify-center 
+                              hover:bg-robotics-gold/20 transition-all duration-300 z-10" aria-label="Previous slide">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+
+                        <button class="slider-btn slider-next absolute right-4 top-1/2 -translate-y-1/2 
+                              w-10 h-10 md:w-12 md:h-12 rounded-full bg-black/60 backdrop-blur-sm 
+                              border border-robotics-gold/30 text-white flex items-center justify-center 
+                              hover:bg-robotics-gold/20 transition-all duration-300 z-10" aria-label="Next slide">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+
+                        <!-- Loading Indicator -->
+                        <div class="loading-indicator absolute inset-0 bg-gray-800 flex items-center 
+                           justify-center z-20 transition-opacity duration-300 hidden">
+                            <div class="text-center">
+                                <div class="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 
+                                    border-robotics-gold mx-auto mb-2"></div>
+                                <span class="text-gray-400 text-sm">Loading image...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slider Controls -->
+                    <div class="slider-controls mt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                        <!-- Dots Navigation -->
+                        <div class="slider-dots flex gap-2" id="slider-dots">
+                            <!-- Dots will be generated dynamically -->
+                        </div>
+
+                        <!-- Slide Counter -->
+                        <div class="slider-counter text-gray-300 text-sm font-orbitron">
+                            <span id="current-slide">1</span> / <span id="total-slides">5</span>
+                        </div>
+
+                        <!-- Auto-play Toggle -->
+                        <div class="flex items-center gap-2">
+                            <button class="auto-play-toggle w-10 h-6 rounded-full bg-gray-700 relative 
+                                  focus:outline-none focus:ring-2 focus:ring-robotics-gold/50" id="auto-play-toggle"
+                                aria-label="Toggle auto-play">
+                                <span class="toggle-switch absolute top-1 left-1 w-4 h-4 rounded-full 
+                                     bg-robotics-gold transition-transform duration-300"></span>
+                            </button>
+                            <span class="text-gray-300 text-sm">Auto-play</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image Info -->
+                <div class="image-info mt-6 text-center text-gray-300">
+                    <h3 class="image-title text-lg font-semibold mb-1" id="image-title"></h3>
+                    <p class="image-description text-sm" id="image-description"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader Script -->
+    <script src="./js/components.js"></script>
+
+    <!-- Common main Script -->
+    <script src="./js/main.js"></script>
+
+    <!-- Index Page specific Script-->
+    <script src="./js/pages/home.js"></script>
+
+</body>
+
+</html>

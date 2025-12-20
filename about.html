@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Robotics Club NIT Patna</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'robotics-blue': '#0a1a3a',
+                        'robotics-light-blue': '#00b4d8',
+                        'robotics-gold': '#ffd700',
+                        'robotics-dark': '#0f172a',
+                    },
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'system-ui', '-apple-system', 'sans-serif'],
+                        'roboto': ['Roboto', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            'from': { opacity: '0', transform: 'translateY(20px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 10px rgba(255, 215, 0, 0.3)' },
+                            '50%': { boxShadow: '0 0 20px rgba(255, 215, 0, 0.6)' },
+                        },
+                        slideInLeft: {
+                            'from': { opacity: '0', transform: 'translateX(-30px)' },
+                            'to': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            'from': { opacity: '0', transform: 'translateX(30px)' },
+                            'to': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="./css/components/navbar.css">
+    <link rel="stylesheet" href="./css/components/footer.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="./css/pages/about.css">
+</head>
+
+<body class="font-roboto bg-gray-900 text-white flex flex-col min-h-screen">
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-16">
+
+        <!-- ====================
+             HERO SECTION
+        ===================== -->
+        <section class="about-hero relative overflow-hidden">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-robotics-gold/5 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-robotics-light-blue/5 rounded-full blur-3xl">
+                </div>
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-robotics-gold/3 rounded-full blur-3xl">
+                </div>
+            </div>
+
+            <div class="container mx-auto px-4 py-24 relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <!-- Badge -->
+                    <div
+                        class="inline-flex items-center gap-3 bg-robotics-blue/80 backdrop-blur-sm border border-robotics-gold/30 rounded-full px-6 py-3 mb-8 animate-fade-in-up">
+                        <div class="w-2 h-2 bg-robotics-gold rounded-full animate-pulse"></div>
+                        <span class="font-orbitron text-robotics-gold text-sm tracking-widest">ABOUT ROBOTICS
+                            CLUB</span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold mb-6 animate-fade-in-up"
+                        style="animation-delay: 0.2s">
+                        <span class="text-white">Pioneering</span>
+                        <span class="text-robotics-gold">Robotics</span>
+                        <span class="text-white">Excellence</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto animate-fade-in-up"
+                        style="animation-delay: 0.4s">
+                        At the forefront of robotics innovation, research, and education since 2015-16.
+                        Empowering the next generation of roboticists at NIT Patna.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 animate-fade-in-up"
+                        style="animation-delay: 0.6s">
+                        <div class="text-center">
+                            <div class="stat-number" data-count="10">0</div>
+                            <p class="text-gray-300 text-sm mt-2">Years of Excellence</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="stat-number" data-count="500">0</div>
+                            <p class="text-gray-300 text-sm mt-2">Alumni Members</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="stat-number" data-count="150">0</div>
+                            <p class="text-gray-300 text-sm mt-2">Projects Completed</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="stat-number" data-count="75">0</div>
+                            <p class="text-gray-300 text-sm mt-2">Awards Won</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+                <a href="#club-description" class="text-robotics-gold">
+                    <i class="fas fa-chevron-down text-2xl"></i>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ====================
+             CLUB DESCRIPTION SECTION
+        ===================== -->
+        <section id="club-description" class="py-20 bg-robotics-blue">
+            <div class="container mx-auto px-4">
+                <div class="max-w-6xl mx-auto">
+                    <!-- Section Header -->
+                    <div class="text-center mb-16 animate-fade-in-up">
+                        <div class="inline-flex items-center gap-3 mb-6">
+
+                            <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white">
+                                <span class="text-robotics-gold">Club</span> Description
+                            </h2>
+
+                        </div>
+                        <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                            Discover who we are, what we do, and why we're passionate about robotics
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <!-- Left Column: Text Content -->
+                        <div class="animate-slide-in-left">
+                            <h3 class="text-2xl font-orbitron font-bold text-white mb-6">
+                                Welcome to <span class="text-robotics-gold">Robotics Club NIT Patna</span>
+                            </h3>
+
+                            <div class="space-y-6">
+                                <p class="text-gray-300">
+                                    Established in 2010, the Robotics Club at NIT Patna is a premier student-run
+                                    organization dedicated to fostering innovation, research, and hands-on learning in
+                                    the field of robotics and automation. We serve as a platform for students to
+                                    explore, create, and innovate in robotics.
+                                </p>
+
+                                <p class="text-gray-300">
+                                    Our club brings together students from various engineering disciplines who share a
+                                    common passion for robotics. We believe in learning by doing, and our projects range
+                                    from simple autonomous robots to complex AI-powered systems.
+                                </p>
+
+                                <p class="text-gray-300">
+                                    With state-of-the-art facilities, experienced faculty mentors, and a vibrant
+                                    community of robotics enthusiasts, we provide an environment where theoretical
+                                    knowledge meets practical application.
+                                </p>
+                            </div>
+
+                            <!-- Key Features -->
+                            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-robotics-gold/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-users text-robotics-gold"></i>
+                                    </div>
+                                    <span class="text-gray-300">Interdisciplinary Team</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-robotics-gold/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-flask text-robotics-gold"></i>
+                                    </div>
+                                    <span class="text-gray-300">Research-Focused</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-robotics-gold/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-trophy text-robotics-gold"></i>
+                                    </div>
+                                    <span class="text-gray-300">Award-Winning Projects</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-robotics-gold/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-handshake text-robotics-gold"></i>
+                                    </div>
+                                    <span class="text-gray-300">Industry Partnerships</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Image/Illustration -->
+                        <div class="relative animate-slide-in-right">
+                            <div class="relative rounded-2xl overflow-hidden border-2 border-robotics-gold/30">
+                                <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                                    alt="Robotics Club Members Working" class="w-full h-auto" loading="lazy">
+                                <div class="absolute inset-0 bg-gradient-to-t from-robotics-blue/80 to-transparent">
+                                </div>
+                            </div>
+
+                            <!-- Floating Element -->
+                            <div
+                                class="absolute -bottom-6 -right-6 w-32 h-32 bg-robotics-gold/10 rounded-full border border-robotics-gold/20 backdrop-blur-sm flex items-center justify-center animate-float">
+                                <div class="text-center">
+                                    <div class="text-3xl font-orbitron text-robotics-gold">10+</div>
+                                    <div class="text-xs text-gray-300">Years Experience</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Divider -->
+            <div class="section-divider"></div>
+        </section>
+
+
+        <!-- ====================
+             CLUB HISTORY TIMELINE
+        ===================== -->
+        <section id="club-history" class="py-20 bg-gradient-to-b from-robotics-blue to-gray-900">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-3 mb-6">
+
+                        <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white">
+                            <span class="text-robotics-gold">Club</span> History
+                        </h2>
+
+                    </div>
+                    <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                        A journey of innovation, growth, and milestones since our inception
+                    </p>
+                </div>
+
+                <!-- Timeline -->
+                <div class="timeline-container">
+                    <!-- Timeline Item 1: Foundation -->
+                    <div class="timeline-item animate-fade-in-up" style="animation-delay: 0.1s">
+                        <div class="timeline-content">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-robotics-gold/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-seedling text-robotics-gold"></i>
+                                </div>
+                                <div>
+                                    <div class="text-robotics-gold font-orbitron font-bold">2010</div>
+                                    <h3 class="text-xl font-bold text-white">Club Foundation</h3>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">
+                                Robotics Club NIT Patna was founded by a group of passionate students with guidance from
+                                faculty mentors. Started with just 15 members and basic equipment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 2: First Achievement -->
+                    <div class="timeline-item animate-fade-in-up" style="animation-delay: 0.2s">
+                        <div class="timeline-content">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-12 h-12 bg-robotics-light-blue/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-trophy text-robotics-light-blue"></i>
+                                </div>
+                                <div>
+                                    <div class="text-robotics-light-blue font-orbitron font-bold">2012</div>
+                                    <h3 class="text-xl font-bold text-white">First National Competition Win</h3>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">
+                                Won 1st prize at National Robotics Competition with an autonomous line-following robot.
+                                This victory put NIT Patna on the national robotics map.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 3: Lab Expansion -->
+                    <div class="timeline-item animate-fade-in-up" style="animation-delay: 0.3s">
+                        <div class="timeline-content">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-robotics-gold/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-expand-alt text-robotics-gold"></i>
+                                </div>
+                                <div>
+                                    <div class="text-robotics-gold font-orbitron font-bold">2015</div>
+                                    <h3 class="text-xl font-bold text-white">Advanced Robotics Lab</h3>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">
+                                Established a dedicated robotics laboratory with 3D printers, CNC machines, and advanced
+                                testing equipment through institute funding and industry partnerships.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 4: International Recognition -->
+                    <div class="timeline-item animate-fade-in-up" style="animation-delay: 0.4s">
+                        <div class="timeline-content">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-12 h-12 bg-robotics-light-blue/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-globe text-robotics-light-blue"></i>
+                                </div>
+                                <div>
+                                    <div class="text-robotics-light-blue font-orbitron font-bold">2018</div>
+                                    <h3 class="text-xl font-bold text-white">International Collaboration</h3>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">
+                                Partnered with robotics clubs from Singapore and Germany for joint research projects.
+                                Published first international research paper on swarm robotics.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 5: AI Integration -->
+                    <div class="timeline-item animate-fade-in-up" style="animation-delay: 0.5s">
+                        <div class="timeline-content">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-12 h-12 bg-robotics-gold/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-brain text-robotics-gold"></i>
+                                </div>
+                                <div>
+                                    <div class="text-robotics-gold font-orbitron font-bold">2021</div>
+                                    <h3 class="text-xl font-bold text-white">AI & ML Integration</h3>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">
+                                Incorporated Artificial Intelligence and Machine Learning into robotics projects.
+                                Developed first AI-powered autonomous drone for precision agriculture.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Timeline Item 6: Present Day -->
+                    <div class="timeline-item animate-fade-in-up" style="animation-delay: 0.6s">
+                        <div class="timeline-content">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div
+                                    class="w-12 h-12 bg-robotics-light-blue/10 rounded-lg flex items-center justify-center">
+                                    <i class="fas fa-rocket text-robotics-light-blue"></i>
+                                </div>
+                                <div>
+                                    <div class="text-robotics-light-blue font-orbitron font-bold">2024</div>
+                                    <h3 class="text-xl font-bold text-white">Current & Future Vision</h3>
+                                </div>
+                            </div>
+                            <p class="text-gray-300">
+                                Over 200 active members, 50+ ongoing projects, and partnerships with leading tech
+                                companies. Focusing on sustainable robotics and human-robot collaboration for societal
+                                impact.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Divider -->
+            <div class="section-divider"></div>
+        </section>
+
+
+        <!-- ====================
+             MISSION, VISION & OBJECTIVES
+        ===================== -->
+        <section id="mission-vision" class="py-20 bg-robotics-blue">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-3 mb-6">
+
+                        <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white">
+                            <span class="text-robotics-gold">Mission</span>, Vision & Objectives
+                        </h2>
+
+                    </div>
+                    <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                        Our guiding principles that drive everything we do
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                    <!-- Mission Card -->
+                    <div class="mv-card animate-fade-in-up" style="animation-delay: 0.1s">
+                        <div class="text-center mb-8">
+                            <div
+                                class="w-20 h-20 bg-robotics-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-bullseye text-3xl text-robotics-gold"></i>
+                            </div>
+                            <h3 class="text-2xl font-orbitron font-bold text-white mb-4">Our Mission</h3>
+                        </div>
+                        <p class="text-gray-300 text-center">
+                            To cultivate innovation, foster technical excellence, and create a collaborative environment
+                            where students can transform theoretical knowledge into practical robotic solutions that
+                            address real-world challenges.
+                        </p>
+                    </div>
+
+                    <!-- Vision Card -->
+                    <div class="mv-card animate-fade-in-up" style="animation-delay: 0.2s">
+                        <div class="text-center mb-8">
+                            <div
+                                class="w-20 h-20 bg-robotics-light-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-eye text-3xl text-robotics-light-blue"></i>
+                            </div>
+                            <h3 class="text-2xl font-orbitron font-bold text-white mb-4">Our Vision</h3>
+                        </div>
+                        <p class="text-gray-300 text-center">
+                            To establish NIT Patna as a premier hub for robotics innovation in India and produce
+                            graduates who become leaders in robotics research, industry, and entrepreneurship globally.
+                        </p>
+                    </div>
+
+                    <!-- Core Values Card -->
+                    <div class="mv-card animate-fade-in-up" style="animation-delay: 0.3s">
+                        <div class="text-center mb-8">
+                            <div
+                                class="w-20 h-20 bg-robotics-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-heart text-3xl text-robotics-gold"></i>
+                            </div>
+                            <h3 class="text-2xl font-orbitron font-bold text-white mb-4">Core Values</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check-circle text-robotics-gold"></i>
+                                <span>Innovation & Creativity</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check-circle text-robotics-gold"></i>
+                                <span>Collaboration & Teamwork</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check-circle text-robotics-gold"></i>
+                                <span>Ethical Responsibility</span>
+                            </li>
+                            <li class="flex items-center gap-3 text-gray-300">
+                                <i class="fas fa-check-circle text-robotics-gold"></i>
+                                <span>Continuous Learning</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Objectives Section -->
+                <div class="max-w-4xl mx-auto animate-fade-in-up" style="animation-delay: 0.4s">
+                    <h3 class="text-3xl font-orbitron font-bold text-white text-center mb-10">
+                        Our <span class="text-robotics-gold">Objectives</span>
+                    </h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Objective 1 -->
+                        <div class="objective-item">
+                            <div
+                                class="w-12 h-12 bg-robotics-gold/10 rounded-lg flex-shrink-0 flex items-center justify-center">
+                                <span class="text-robotics-gold font-orbitron font-bold text-xl">01</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">Technical Skill Development</h4>
+                                <p class="text-gray-300 text-sm">
+                                    Provide hands-on training in robotics, AI, embedded systems, and IoT through
+                                    workshops and projects.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Objective 2 -->
+                        <div class="objective-item">
+                            <div
+                                class="w-12 h-12 bg-robotics-gold/10 rounded-lg flex-shrink-0 flex items-center justify-center">
+                                <span class="text-robotics-gold font-orbitron font-bold text-xl">02</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">Research & Innovation</h4>
+                                <p class="text-gray-300 text-sm">
+                                    Foster a research-oriented environment for developing novel robotic solutions to
+                                    real-world problems.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Objective 3 -->
+                        <div class="objective-item">
+                            <div
+                                class="w-12 h-12 bg-robotics-gold/10 rounded-lg flex-shrink-0 flex items-center justify-center">
+                                <span class="text-robotics-gold font-orbitron font-bold text-xl">03</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">Industry Collaboration</h4>
+                                <p class="text-gray-300 text-sm">
+                                    Establish partnerships with industry leaders for internships, projects, and
+                                    technology transfer.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Objective 4 -->
+                        <div class="objective-item">
+                            <div
+                                class="w-12 h-12 bg-robotics-gold/10 rounded-lg flex-shrink-0 flex items-center justify-center">
+                                <span class="text-robotics-gold font-orbitron font-bold text-xl">04</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">Competition Excellence</h4>
+                                <p class="text-gray-300 text-sm">
+                                    Prepare and mentor teams for national and international robotics competitions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Objective 5 -->
+                        <div class="objective-item">
+                            <div
+                                class="w-12 h-12 bg-robotics-gold/10 rounded-lg flex-shrink-0 flex items-center justify-center">
+                                <span class="text-robotics-gold font-orbitron font-bold text-xl">05</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">Community Outreach</h4>
+                                <p class="text-gray-300 text-sm">
+                                    Promote robotics education in schools and local communities through workshops and
+                                    demonstrations.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Objective 6 -->
+                        <div class="objective-item">
+                            <div
+                                class="w-12 h-12 bg-robotics-gold/10 rounded-lg flex-shrink-0 flex items-center justify-center">
+                                <span class="text-robotics-gold font-orbitron font-bold text-xl">06</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold mb-2">Entrepreneurship</h4>
+                                <p class="text-gray-300 text-sm">
+                                    Support members in transforming innovative ideas into viable startups and commercial
+                                    products.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================
+     CLUB ACTIVITIES SECTION (INFORMATIVE ONLY)
+     ===================== -->
+        <section id="club-activities" class="py-20 bg-gradient-to-b from-gray-900 to-robotics-blue">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-3 mb-6">
+
+                        <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white">
+                            <span class="text-robotics-gold">Club</span> Activities
+                        </h2>
+
+                    </div>
+                    <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                        Our comprehensive program of workshops, competitions, and learning sessions that foster
+                        innovation and skill development
+                    </p>
+                </div>
+
+                <!-- Workshops Section -->
+                <div class="mb-20 animate-fade-in-up" style="animation-delay: 0.2s">
+                    <div class="flex items-center gap-4 mb-10">
+                        <div class="w-16 h-16 bg-robotics-gold/10 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-wrench text-3xl text-robotics-gold"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl md:text-3xl font-orbitron font-bold text-white">
+                                Workshops & <span class="text-robotics-gold">Training</span>
+                            </h3>
+                            <p class="text-gray-300 mt-2">Hands-on learning experiences for all skill levels</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <!-- Left Column: Workshop Details -->
+                        <div>
+                            <div class="bg-robotics-blue/30 border border-robotics-gold/20 rounded-xl p-6 mb-8">
+                                <h4 class="text-xl font-orbitron font-bold text-white mb-4 flex items-center gap-2">
+                                    <i class="fas fa-calendar-alt text-robotics-gold"></i>
+                                    Workshop Schedule
+                                </h4>
+                                <p class="text-gray-300 mb-4">
+                                    We conduct regular workshops throughout the academic year, typically:
+                                </p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-center gap-3 text-gray-300">
+                                        <i class="fas fa-circle text-xs text-robotics-gold"></i>
+                                        <span><strong>Weekly Sessions:</strong> Every Saturday, 2:00 PM - 5:00 PM</span>
+                                    </li>
+                                    <li class="flex items-center gap-3 text-gray-300">
+                                        <i class="fas fa-circle text-xs text-robotics-gold"></i>
+                                        <span><strong>Special Workshops:</strong> Monthly advanced sessions</span>
+                                    </li>
+                                    <li class="flex items-center gap-3 text-gray-300">
+                                        <i class="fas fa-circle text-xs text-robotics-gold"></i>
+                                        <span><strong>Summer Intensive:</strong> 2-week programs during breaks</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Workshop Categories -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="bg-robotics-blue/30 border border-robotics-gold/10 rounded-xl p-5">
+                                    <h5 class="text-white font-bold mb-3 flex items-center gap-2">
+                                        <i class="fas fa-user-graduate text-robotics-gold"></i>
+                                        Beginner Level
+                                    </h5>
+                                    <ul class="space-y-2 text-gray-300 text-sm">
+                                        <li>• Arduino Basics & Programming</li>
+                                        <li>• Introduction to Robotics</li>
+                                        <li>• Basic Electronics & Circuits</li>
+                                        <li>• Simple Sensor Integration</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-robotics-blue/30 border border-robotics-gold/10 rounded-xl p-5">
+                                    <h5 class="text-white font-bold mb-3 flex items-center gap-2">
+                                        <i class="fas fa-cogs text-robotics-light-blue"></i>
+                                        Advanced Level
+                                    </h5>
+                                    <ul class="space-y-2 text-gray-300 text-sm">
+                                        <li>• ROS/ROS2 Development</li>
+                                        <li>• AI & Computer Vision</li>
+                                        <li>• Autonomous Systems</li>
+                                        <li>• Advanced Drone Programming</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Workshop Statistics -->
+                        <div>
+                            <div class="bg-robotics-blue/30 border border-robotics-gold/20 rounded-xl p-6 mb-8">
+                                <h4 class="text-xl font-orbitron font-bold text-white mb-6 text-center">
+                                    Workshop <span class="text-robotics-gold">Statistics</span>
+                                </h4>
+                                <div class="grid grid-cols-2 gap-6">
+                                    <div class="text-center">
+                                        <div class="text-3xl font-orbitron font-bold text-robotics-gold">12-15</div>
+                                        <div class="text-gray-300 text-sm mt-2">Workshops Conducted Annually</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-orbitron font-bold text-robotics-gold">500+</div>
+                                        <div class="text-gray-300 text-sm mt-2">Total Participants</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-orbitron font-bold text-robotics-gold">20+</div>
+                                        <div class="text-gray-300 text-sm mt-2">Topics Covered</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="text-3xl font-orbitron font-bold text-robotics-gold">40</div>
+                                        <div class="text-gray-300 text-sm mt-2">Hours of Training/Month</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Workshop Image -->
+                            <div class="rounded-xl overflow-hidden border border-robotics-gold/20">
+                                <img src="https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                                    alt="Workshop Session in Progress" class="w-full h-64 object-cover" loading="lazy">
+                                <div class="bg-robotics-blue/80 p-4">
+                                    <p class="text-gray-300 text-sm text-center">
+                                        Students working on robotics projects during a workshop session
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Competitions Section -->
+                <div class="animate-fade-in-up" style="animation-delay: 0.4s">
+                    <div class="flex items-center gap-4 mb-10">
+                        <div class="w-16 h-16 bg-robotics-light-blue/10 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-trophy text-3xl text-robotics-light-blue"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl md:text-3xl font-orbitron font-bold text-white">
+                                Competitions & <span class="text-robotics-light-blue">Achievements</span>
+                            </h3>
+                            <p class="text-gray-300 mt-2">Showcasing excellence on national and international platforms
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
+                        <!-- Competition Details -->
+                        <div>
+                            <div class="bg-robotics-blue/30 border border-robotics-light-blue/20 rounded-xl p-6 mb-8">
+                                <h4 class="text-xl font-orbitron font-bold text-white mb-4">Competition Participation
+                                </h4>
+                                <p class="text-gray-300 mb-4">
+                                    Our teams actively participate in prestigious robotics competitions throughout the
+                                    year:
+                                </p>
+
+                                <div class="space-y-6 mt-6">
+                                    <div class="competition-item">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h5 class="text-white font-bold">ROBOCON India</h5>
+                                            <span class="text-robotics-gold text-sm font-semibold">National Level</span>
+                                        </div>
+                                        <p class="text-gray-300 text-sm">
+                                            Consistently ranked among top 10 teams in India. National runners-up in
+                                            2022.
+                                        </p>
+                                        <div class="flex items-center gap-2 mt-3">
+                                            <span
+                                                class="px-3 py-1 bg-robotics-gold/20 text-robotics-gold text-xs rounded-full">
+                                                <i class="fas fa-medal mr-1"></i> Multiple Awards
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                    <div class="competition-item">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h5 class="text-white font-bold">IIT Techfest Robotics Challenge</h5>
+                                            <span class="text-robotics-gold text-sm font-semibold">Inter-IIT</span>
+                                        </div>
+                                        <p class="text-gray-300 text-sm">
+                                            Winners of Autonomous Robotics Challenge 2023 with innovative navigation
+                                            algorithms.
+                                        </p>
+                                    </div>
+
+                                    <div class="competition-item">
+                                        <div class="flex items-center justify-between mb-2">
+                                            <h5 class="text-white font-bold">International ABU Robocon</h5>
+                                            <span class="text-robotics-gold text-sm font-semibold">International</span>
+                                        </div>
+                                        <p class="text-gray-300 text-sm">
+                                            Represented India in 2021, showcasing innovative robot designs on global
+                                            stage.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Competition Statistics -->
+                        <div>
+                            <div class="bg-robotics-blue/30 border border-robotics-light-blue/20 rounded-xl p-6 mb-8">
+                                <h4 class="text-xl font-orbitron font-bold text-white mb-6 text-center">
+                                    Competition <span class="text-robotics-light-blue">Statistics</span>
+                                </h4>
+                                <div class="space-y-6">
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-gray-300">National Competitions</span>
+                                            <span class="text-robotics-gold font-bold">8-10 annually</span>
+                                        </div>
+                                        <div class="w-full bg-gray-700 rounded-full h-2">
+                                            <div class="bg-robotics-gold h-2 rounded-full" style="width: 80%"></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-gray-300">International Participation</span>
+                                            <span class="text-robotics-gold font-bold">2-3 annually</span>
+                                        </div>
+                                        <div class="w-full bg-gray-700 rounded-full h-2">
+                                            <div class="bg-robotics-gold h-2 rounded-full" style="width: 30%"></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-gray-300">Awards Won (2023)</span>
+                                            <span class="text-robotics-gold font-bold">15 awards</span>
+                                        </div>
+                                        <div class="w-full bg-gray-700 rounded-full h-2">
+                                            <div class="bg-robotics-gold h-2 rounded-full" style="width: 75%"></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="flex justify-between items-center mb-2">
+                                            <span class="text-gray-300">Student Participation</span>
+                                            <span class="text-robotics-gold font-bold">100+ students</span>
+                                        </div>
+                                        <div class="w-full bg-gray-700 rounded-full h-2">
+                                            <div class="bg-robotics-gold h-2 rounded-full" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================
+     INFRASTRUCTURE & LAB FACILITIES SECTION (INFORMATIVE ONLY)
+     ===================== -->
+        <section id="infrastructure" class="py-20 bg-robotics-blue">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-3 mb-6">
+
+                        <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white">
+                            Infrastructure & <span class="text-robotics-gold">Lab Facilities</span>
+                        </h2>
+                    </div>
+                    <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                        State-of-the-art facilities equipped with modern technology to support innovation and hands-on
+                        learning
+                    </p>
+                </div>
+
+                <!-- Main Laboratory Overview -->
+                <div class="mb-20 animate-fade-in-up" style="animation-delay: 0.2s">
+                    <div class="flex items-center gap-4 mb-10">
+                        <div class="w-16 h-16 bg-robotics-gold/10 rounded-xl flex items-center justify-center">
+                            <i class="fas fa-flask text-3xl text-robotics-gold"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl md:text-3xl font-orbitron font-bold text-white">
+                                Main <span class="text-robotics-gold">Robotics Laboratory</span>
+                            </h3>
+                            <p class="text-gray-300 mt-2">Our primary workspace for innovation and experimentation</p>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <!-- Lab Description -->
+                        <div>
+                            <div class="bg-robotics-blue/30 border border-robotics-gold/20 rounded-xl p-6 mb-8">
+                                <h4 class="text-xl font-orbitron font-bold text-white mb-4">Laboratory Overview</h4>
+                                <p class="text-gray-300 mb-4">
+                                    Our 2500 sq. ft. dedicated robotics laboratory serves as the central hub for all
+                                    robotics activities at NIT Patna. The lab is designed to facilitate collaborative
+                                    work, research, and hands-on learning.
+                                </p>
+
+                                <div class="grid grid-cols-2 gap-4 mt-6">
+                                    <div class="lab-feature">
+                                        <div class="lab-feature-icon">
+                                            <i class="fas fa-ruler-combined"></i>
+                                        </div>
+                                        <div>
+                                            <div class="lab-feature-title">Area</div>
+                                            <div class="lab-feature-value">2500 sq. ft.</div>
+                                        </div>
+                                    </div>
+                                    <div class="lab-feature">
+                                        <div class="lab-feature-icon">
+                                            <i class="fas fa-desktop"></i>
+                                        </div>
+                                        <div>
+                                            <div class="lab-feature-title">Workstations</div>
+                                            <div class="lab-feature-value">50+ Stations</div>
+                                        </div>
+                                    </div>
+                                    <div class="lab-feature">
+                                        <div class="lab-feature-icon">
+                                            <i class="fas fa-users"></i>
+                                        </div>
+                                        <div>
+                                            <div class="lab-feature-title">Capacity</div>
+                                            <div class="lab-feature-value">60 Students</div>
+                                        </div>
+                                    </div>
+                                    <div class="lab-feature">
+                                        <div class="lab-feature-icon">
+                                            <i class="fas fa-clock"></i>
+                                        </div>
+                                        <div>
+                                            <div class="lab-feature-title">Access</div>
+                                            <div class="lab-feature-value">8 AM - 10 PM</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Lab Infrastructure -->
+                            <div class="bg-robotics-blue/30 border border-robotics-gold/20 rounded-xl p-6">
+                                <h4 class="text-xl font-orbitron font-bold text-white mb-4">Infrastructure Details</h4>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i class="fas fa-check-circle text-robotics-gold mt-1"></i>
+                                        <span><strong>Power Supply:</strong> Dedicated 3-phase power with UPS backup and
+                                            voltage stabilizers</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i class="fas fa-check-circle text-robotics-gold mt-1"></i>
+                                        <span><strong>Safety Systems:</strong> Fire extinguishers, first-aid kits, and
+                                            emergency exits</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i class="fas fa-check-circle text-robotics-gold mt-1"></i>
+                                        <span><strong>Networking:</strong> High-speed internet with Wi-Fi coverage
+                                            throughout the lab</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-gray-300">
+                                        <i class="fas fa-check-circle text-robotics-gold mt-1"></i>
+                                        <span><strong>Storage:</strong> Secure cabinets for components, tools, and
+                                            project storage</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Lab Image -->
+                        <div>
+                            <div class="rounded-xl overflow-hidden border-2 border-robotics-gold/30 mb-6">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                                    alt="Main Robotics Laboratory" class="w-full h-80 object-cover" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Specialized Laboratories -->
+                <div class="mb-20 animate-fade-in-up" style="animation-delay: 0.4s">
+                    <h3 class="text-3xl font-orbitron font-bold text-white mb-10 text-center">
+                        Specialized <span class="text-robotics-gold">Laboratories</span>
+                    </h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <!-- AI & ML Lab -->
+                        <div class="specialized-lab">
+                            <div class="specialized-lab-header">
+                                <div class="specialized-lab-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h4 class="specialized-lab-title">AI & Machine Learning Lab</h4>
+                            </div>
+                            <div class="specialized-lab-image">
+                                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="AI & ML Laboratory" class="w-full h-48 object-cover" loading="lazy">
+                            </div>
+                            <div class="specialized-lab-content">
+                                <p class="specialized-lab-description">
+                                    Equipped with high-performance computing resources for AI research and deep learning
+                                    model training.
+                                </p>
+                                <div class="specialized-lab-equipment">
+                                    <span>NVIDIA RTX 4090 GPUs</span>
+                                    <span>High-Performance Workstations</span>
+                                    <span>AI Development Software</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Drone Lab -->
+                        <div class="specialized-lab">
+                            <div class="specialized-lab-header">
+                                <div class="specialized-lab-icon">
+                                    <i class="fas fa-plane"></i>
+                                </div>
+                                <h4 class="specialized-lab-title">Drone Development Lab</h4>
+                            </div>
+                            <div class="specialized-lab-image">
+                                <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Drone Laboratory" class="w-full h-48 object-cover" loading="lazy">
+                            </div>
+                            <div class="specialized-lab-content">
+                                <p class="specialized-lab-description">
+                                    Dedicated space for drone assembly, testing, and programming with flight simulation
+                                    capabilities.
+                                </p>
+                                <div class="specialized-lab-equipment">
+                                    <span>Multiple Drone Kits</span>
+                                    <span>Flight Simulators</span>
+                                    <span>Testing Equipment</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3D Printing Lab -->
+                        <div class="specialized-lab">
+                            <div class="specialized-lab-header">
+                                <div class="specialized-lab-icon">
+                                    <i class="fas fa-print"></i>
+                                </div>
+                                <h4 class="specialized-lab-title">3D Printing & Prototyping</h4>
+                            </div>
+                            <div class="specialized-lab-image">
+                                <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="3D Printing Laboratory" class="w-full h-48 object-cover" loading="lazy">
+                            </div>
+                            <div class="specialized-lab-content">
+                                <p class="specialized-lab-description">
+                                    Advanced fabrication tools for rapid prototyping, including 3D printers and laser
+                                    cutting machines.
+                                </p>
+                                <div class="specialized-lab-equipment">
+                                    <span>8x 3D Printers</span>
+                                    <span>Laser Cutter</span>
+                                    <span>CNC Machine</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Electronics Lab -->
+                        <div class="specialized-lab">
+                            <div class="specialized-lab-header">
+                                <div class="specialized-lab-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <h4 class="specialized-lab-title">Electronics & PCB Lab</h4>
+                            </div>
+                            <div class="specialized-lab-image">
+                                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
+                                    alt="Electronics Laboratory" class="w-full h-48 object-cover" loading="lazy">
+                            </div>
+                            <div class="specialized-lab-content">
+                                <p class="specialized-lab-description">
+                                    Comprehensive electronics workstation with testing equipment and PCB fabrication
+                                    capabilities.
+                                </p>
+                                <div class="specialized-lab-equipment">
+                                    <span>Oscilloscopes</span>
+                                    <span>Function Generators</span>
+                                    <span>Soldering Stations</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Equipment Inventory -->
+                <div class="animate-fade-in-up" style="animation-delay: 0.6s">
+                    <h3 class="text-3xl font-orbitron font-bold text-white mb-10 text-center">
+                        Equipment <span class="text-robotics-gold">Inventory</span>
+                    </h3>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Development Boards -->
+                        <div class="equipment-category">
+                            <div class="equipment-category-header">
+                                <h4 class="equipment-category-title">Development Boards</h4>
+
+                            </div>
+                            <ul class="equipment-list">
+                                <li class="equipment-item">
+                                    <span class="equipment-name">Arduino Family</span>
+
+                                </li>
+                                <li class="equipment-item">
+                                    <span class="equipment-name">Raspberry Pi 4</span>
+
+                                </li>
+                                <li class="equipment-item">
+                                    <span class="equipment-name">ESP32/ESP8266</span>
+
+                                </li>
+
+                                <li class="equipment-item">
+                                    <span class="equipment-name">STM32 Boards</span>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Sensors & Actuators -->
+                        <div class="equipment-category">
+                            <div class="equipment-category-header">
+                                <h4 class="equipment-category-title">Sensors & Actuators</h4>
+
+                            </div>
+                            <ul class="equipment-list">
+                                <li class="equipment-item">
+                                    <span class="equipment-name">Ultrasonic Sensors</span>
+
+                                </li>
+                                <li class="equipment-item">
+                                    <span class="equipment-name">Infrared Sensors</span>
+
+                                </li>
+                                <li class="equipment-item">
+                                    <span class="equipment-name">Servo Motors</span>
+
+                                </li>
+                                <li class="equipment-item">
+                                    <span class="equipment-name">Stepper Motors</span>
+
+                                </li>
+                                <li class="equipment-item">
+                                    <span class="equipment-name">DC Motors</span>
+
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Software & Tools -->
+                        <div class="equipment-category">
+                            <div class="equipment-category-header">
+                                <h4 class="equipment-category-title">Software & Tools</h4>
+
+                            </div>
+                            <ul class="equipment-list">
+                                <li class="equipment-item">
+                                    <span class="equipment-name">ROS/ROS2 Suite</span>
+
+                                </li>
+                                <li class="equipment-item">
+                                    <span class="equipment-name">MATLAB & Simulink</span>
+
+                                </li>
+                                <li class="equipment-item">
+                                    <span class="equipment-name">SolidWorks</span>
+
+                                </li>
+                                <li class="equipment-item">
+                                    <span class="equipment-name">AutoCAD/Fusion 360</span>
+
+                                </li>
+                                <li class="equipment-item">
+                                    <span class="equipment-name">Programming IDEs</span>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Total Equipment Value -->
+                    <div class="mt-12 text-center">
+                        <div class="inline-block bg-robotics-blue/30 border border-robotics-gold/20 rounded-xl p-6">
+                            <div class="text-2xl font-orbitron font-bold text-robotics-gold">Total Equipment Value: ₹50+
+                                Lakhs</div>
+                            <p class="text-gray-300 mt-2 text-sm">
+                                Continuously updated with latest technology through institute funding and industry
+                                partnerships
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader Script -->
+    <script src="./js/components.js"></script>
+
+    <!-- Common main Script -->
+    <script src="./js/main.js"></script>
+
+    <!-- Page Specific Script -->
+    <script src="./js/pages/about.js"></script>
+</body>
+
+</html>

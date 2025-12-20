@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Robotics Club NIT Patna</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'robotics-blue': '#0a1a3a',
+                        'robotics-light-blue': '#00b4d8',
+                        'robotics-gold': '#ffd700',
+                        'robotics-dark': '#0f172a',
+                    },
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'system-ui', '-apple-system', 'sans-serif'],
+                        'roboto': ['Roboto', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'gradient-shift': 'gradientShift 3s ease infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            'from': { opacity: '0', transform: 'translateY(20px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 10px rgba(255, 215, 0, 0.3)' },
+                            '50%': { boxShadow: '0 0 20px rgba(255, 215, 0, 0.6)' },
+                        },
+                        slideInLeft: {
+                            'from': { opacity: '0', transform: 'translateX(-30px)' },
+                            'to': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            'from': { opacity: '0', transform: 'translateX(30px)' },
+                            'to': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        gradientShift: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Component CSS -->
+    <link rel="stylesheet" href="./css/components/navbar.css">
+    <link rel="stylesheet" href="./css/components/footer.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="./css/pages/contact.css">
+
+</head>
+
+<body class="font-roboto bg-gray-900 text-white flex flex-col min-h-screen">
+
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="flex-grow pt-16">
+
+        <!-- ====================
+             HERO SECTION
+        ===================== -->
+        <section class="contact-hero relative overflow-hidden">
+            <!-- Animated Background Elements -->
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-robotics-gold/5 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-robotics-light-blue/5 rounded-full blur-3xl">
+                </div>
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-robotics-gold/3 rounded-full blur-3xl">
+                </div>
+            </div>
+
+            <div class="container mx-auto px-4 py-24 relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <!-- Badge -->
+                    <div
+                        class="inline-flex items-center gap-3 bg-robotics-blue/80 backdrop-blur-sm border border-robotics-gold/30 rounded-full px-6 py-3 mb-8 animate-fade-in-up">
+                        <div class="w-2 h-2 bg-robotics-gold rounded-full animate-pulse"></div>
+                        <span class="font-orbitron text-robotics-gold text-sm tracking-widest">GET IN TOUCH</span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold mb-6 animate-fade-in-up"
+                        style="animation-delay: 0.2s">
+                        <span class="text-white">Connect</span>
+                        <span class="text-robotics-gold">With</span>
+                        <span class="text-white">Us</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto animate-fade-in-up"
+                        style="animation-delay: 0.4s">
+                        Have questions, suggestions, or interested in collaborating? Reach out to the Robotics Club NIT
+                        Patna. We're here to help and collaborate.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================
+             CONTACT INFORMATION SECTION
+        ===================== -->
+        <section id="contact-info" class="py-20 bg-robotics-blue">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-3 mb-6">
+                        <div class="w-12 h-1 bg-gradient-to-r from-robotics-light-blue to-robotics-gold rounded-full">
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white">
+                            Contact <span class="text-robotics-gold">Information</span>
+                        </h2>
+                        <div class="w-12 h-1 bg-gradient-to-r from-robotics-gold to-robotics-light-blue rounded-full">
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                        Find all the ways to reach out to the Robotics Club NIT Patna
+                    </p>
+                </div>
+
+                <!-- Contact Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+                    <!-- Address Card -->
+                    <div class="contact-card animate-fade-in-up" style="animation-delay: 0.1s">
+                        <div class="text-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-robotics-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-map-marker-alt text-2xl text-robotics-gold"></i>
+                            </div>
+                            <h3 class="text-xl font-orbitron font-bold text-white mb-2">Our Location</h3>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-gray-300">
+                                Robotics Club NIT Patna<br>
+                                National Institute of Technology Patna<br>
+                                Ashok Rajpath, Patna<br>
+                                Bihar - 800005, India
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Email Card -->
+                    <div class="contact-card animate-fade-in-up" style="animation-delay: 0.2s">
+                        <div class="text-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-robotics-light-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-envelope text-2xl text-robotics-light-blue"></i>
+                            </div>
+                            <h3 class="text-xl font-orbitron font-bold text-white mb-2">Email Us</h3>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-gray-300 mb-4">
+                                For general inquiries and information
+                            </p>
+                            <a href="mailto:roboticsclub@nitp.ac.in"
+                                class="text-robotics-gold font-semibold hover:text-robotics-light-blue transition-colors">
+                                roboticsclub@nitp.ac.in
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Phone Card -->
+                    <div class="contact-card animate-fade-in-up" style="animation-delay: 0.3s">
+                        <div class="text-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-robotics-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-phone-alt text-2xl text-robotics-gold"></i>
+                            </div>
+                            <h3 class="text-xl font-orbitron font-bold text-white mb-2">Call Us</h3>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-gray-300 mb-4">
+                                Available during working hours
+                            </p>
+                            <div class="space-y-2">
+                                <div class="text-robotics-gold font-semibold">+91 612 237 1715</div>
+                                <div class="text-gray-300 text-sm">Club Office</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hours Card -->
+                    <div class="contact-card animate-fade-in-up" style="animation-delay: 0.4s">
+                        <div class="text-center mb-6">
+                            <div
+                                class="w-16 h-16 bg-robotics-light-blue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-clock text-2xl text-robotics-light-blue"></i>
+                            </div>
+                            <h3 class="text-xl font-orbitron font-bold text-white mb-2">Working Hours</h3>
+                        </div>
+                        <div class="text-center">
+                            <div class="hours-item">
+                                <span class="text-gray-300">Monday - Friday</span>
+                                <span class="text-robotics-gold font-semibold">9 AM - 6 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="text-gray-300">Saturday</span>
+                                <span class="text-robotics-gold font-semibold">10 AM - 4 PM</span>
+                            </div>
+                            <div class="hours-item">
+                                <span class="text-gray-300">Sunday</span>
+                                <span class="text-robotics-gold font-semibold">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="text-center animate-fade-in-up" style="animation-delay: 0.5s">
+                    <h3 class="text-2xl font-orbitron font-bold text-white mb-8">
+                        Connect on <span class="text-robotics-gold">Social Media</span>
+                    </h3>
+                    <p class="text-gray-300 mb-10 max-w-2xl mx-auto">
+                        Follow us for latest updates, events, and robotics news
+                    </p>
+
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="social-link" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://discord.com" target="_blank" class="social-link" aria-label="Discord">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================
+             LOCATION & CONTACT FORM SECTION
+        ===================== -->
+        <section id="location-form" class="py-20 bg-gradient-to-b from-robotics-blue to-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Left Column: Location Map -->
+                    <div class="animate-slide-in-left">
+                        <h3 class="text-3xl font-orbitron font-bold text-white mb-8">
+                            <i class="fas fa-map-marked-alt text-robotics-gold mr-3"></i>
+                            Our <span class="text-robotics-gold">Location</span>
+                        </h3>
+
+                        <div class="location-container mb-8">
+                            <!-- Static Location Image -->
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+                                alt="NIT Patna Campus Location" class="w-full h-96 object-cover" loading="lazy">
+
+                            <div class="location-overlay">
+                                <h4 class="text-xl font-orbitron font-bold text-white mb-2">NIT Patna Campus</h4>
+                                <p class="text-gray-300">
+                                    Ashok Rajpath, Patna, Bihar - 800005
+                                </p>
+                                <div class="flex items-center gap-2 mt-3">
+                                    <i class="fas fa-subway text-robotics-gold"></i>
+                                    <span class="text-gray-300 text-sm">Nearest Metro: Patna Junction (3 km)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campus Information -->
+                        <div class="bg-robotics-blue/30 border border-robotics-gold/20 rounded-xl p-6">
+                            <h4 class="text-xl font-orbitron font-bold text-white mb-4">Campus Directions</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-robotics-gold/10 rounded-lg flex items-center justify-center mt-1">
+                                        <i class="fas fa-car text-robotics-gold"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white font-bold mb-1">By Road</h5>
+                                        <p class="text-gray-300 text-sm">
+                                            Located on Ashok Rajpath, 5 km from Patna Junction. Well-connected by city
+                                            buses and taxis.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-robotics-gold/10 rounded-lg flex items-center justify-center mt-1">
+                                        <i class="fas fa-train text-robotics-gold"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white font-bold mb-1">By Train</h5>
+                                        <p class="text-gray-300 text-sm">
+                                            Patna Junction (3 km) is the nearest railway station. Auto-rickshaws
+                                            available outside station.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-start gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-robotics-gold/10 rounded-lg flex items-center justify-center mt-1">
+                                        <i class="fas fa-plane text-robotics-gold"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="text-white font-bold mb-1">By Air</h5>
+                                        <p class="text-gray-300 text-sm">
+                                            Jay Prakash Narayan Airport (10 km). Pre-paid taxis available to campus.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Contact Form -->
+                    <div class="animate-slide-in-right">
+                        <h3 class="text-3xl font-orbitron font-bold text-white mb-8">
+                            <i class="fas fa-paper-plane text-robotics-light-blue mr-3"></i>
+                            Send us a <span class="text-robotics-light-blue">Message</span>
+                        </h3>
+
+                        <!-- Success Message (Hidden by default) -->
+                        <div id="success-message" class="success-message mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-check-circle text-2xl text-green-500"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg">Message Sent Successfully!</h4>
+                                    <p class="text-gray-300 mt-1">
+                                        Thank you for contacting Robotics Club NIT Patna. We'll get back to you within
+                                        24-48 hours.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <form id="contact-form" class="contact-form">
+                            <div class="space-y-6">
+                                <!-- Name Field -->
+                                <div>
+                                    <label for="name" class="form-label">Full Name *</label>
+                                    <input type="text" id="name" name="name" class="form-input"
+                                        placeholder="Enter your full name" required>
+                                    <div class="text-red-400 text-sm mt-2 hidden" id="name-error">
+                                        Please enter a valid name (minimum 2 characters)
+                                    </div>
+                                </div>
+
+                                <!-- Email Field -->
+                                <div>
+                                    <label for="email" class="form-label">Email Address *</label>
+                                    <input type="email" id="email" name="email" class="form-input"
+                                        placeholder="Enter your email address" required>
+                                    <div class="text-red-400 text-sm mt-2 hidden" id="email-error">
+                                        Please enter a valid email address
+                                    </div>
+                                </div>
+
+                                <!-- Subject Field -->
+                                <div>
+                                    <label for="subject" class="form-label">Subject *</label>
+                                    <select id="subject" name="subject" class="form-input" required>
+                                        <option value="" disabled selected>Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="membership">Club Membership</option>
+                                        <option value="workshop">Workshop Information</option>
+                                        <option value="collaboration">Collaboration Opportunity</option>
+                                        <option value="sponsorship">Sponsorship Inquiry</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="text-red-400 text-sm mt-2 hidden" id="subject-error">
+                                        Please select a subject
+                                    </div>
+                                </div>
+
+                                <!-- Message Field -->
+                                <div>
+                                    <label for="message" class="form-label">Message *</label>
+                                    <textarea id="message" name="message" rows="6" class="form-input"
+                                        placeholder="Type your message here..." required></textarea>
+                                    <div class="text-gray-400 text-sm mt-2">
+                                        <span id="char-count">0</span>/500 characters
+                                    </div>
+                                    <div class="text-red-400 text-sm mt-2 hidden" id="message-error">
+                                        Message must be between 10 and 500 characters
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="pt-4">
+                                    <button type="submit" class="submit-btn w-full">
+                                        <i class="fas fa-paper-plane mr-2"></i>
+                                        Send Message
+                                    </button>
+                                </div>
+
+                                <!-- Form Note -->
+                                <div class="text-center pt-4">
+                                    <p class="text-gray-400 text-sm">
+                                        <i class="fas fa-info-circle text-robotics-gold mr-1"></i>
+                                        Fields marked with * are required. We typically respond within 24-48 hours.
+                                    </p>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Alternative Contact Methods -->
+                        <div class="mt-8 bg-robotics-blue/30 border border-robotics-gold/20 rounded-xl p-6">
+                            <h4 class="text-xl font-orbitron font-bold text-white mb-4">Other Ways to Reach Us</h4>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-robotics-gold/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-calendar-alt text-robotics-gold"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-bold text-sm">Club Meetings</div>
+                                        <div class="text-gray-300 text-xs">Every Friday, 4 PM at Robotics Lab</div>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <div
+                                        class="w-10 h-10 bg-robotics-light-blue/10 rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-user-friends text-robotics-light-blue"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-white font-bold text-sm">Faculty Coordinator</div>
+                                        <div class="text-gray-300 text-xs">Dr. A. K. Sharma (Dept. of ECE)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ====================
+             FAQ SECTION
+        ===================== -->
+        <section id="faq" class="py-20 bg-robotics-blue">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-3 mb-6">
+                        <div class="w-12 h-1 bg-gradient-to-r from-robotics-light-blue to-robotics-gold rounded-full">
+                        </div>
+                        <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white">
+                            Frequently Asked <span class="text-robotics-gold">Questions</span>
+                        </h2>
+                        <div class="w-12 h-1 bg-gradient-to-r from-robotics-gold to-robotics-light-blue rounded-full">
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                        Quick answers to common questions about the Robotics Club
+                    </p>
+                </div>
+
+                <!-- FAQ Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item animate-fade-in-up" style="animation-delay: 0.1s">
+                        <div class="faq-question">
+                            <h4 class="text-white font-bold">How can I join the Robotics Club?</h4>
+                            <i class="fas fa-chevron-down text-robotics-gold transition-transform"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-gray-300">
+                                We conduct recruitment at the beginning of each academic year. Keep an eye on campus
+                                announcements or visit our lab during orientation week. No prior experience required -
+                                we welcome enthusiasts from all branches.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item animate-fade-in-up" style="animation-delay: 0.2s">
+                        <div class="faq-question">
+                            <h4 class="text-white font-bold">Do I need prior robotics experience?</h4>
+                            <i class="fas fa-chevron-down text-robotics-gold transition-transform"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-gray-300">
+                                Not at all! We have programs for complete beginners. Our workshops start from basics and
+                                progress to advanced topics. The only requirement is enthusiasm and willingness to
+                                learn.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item animate-fade-in-up" style="animation-delay: 0.3s">
+                        <div class="faq-question">
+                            <h4 class="text-white font-bold">What equipment is available for use?</h4>
+                            <i class="fas fa-chevron-down text-robotics-gold transition-transform"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-gray-300">
+                                Our lab is equipped with 3D printers, Arduino/Raspberry Pi kits, sensors, motors,
+                                drones, and testing equipment. Members receive training before using specialized
+                                equipment.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item animate-fade-in-up" style="animation-delay: 0.4s">
+                        <div class="faq-question">
+                            <h4 class="text-white font-bold">Are there any fees for joining?</h4>
+                            <i class="fas fa-chevron-down text-robotics-gold transition-transform"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-gray-300">
+                                No, membership is completely free for NIT Patna students. The club is funded by the
+                                institute and through industry collaborations. Some advanced workshops may have minimal
+                                material costs.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item animate-fade-in-up" style="animation-delay: 0.5s">
+                        <div class="faq-question">
+                            <h4 class="text-white font-bold">Can non-members attend workshops?</h4>
+                            <i class="fas fa-chevron-down text-robotics-gold transition-transform"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-gray-300">
+                                Yes, many of our workshops are open to all NIT Patna students. However, priority is
+                                given to club members for hands-on sessions due to limited equipment availability.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div class="faq-item animate-fade-in-up" style="animation-delay: 0.6s">
+                        <div class="faq-question">
+                            <h4 class="text-white font-bold">How often does the club meet?</h4>
+                            <i class="fas fa-chevron-down text-robotics-gold transition-transform"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p class="text-gray-300">
+                                We have regular meetings every Friday at 4 PM in the Robotics Lab. Additionally, project
+                                teams meet as needed, and workshops are scheduled throughout the semester.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Additional Help -->
+                <div class="text-center mt-12 animate-fade-in-up" style="animation-delay: 0.7s">
+                    <div
+                        class="inline-block bg-robotics-blue/30 border border-robotics-gold/20 rounded-xl p-6 max-w-2xl">
+                        <h4 class="text-xl font-orbitron font-bold text-white mb-3">Still Have Questions?</h4>
+                        <p class="text-gray-300 mb-4">
+                            Visit us during our working hours or send us an email. We're always happy to help!
+                        </p>
+                        <div class="text-robotics-gold font-semibold">
+                            <i class="fas fa-envelope mr-2"></i>
+                            roboticsclub@nitp.ac.in
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Component Loader Script -->
+    <script src="./js/components.js"></script>
+
+    <!-- Common main Script -->
+    <script src="./js/main.js"></script>
+
+    <!-- Page Specific Script -->
+    <script src="./js/pages/contact.js"></script>
+</body>
+
+</html>
