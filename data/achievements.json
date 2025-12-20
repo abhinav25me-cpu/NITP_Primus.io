@@ -1,0 +1,17 @@
+{
+  "achievements": [
+    {
+      "id": 1,
+      "title": "Idea Festival 2025 (Startup Bihar)",
+      "description": "Secured 2nd prize among over 25,000 teams for an AI-powered Vertical Take-off and Landing Unmanned Aerial Vehicle (VTOL-UAV), recognized by Union Minister Piyush Goyal.",
+      "type": "competition",
+      "date": "2025-09-11",
+      "prize": "2nd Prize among 25,000+ teams",
+      "team": ["Adarsh Aarav", "Sonu kumar", "Kumar Shourya", "Aditya kumar"],
+      "image": "https://media.licdn.com/dms/image/v2/D4E22AQHoc3xynzIFxA/feedshare-shrink_2048_1536/B4EZlNngqpKsA0-/0/1757943872552?e=2147483647&v=beta&t=o5Ow5a43cD4FdMpeNl7LM8WaPNqy9qmoS-7xna8xyPg",
+      "category": "VTOL-UAV",
+      "featured": true,
+      "link": "#achievement-1"
+    }
+  ]
+}

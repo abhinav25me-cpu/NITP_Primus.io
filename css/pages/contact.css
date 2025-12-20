@@ -1,0 +1,296 @@
+ /* ===== CONTACT PAGE SPECIFIC STYLES ===== */
+
+ /* Hero Section */
+ .contact-hero {
+     position: relative;
+     min-height: 60vh;
+     background: linear-gradient(rgba(10, 26, 58, 0.9), rgba(10, 26, 58, 0.7)),
+         url('https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
+     background-size: cover;
+     background-position: center;
+     overflow: hidden;
+ }
+
+ /* Contact Info Cards */
+ .contact-card {
+     background: linear-gradient(145deg, rgba(26, 40, 70, 0.8), rgba(10, 26, 58, 0.9));
+     border: 1px solid rgba(255, 215, 0, 0.2);
+     border-radius: 20px;
+     padding: 30px;
+     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+     height: 100%;
+ }
+
+ .contact-card:hover {
+     transform: translateY(-10px);
+     border-color: rgba(255, 215, 0, 0.4);
+     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+ }
+
+ /* Social Media Links */
+ .social-link {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     width: 50px;
+     height: 50px;
+     border-radius: 12px;
+     background: rgba(255, 255, 255, 0.05);
+     border: 1px solid rgba(255, 215, 0, 0.2);
+     color: #ffd700;
+     font-size: 1.2rem;
+     transition: all 0.3s ease;
+ }
+
+ .social-link:hover {
+     background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(0, 180, 216, 0.2));
+     border-color: #ffd700;
+     transform: translateY(-5px);
+     box-shadow: 0 10px 20px rgba(255, 215, 0, 0.2);
+ }
+
+ /* Contact Form */
+ .contact-form {
+     background: linear-gradient(145deg, rgba(26, 40, 70, 0.6), rgba(10, 26, 58, 0.8));
+     border: 1px solid rgba(255, 215, 0, 0.2);
+     border-radius: 20px;
+     padding: 40px;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .contact-form::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 4px;
+     background: linear-gradient(90deg, #ffd700, #00b4d8, #ffd700);
+     background-size: 200% 100%;
+     animation: gradientShift 3s ease infinite;
+ }
+
+ /* Form Inputs */
+ .form-input {
+     background: rgba(255, 255, 255, 0.05);
+     border: 1px solid rgba(255, 215, 0, 0.2);
+     border-radius: 12px;
+     padding: 15px 20px;
+     color: white;
+     font-family: 'Roboto', sans-serif;
+     font-size: 1rem;
+     width: 100%;
+     transition: all 0.3s ease;
+ }
+
+ .form-input:focus {
+     outline: none;
+     border-color: #ffd700;
+     background: rgba(255, 255, 255, 0.08);
+     box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+ }
+
+ .form-input::placeholder {
+     color: rgba(255, 255, 255, 0.5);
+ }
+
+ /* Form Labels */
+ .form-label {
+     color: #ffd700;
+     font-weight: 600;
+     margin-bottom: 8px;
+     display: block;
+     font-family: 'Orbitron', sans-serif;
+ }
+
+ /* Submit Button */
+ .submit-btn {
+     background: linear-gradient(135deg, #ffd700, #ffed4e);
+     color: #0a1a3a;
+     border: none;
+     border-radius: 12px;
+     padding: 16px 32px;
+     font-family: 'Orbitron', sans-serif;
+     font-weight: 700;
+     font-size: 1.1rem;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .submit-btn:hover {
+     transform: translateY(-3px);
+     box-shadow: 0 15px 30px rgba(255, 215, 0, 0.3);
+ }
+
+ .submit-btn:active {
+     transform: translateY(-1px);
+ }
+
+ .submit-btn::after {
+     content: '';
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     width: 0;
+     height: 0;
+     background: rgba(255, 255, 255, 0.3);
+     border-radius: 50%;
+     transform: translate(-50%, -50%);
+     transition: width 0.6s, height 0.6s;
+ }
+
+ .submit-btn:active::after {
+     width: 300px;
+     height: 300px;
+ }
+
+ /* Success Message */
+ .success-message {
+     background: rgba(76, 175, 80, 0.1);
+     border: 1px solid rgba(76, 175, 80, 0.3);
+     border-radius: 12px;
+     padding: 20px;
+     display: none;
+     animation: fadeInUp 0.6s ease;
+ }
+
+ .success-message.show {
+     display: block;
+ }
+
+ /* Location Map Container */
+ .location-container {
+     position: relative;
+     border-radius: 20px;
+     overflow: hidden;
+     border: 2px solid rgba(255, 215, 0, 0.3);
+ }
+
+ .location-overlay {
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background: linear-gradient(to top, rgba(10, 26, 58, 0.9), transparent);
+     padding: 30px;
+     color: white;
+ }
+
+ /* Working Hours */
+ .hours-item {
+     display: flex;
+     justify-content: space-between;
+     padding: 12px 0;
+     border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+ }
+
+ .hours-item:last-child {
+     border-bottom: none;
+ }
+
+ /* Responsive Design */
+ @media (max-width: 768px) {
+     .contact-form {
+         padding: 25px;
+     }
+
+     .contact-card {
+         padding: 25px;
+         margin-bottom: 20px;
+     }
+
+     .location-overlay {
+         padding: 20px;
+     }
+ }
+
+ /* Reduced Motion */
+ @media (prefers-reduced-motion: reduce) {
+     * {
+         animation-duration: 0.01ms !important;
+         animation-iteration-count: 1 !important;
+         transition-duration: 0.01ms !important;
+     }
+ }
+
+ /* FAQ Styles */
+ .faq-item {
+     background: rgba(26, 40, 70, 0.4);
+     border: 1px solid rgba(255, 215, 0, 0.1);
+     border-radius: 12px;
+     overflow: hidden;
+     transition: all 0.3s ease;
+ }
+
+ .faq-item:hover {
+     border-color: rgba(255, 215, 0, 0.3);
+ }
+
+ .faq-question {
+     padding: 20px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     cursor: pointer;
+     background: rgba(10, 26, 58, 0.6);
+ }
+
+ .faq-answer {
+     padding: 0 20px;
+ }
+
+ /* Shake animation for invalid fields */
+ @keyframes shake {
+
+     0%,
+     100% {
+         transform: translateX(0);
+     }
+
+     25% {
+         transform: translateX(-5px);
+     }
+
+     75% {
+         transform: translateX(5px);
+     }
+ }
+
+ .animate-shake {
+     animation: shake 0.5s ease;
+ }
+
+ /* Smooth transitions */
+ .faq-answer {
+     transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+ }
+
+ /* Responsive adjustments */
+ @media (max-width: 768px) {
+     .faq-question {
+         padding: 15px;
+     }
+
+     .faq-answer {
+         padding: 0 15px;
+     }
+
+     .contact-form {
+         padding: 20px;
+     }
+
+     .social-link {
+         width: 45px;
+         height: 45px;
+         font-size: 1rem;
+     }
+ }
+
+ @media (max-width: 640px) {
+     .grid.grid-cols-1.lg\:grid-cols-2 {
+         grid-template-columns: 1fr;
+     }
+ }
