@@ -9,6 +9,55 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'robotics-blue': '#0a1a3a',
+                        'robotics-light-blue': '#00b4d8',
+                        'robotics-gold': '#ffd700',
+                        'robotics-dark': '#0f172a',
+                    },
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'system-ui', '-apple-system', 'sans-serif'],
+                        'roboto': ['Roboto', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            'from': { opacity: '0', transform: 'translateY(20px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 10px rgba(255, 215, 0, 0.3)' },
+                            '50%': { boxShadow: '0 0 20px rgba(255, 215, 0, 0.6)' },
+                        },
+                        slideInLeft: {
+                            'from': { opacity: '0', transform: 'translateX(-30px)' },
+                            'to': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            'from': { opacity: '0', transform: 'translateX(30px)' },
+                            'to': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap"
@@ -23,6 +72,9 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/main.css">
+
+    <!-- Projects Page Specific CSS -->
+    <link rel="stylesheet" href="./css/pages/projects.css">
 </head>
 
 <body class="font-roboto bg-gray-900 text-white flex flex-col min-h-screen">
@@ -31,10 +83,166 @@
     <div id="navbar-placeholder"></div>
 
     <!-- Main Content -->
-    <main class="flex-grow pt-16">
+    <main class="flex-grow">
+
+        <!-- ====================
+             HERO SECTION
+        ===================== -->
+        <section class="projects-hero">
+            <div class="container mx-auto px-4 py-24">
+                <div class="max-w-4xl mx-auto text-center">
+                    <!-- Badge -->
+                    <div
+                        class="inline-flex items-center gap-3 bg-robotics-blue/80 backdrop-blur-sm border border-robotics-gold/30 rounded-full px-6 py-3 mb-8 animate-fade-in-up">
+                        <div class="w-2 h-2 bg-robotics-gold rounded-full animate-pulse"></div>
+                        <span class="font-orbitron text-robotics-gold text-sm tracking-widest">OUR INNOVATIONS</span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold mb-6 animate-fade-in-up"
+                        style="animation-delay: 0.2s">
+                        <span class="text-white">Robotics</span>
+                        <span class="text-robotics-gold">Projects</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto animate-fade-in-up"
+                        style="animation-delay: 0.4s">
+                        Explore our innovative robotics projects that push the boundaries of technology and creativity
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 animate-fade-in-up"
+                        style="animation-delay: 0.6s">
+                        <div class="text-center">
+                            <div class="text-3xl font-orbitron font-bold text-robotics-gold">6+</div>
+                            <div class="text-gray-300 text-sm mt-2">Active Projects</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-orbitron font-bold text-robotics-gold">50+</div>
+                            <div class="text-gray-300 text-sm mt-2">Team Members</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-orbitron font-bold text-robotics-gold">15+</div>
+                            <div class="text-gray-300 text-sm mt-2">Technologies Used</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-orbitron font-bold text-robotics-gold">3</div>
+                            <div class="text-gray-300 text-sm mt-2">Years of Innovation</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
+        <!-- ====================
+             PROJECTS GRID SECTION
+        ===================== -->
+        <section class="py-20 bg-robotics-blue">
+            <div class="container mx-auto px-4">
+
+                <!-- Filter Controls -->
+                <div class="mb-12 animate-fade-in-up">
+                    <div class="flex flex-wrap items-center justify-between gap-6 mb-8">
+                        <div>
+                            <h2 class="text-2xl md:text-3xl font-orbitron font-bold text-white">
+                                <span class="text-robotics-gold">Filter</span> Projects
+                            </h2>
+                            <p class="text-gray-300 mt-2">Browse projects by year and category</p>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <button id="reset-filters" class="filter-btn">
+                                <i class="fas fa-redo mr-2"></i>
+                                Reset Filters
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Year Filter -->
+                    <div class="mb-6">
+                        <h3 class="text-white font-bold mb-4">Filter by Year</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="filter-btn filter-year active" data-year="all">
+                                All Years
+                            </button>
+                            <button class="filter-btn filter-year" data-year="2024">
+                                2024
+                            </button>
+                            <button class="filter-btn filter-year" data-year="2023">
+                                2023
+                            </button>
+                            <button class="filter-btn filter-year" data-year="2022">
+                                2022
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Type Filter -->
+                    <div>
+                        <h3 class="text-white font-bold mb-4">Filter by Type</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <button class="filter-btn filter-type active" data-type="all">
+                                All Types
+                            </button>
+                            <button class="filter-btn filter-type" data-type="drone">
+                                <i class="fas fa-drone mr-2"></i>Drones
+                            </button>
+                            <button class="filter-btn filter-type" data-type="humanoid">
+                                <i class="fas fa-robot mr-2"></i>Humanoid
+                            </button>
+                            <button class="filter-btn filter-type" data-type="agriculture">
+                                <i class="fas fa-tractor mr-2"></i>Agriculture
+                            </button>
+                            <button class="filter-btn filter-type" data-type="underwater">
+                                <i class="fas fa-water mr-2"></i>Underwater
+                            </button>
+                            <button class="filter-btn filter-type" data-type="swarm">
+                                <i class="fas fa-bug mr-2"></i>Swarm
+                            </button>
+                            <button class="filter-btn filter-type" data-type="robotic-arm">
+                                <i class="fas fa-hand-paper mr-2"></i>Robotic Arm
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Loading State -->
+                <div id="loading-state" class="loading-state">
+                    <div class="loading-spinner"></div>
+                    <p class="text-gray-300">Loading projects...</p>
+                </div>
+
+                <!-- Empty State (Hidden by default) -->
+                <div id="empty-state" class="empty-state hidden">
+                    <div class="text-robotics-gold text-4xl mb-4">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-white text-xl mb-2">No Projects Found</h3>
+                    <p class="text-gray-300">Try changing your filter criteria</p>
+                </div>
+
+                <!-- Projects Grid -->
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Projects will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
     </main>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="project-modal">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div id="modal-content">
+                <!-- Modal content will be dynamically inserted here -->
+            </div>
+        </div>
+    </div>
 
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
@@ -45,6 +253,8 @@
     <!-- Common main Script -->
     <script src="./js/main.js"></script>
 
+    <!-- Projects Page Specific Script -->
+    <script src="./js/pages/projects.js"></script>
 
 </body>
 

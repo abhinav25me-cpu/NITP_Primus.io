@@ -6,46 +6,316 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Team | Robotics Club NIT Patna</title>
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind Configuration matching about.html -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'robotics-blue': '#0a1a3a',
+                        'robotics-light-blue': '#00b4d8',
+                        'robotics-gold': '#ffd700',
+                        'robotics-dark': '#0f172a',
+                    },
+                    fontFamily: {
+                        'orbitron': ['Orbitron', 'system-ui', '-apple-system', 'sans-serif'],
+                        'roboto': ['Roboto', 'system-ui', '-apple-system', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 0.6s ease forwards',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+                        'slide-in-left': 'slideInLeft 0.8s ease-out',
+                        'slide-in-right': 'slideInRight 0.8s ease-out',
+                        'gradient-shift': 'gradientShift 5s ease infinite',
+                        'card-hover': 'cardHover 0.3s ease forwards',
+                        'bounce-in': 'bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55)'
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            'from': { opacity: '0', transform: 'translateY(20px)' },
+                            'to': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 10px rgba(255, 215, 0, 0.3)' },
+                            '50%': { boxShadow: '0 0 20px rgba(255, 215, 0, 0.6)' },
+                        },
+                        slideInLeft: {
+                            'from': { opacity: '0', transform: 'translateX(-30px)' },
+                            'to': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        slideInRight: {
+                            'from': { opacity: '0', transform: 'translateX(30px)' },
+                            'to': { opacity: '1', transform: 'translateX(0)' },
+                        },
+                        gradientShift: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' },
+                        },
+                        cardHover: {
+                            'to': { transform: 'translateY(-10px)', boxShadow: '0 20px 40px rgba(255, 215, 0, 0.2)' }
+                        },
+                        bounceIn: {
+                            '0%': { transform: 'scale(0.3)', opacity: '0' },
+                            '50%': { transform: 'scale(1.05)' },
+                            '70%': { transform: 'scale(0.9)' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 
     <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
 
-    <!-- Font Awesome -->
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Include existing CSS files -->
+    <link rel="stylesheet" href="./css/main.css">
 
     <!-- Component CSS -->
     <link rel="stylesheet" href="./css/components/navbar.css">
     <link rel="stylesheet" href="./css/components/footer.css">
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="./css/main.css">
+    <!-- Team Page Specific CSS -->
+    <link rel="stylesheet" href="./css/pages/team.css">
+
 </head>
 
-<body class="font-roboto bg-gray-900 text-white flex flex-col min-h-screen">
+<body class="font-roboto bg-gray-900 text-white">
 
     <!-- Navbar Placeholder -->
     <div id="navbar-placeholder"></div>
 
     <!-- Main Content -->
-    <main class="flex-grow pt-16">
+    <main class="pt-16">
+        <!-- ====================
+             HERO SECTION
+        ===================== -->
+        <section class="team-hero py-20">
+                <div class="max-w-4xl mx-auto text-center">
+                    <!-- Badge -->
+                    <div
+                        class="inline-flex items-center gap-3 bg-robotics-blue/80 backdrop-blur-sm border border-robotics-gold/30 rounded-full px-6 py-3 mb-8 animate-fade-in-up">
+                        <div class="w-2 h-2 bg-robotics-gold rounded-full animate-pulse"></div>
+                        <span class="font-orbitron text-robotics-gold text-sm tracking-widest">MEET OUR TEAM</span>
+                    </div>
+
+                    <!-- Main Heading -->
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-orbitron font-bold mb-6 animate-fade-in-up"
+                        style="animation-delay: 0.3s">
+                        <span class="text-white">The</span>
+                        <span class="text-robotics-gold">Minds</span>
+                        <span class="text-white">Behind</span>
+                        <span class="text-robotics-light-blue">Innovation</span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto animate-fade-in-up"
+                        style="animation-delay: 0.4s">
+                        Meet the brilliant minds who drive innovation at Robotics Club NIT Patna.
+                        From visionary faculty advisors to passionate student members, our team is dedicated to pushing
+                        the boundaries of robotics.
+                    </p>
+                </div>
+        </section>
+
+        <!-- ====================
+             FACULTY ADVISORS SECTION
+        ===================== -->
+        <section id="faculty-advisors" class="py-20 section-bg-gradient">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-3 mb-6">
+                        <div class="w-2 h-2 bg-robotics-gold rounded-full animate-pulse"></div>
+                        <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white">
+                            <span class="text-robotics-gold">Faculty</span> Advisors
+                        </h2>
+                    </div>
+                    <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                        Our esteemed faculty mentors who provide guidance, expertise, and inspiration
+                    </p>
+                </div>
+
+                <!-- Faculty Cards Container -->
+                <div id="faculty-container" class="grid gap-8 max-w-6xl mx-auto">
+                    <!-- Faculty cards will be dynamically loaded here -->
+                    <div class="text-center py-10">
+                        <div class="loading-spinner mx-auto mb-4"></div>
+                        <p class="text-gray-300">Loading faculty advisors...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====================
+             CORE TEAM SECTION
+        ===================== -->
+        <section id="core-team" class="py-20 section-alt-gradient">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-3 mb-6">
+                        <div class="w-2 h-2 bg-robotics-light-blue rounded-full animate-pulse"></div>
+                        <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white">
+                            Core Team <span class="text-robotics-light-blue">2024-25</span>
+                        </h2>
+                    </div>
+                    <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                        The dedicated office bearers who manage club operations and lead various initiatives
+                    </p>
+                </div>
+
+                <!-- Core Team Grid -->
+                <div id="core-team-container"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <!-- Core team cards will be dynamically loaded here -->
+                    <div class="text-center py-10">
+                        <div class="loading-spinner mx-auto mb-4"></div>
+                        <p class="text-gray-300">Loading core team members...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
+
+
+
+         <!--  team members section -->
+        <section id="team-members" class="py-20 section-bg-gradient">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-3 mb-6">
+                        <div class="w-2 h-2 bg-robotics-gold rounded-full animate-pulse"></div>
+                        <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white">
+                            Team <span class="text-robotics-gold">Members</span>
+                        </h2>
+                    </div>
+                    <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                        Our talented members grouped by their specializations and expertise
+                    </p>
+                </div>
+
+                <!-- Specialization Tabs with Count Badges -->
+                <div class="mb-12">
+                    <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-6 animate-fade-in-up"
+                        style="animation-delay: 0.2s" id="specialization-tabs">
+                        <!-- Tabs will be dynamically generated here -->
+                    </div>
+
+                    <!-- Search Box -->
+                    <div class="max-w-md mx-auto mb-8 animate-fade-in-up" style="animation-delay: 0.3s">
+                        <div class="relative">
+                            <input type="text" id="member-search"
+                                class="w-full px-6 py-3 pl-12 bg-robotics-blue/50 border border-robotics-gold/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-robotics-gold focus:ring-2 focus:ring-robotics-gold/20"
+                                placeholder="Search team members by name, skills, or specialization...">
+                            <i
+                                class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-robotics-gold"></i>
+                            <button id="clear-search"
+                                class="absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-white hidden">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <p class="text-gray-400 text-sm mt-2 text-center">Search across all team members, skills, or
+                            specializations</p>
+                    </div>
+                </div>
+
+                <!-- Team Members Grid -->
+                <div id="team-members-container"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                    <!-- Team members will be dynamically loaded here -->
+                    <div class="text-center py-10 col-span-full">
+                        <div class="loading-spinner mx-auto mb-4"></div>
+                        <p class="text-gray-300">Loading team members...</p>
+                    </div>
+                </div>
+
+                <!-- No Results Message (Hidden by default) -->
+                <div id="no-results-message" class="hidden text-center py-12 animate-fade-in-up">
+                    <div class="inline-block p-8 bg-robotics-blue/30 rounded-2xl border border-robotics-gold/20">
+                        <i class="fas fa-search text-robotics-gold text-4xl mb-4"></i>
+                        <h3 class="text-xl font-orbitron font-bold text-white mb-2">No Members Found</h3>
+                        <p class="text-gray-300">Try a different search term or select another specialization.</p>
+                        <button id="reset-filters"
+                            class="mt-4 px-6 py-2 bg-robotics-gold/10 text-robotics-gold rounded-lg hover:bg-robotics-gold/20 transition-colors">
+                            Reset All Filters
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Active Filters Display -->
+                <div id="active-filters" class="hidden max-w-2xl mx-auto mt-8 mb-4 animate-fade-in-up">
+                    <div class="flex flex-wrap items-center justify-center gap-3">
+                        <span class="text-gray-300 text-sm">Active filters:</span>
+                        <div id="filter-chips" class="flex flex-wrap gap-2"></div>
+                        <button id="clear-all-filters"
+                            class="text-robotics-gold hover:text-robotics-light-blue text-sm font-medium flex items-center gap-1">
+                            <i class="fas fa-times"></i>
+                            Clear all
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <!-- ====================
+             ALUMNI SECTION
+        ===================== -->
+        <section id="alumni" class="py-20 section-alt-gradient">
+            <div class="container mx-auto px-4">
+                <!-- Section Header -->
+                <div class="text-center mb-16 animate-fade-in-up">
+                    <div class="inline-flex items-center gap-3 mb-6">
+                        <div class="w-2 h-2 bg-robotics-light-blue rounded-full animate-pulse"></div>
+                        <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white">
+                            Notable <span class="text-robotics-light-blue">Alumni</span>
+                        </h2>
+                    </div>
+                    <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+                        Our alumni who have made significant contributions in robotics and technology worldwide
+                    </p>
+                </div>
+
+                <!-- Alumni Grid -->
+                <div id="alumni-container" class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <!-- Alumni cards will be dynamically loaded here -->
+                    <div class="text-center py-10 col-span-full">
+                        <div class="loading-spinner mx-auto mb-4"></div>
+                        <p class="text-gray-300">Loading alumni...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
-    <!-- Component Loader Script -->
+    <!-- Team Data and Script -->
+    <script src="./js/pages/team.js"></script>
+
+    <!-- Include existing scripts -->
     <script src="./js/components.js"></script>
-
-    <!-- Common main Script -->
     <script src="./js/main.js"></script>
-
-
 </body>
 
 </html>
