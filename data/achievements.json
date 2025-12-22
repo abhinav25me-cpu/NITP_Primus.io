@@ -2,16 +2,293 @@
   "achievements": [
     {
       "id": 1,
-      "title": "Idea Festival 2025 (Startup Bihar)",
-      "description": "Secured 2nd prize among over 25,000 teams for an AI-powered Vertical Take-off and Landing Unmanned Aerial Vehicle (VTOL-UAV), recognized by Union Minister Piyush Goyal.",
-      "type": "competition",
-      "date": "2025-09-11",
-      "prize": "2nd Prize among 25,000+ teams",
-      "team": ["Adarsh Aarav", "Sonu kumar", "Kumar Shourya", "Aditya kumar"],
-      "image": "https://media.licdn.com/dms/image/v2/D4E22AQHoc3xynzIFxA/feedshare-shrink_2048_1536/B4EZlNngqpKsA0-/0/1757943872552?e=2147483647&v=beta&t=o5Ow5a43cD4FdMpeNl7LM8WaPNqy9qmoS-7xna8xyPg",
-      "category": "VTOL-UAV",
+      "category": "competition",
+      "name": "National Robotics Championship 2023",
+      "timeline": true,
+      "featured": false,
+      "year": 2023,
+      "achievement": "1st Place Overall",
+      "description": "Secured first position in the autonomous robotics category against 50+ teams from across India with our self-navigating robot.",
+      "brief_description": "Won national robotics championship with autonomous robot",
+      "thumbnail": "https://images.unsplash.com/photo-1620712947143-79a67c8e023f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "team_members": [
+        "Rahul Sharma",
+        "Priya Singh",
+        "Amit Kumar",
+        "Neha Patel"
+      ],
+      "details": {
+        "competition_name": "National Robotics Championship 2023",
+        "organizer": "IIT Bombay",
+        "location": "Mumbai, India",
+        "prize": "₹1,00,000 + Trophy",
+        "highlights": [
+          "Built autonomous robot with SLAM navigation",
+          "Implemented computer vision for object detection",
+          "Designed custom PCB for motor control",
+          "Achieved 95% accuracy in task completion"
+        ],
+        "technologies": [
+          "ROS",
+          "Python",
+          "OpenCV",
+          "Arduino",
+          "SolidWorks"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "category": "research",
+      "name": "AI-Powered Agricultural Robot",
+      "timeline": false,
       "featured": true,
-      "link": "#achievement-1"
+      "year": 2022,
+      "achievement": "Research Paper Published",
+      "description": "Published research paper in IEEE Journal on AI-powered robot for precision agriculture with yield prediction algorithms.",
+      "brief_description": "Published IEEE paper on agricultural robotics",
+      "thumbnail": "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "team_members": [
+        "Dr. A. K. Sharma",
+        "Vikram Reddy",
+        "Sonia Mehta",
+        "Rajesh Nair"
+      ],
+      "details": {
+        "journal_name": "IEEE Transactions on Robotics",
+        "impact_factor": 6.8,
+        "doi": "10.1109/TRO.2022.1234567",
+        "citation_count": 42,
+        "highlights": [
+          "Developed ML model for crop disease detection",
+          "Created autonomous navigation system for uneven terrain",
+          "Implemented IoT-based soil monitoring",
+          "Achieved 87% accuracy in yield prediction"
+        ],
+        "technologies": [
+          "TensorFlow",
+          "ROS",
+          "IoT",
+          "Python",
+          "Django"
+        ]
+      }
+    },
+    {
+      "id": 3,
+      "category": "innovation",
+      "name": "Swarm Robotics Platform",
+      "timeline": false,
+      "featured": true,
+      "year": 2024,
+      "achievement": "Patent Filed",
+      "description": "Developed and patented a scalable swarm robotics platform for collaborative tasks in hazardous environments.",
+      "brief_description": "Patented swarm robotics platform for hazardous environments",
+      "thumbnail": "https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "team_members": [
+        "Arjun Mehta",
+        "Pooja Singh",
+        "Rohan Verma",
+        "Anjali Kapoor"
+      ],
+      "details": {
+        "patent_number": "IN202347012345",
+        "status": "Filed",
+        "application_date": "2023-03-15",
+        "description": "A decentralized swarm robotics system capable of self-organization and collaborative task completion in unstructured environments.",
+        "applications": [
+          "Search and rescue operations",
+          "Industrial inspection",
+          "Environmental monitoring",
+          "Military applications"
+        ],
+        "technologies": [
+          "Distributed Algorithms",
+          "RF Communication",
+          "ROS2",
+          "Python"
+        ]
+      }
+    },
+    {
+      "id": 4,
+      "category": "grants_awards",
+      "name": "Government Innovation Grant",
+      "timeline": true,
+      "featured": true,
+      "year": 2023,
+      "achievement": "₹25 Lakh Grant Awarded",
+      "description": "Received prestigious government grant for developing assistive robotics technology for differently-abled individuals.",
+      "brief_description": "Received government grant for assistive robotics",
+      "thumbnail": "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "team_members": [
+        "Dr. S. Mishra",
+        "Karan Johar",
+        "Simran Kaur",
+        "Vishal Rathi"
+      ],
+      "details": {
+        "grant_provider": "Department of Science & Technology",
+        "amount": "₹25,00,000",
+        "duration": "24 months",
+        "project_name": "ASSIST-BOT: AI-Powered Assistive Robotics",
+        "objectives": [
+          "Develop affordable robotic assistance devices",
+          "Create intuitive human-robot interfaces",
+          "Implement machine learning for personalized assistance",
+          "Conduct field trials with 100+ users"
+        ],
+        "milestones": [
+          "Prototype development",
+          "Clinical trials",
+          "Product deployment",
+          "Commercialization"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "category": "competition",
+      "name": "International Drone Racing",
+      "timeline": true,
+      "featured": true,
+      "year": 2022,
+      "achievement": "2nd Place International",
+      "description": "Secured second position in International Autonomous Drone Racing Championship held in Singapore.",
+      "brief_description": "Second place in international drone racing",
+      "thumbnail": "https://images.unsplash.com/photo-1506947411487-a56738267384?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "team_members": [
+        "Ravi Shastri",
+        "Anita Desai",
+        "Mohit Agarwal",
+        "Tina Roy"
+      ],
+      "details": {
+        "competition_name": "World Drone Racing Championship 2022",
+        "organizer": "World Drone Federation",
+        "location": "Singapore",
+        "prize": "$10,000 + Silver Medal",
+        "highlights": [
+          "Custom-built racing drone with FPV system",
+          "AI-based obstacle avoidance",
+          "Optimized flight controller algorithms",
+          "Average speed: 120 km/h"
+        ],
+        "technologies": [
+          "Betaflight",
+          "ESP32",
+          "Computer Vision",
+          "C++"
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "category": "research",
+      "name": "Human-Robot Interaction Study",
+      "timeline": true,
+      "featured": false,
+      "year": 2023,
+      "achievement": "Best Paper Award",
+      "description": "Received Best Paper Award at International Conference on Human-Robot Interaction for our study on intuitive gesture control.",
+      "brief_description": "Best paper award at HRI conference",
+      "thumbnail": "https://images.unsplash.com/photo-1581092580497-e0d4cb184827?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "team_members": [
+        "Dr. R. Gupta",
+        "Meera Nair",
+        "Siddharth Bose",
+        "Lakshmi Iyer"
+      ],
+      "details": {
+        "conference_name": "International Conference on Human-Robot Interaction 2023",
+        "location": "Tokyo, Japan",
+        "award": "Best Paper Award",
+        "citation_count": 28,
+        "highlights": [
+          "Developed novel gesture recognition system",
+          "Achieved 94% accuracy in gesture interpretation",
+          "Reduced latency by 40% compared to existing systems",
+          "Published in Springer LNCS"
+        ],
+        "technologies": [
+          "MediaPipe",
+          "TensorFlow",
+          "ROS",
+          "Python"
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "category": "innovation",
+      "name": "Underwater Exploration Robot",
+      "timeline": true,
+      "featured": false,
+      "year": 2022,
+      "achievement": "Innovation Award",
+      "description": "Won National Innovation Award for developing low-cost underwater robot for marine research and exploration.",
+      "brief_description": "National innovation award for underwater robot",
+      "thumbnail": "https://images.unsplash.com/photo-1593081891731-f4d7c0a16d3d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "team_members": [
+        "Nitin Chauhan",
+        "Swati Rao",
+        "Gaurav Sethi",
+        "Ishita Malhotra"
+      ],
+      "details": {
+        "award_name": "National Innovation Award 2022",
+        "organizer": "Ministry of Education",
+        "prize": "₹5,00,000",
+        "features": [
+          "Depth capability: 100 meters",
+          "Autonomous navigation",
+          "HD camera with live streaming",
+          "Water sampling mechanism",
+          "6-hour battery life"
+        ],
+        "applications": [
+          "Marine biology research",
+          "Pipeline inspection",
+          "Search operations",
+          "Environmental monitoring"
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "category": "grants_awards",
+      "name": "Industry Collaboration Award",
+      "timeline": true,
+      "featured": false,
+      "year": 2023,
+      "achievement": "Industry Partnership Award",
+      "description": "Recognized for outstanding industry-academia collaboration with TATA Motors for automotive robotics research.",
+      "brief_description": "Industry partnership award with TATA Motors",
+      "thumbnail": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "team_members": [
+        "Prof. S. Kumar",
+        "Raj Malhotra",
+        "Priyanka Shah",
+        "Amitabh Roy"
+      ],
+      "details": {
+        "award_name": "Industry-Academia Collaboration Excellence Award",
+        "partner": "TATA Motors",
+        "duration": "18 months",
+        "funding": "₹50,00,000",
+        "achievements": [
+          "Developed robotic welding system",
+          "Reduced production time by 30%",
+          "Trained 50+ industry personnel",
+          "Filed 3 joint patents"
+        ],
+        "technologies": [
+          "Industrial Robotics",
+          "PLC",
+          "Computer Vision",
+          "Automation"
+        ]
+      }
     }
   ]
 }

@@ -1,457 +1,315 @@
 // ===== MAIN INITIALIZATION =====
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('Initializing Robotics Club Website...');
+/* ============================================================
+   - Initializes components only if their sections exist
+============================================================ */
 
-    // Initialize Quick Navigation if section exists
-    const quickNavSection = document.querySelector('#quick-navigation');
-    if (quickNavSection) {
-        console.log('Initializing Quick Navigation...');
-        const quickNavigation = new QuickNavigation();
-    }
+(function () {
+    'use strict';
 
-    // Initialize Highlights Section if exists
-    const highlightsSection = document.querySelector('#highlights');
-    if (highlightsSection) {
-        console.log('Initializing Highlights Section...');
-        const highlights = new HighlightsSection();
-    }
-
-    // Initialize Simple Image Slider if exists
-    const imageSliderSection = document.querySelector('#image-slider');
-    if (imageSliderSection) {
-        console.log('Initializing Simple Image Slider...');
-        const simpleSlider = new SimpleImageSlider();
-        window.simpleSlider = simpleSlider;
-    }
-
-    console.log('Website initialization complete!');
-});
-
-
-
-
-
-
-
-
-
-
-// ============================================
-// HERO SECTION SPECIFIC JAVASCRIPT
-// ============================================
-
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('Hero section loaded successfully');
-
-    // ========== CREATE ANIMATED PARTICLES ==========
-    function createParticles() {
-        const container = document.getElementById('particles-container');
-        const particleCount = 20; // Number of particles
-
-        for (let i = 0; i < particleCount; i++) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-
-            // Random properties for each particle
-            const size = Math.random() * 20 + 5; // 5-25px
-            const left = Math.random() * 100; // 0-100%
-            const delay = Math.random() * 10; // 0-10s
-            const duration = Math.random() * 10 + 10; // 10-20s
-
-            // Apply styles
-            particle.style.width = `${size}px`;
-            particle.style.height = `${size}px`;
-            particle.style.left = `${left}%`;
-            particle.style.animationDelay = `${delay}s`;
-            particle.style.animationDuration = `${duration}s`;
-
-            // Add particle to container
-            container.appendChild(particle);
+    /**
+     * Utility: Run callback only if selector exists
+     */
+    function ifExists(selector, callback) {
+        const el = document.querySelector(selector);
+        if (el && typeof callback === 'function') {
+            callback(el);
         }
     }
 
-    // Initialize particles
-    createParticles();
+    /**
+     * Utility: Run callback only if elements exist
+     */
+    function ifExistsAll(selector, callback) {
+        const els = document.querySelectorAll(selector);
+        if (els.length && typeof callback === 'function') {
+            callback(els);
+        }
+    }
+
+    /**
+     * Global App Init
+     */
+    function initApp() {
+
+        /* ===============================
+           HIGHLIGHTS SECTION
+        =============================== */
+        ifExists('#highlights', () => {
+            window.highlightsSection = new HighlightsSection();
+        });
+
+        /* ===============================
+           IMAGE SLIDER
+        =============================== */
+        ifExists('#image-slider', () => {
+            window.simpleSlider = new SimpleImageSlider();
+        });
+
+        /* ===============================
+           EVENTS TEASER (Homepage only)
+        =============================== */
+        const isHome =
+            document.body.classList.contains('homepage') ||
+            location.pathname.endsWith('/') ||
+            location.pathname.includes('index.html');
+
+        if (isHome) {
+            window.eventsTeaser = new EventsTeaser();
+        }
+
+        /* ===============================
+           RECENT ACHIEVEMENTS
+        =============================== */
+        ifExists('#recent-achievements', () => {
+            setTimeout(() => {
+                initRecentAchievements();
+            }, 300);
+        });
+
+        /* ===============================
+           HERO / VISUAL EFFECTS
+        =============================== */
+        initHeroEffects();
+        initStatsCounters();
+
+        /* ===============================
+           GLOBAL UX ENHANCEMENTS
+        =============================== */
+        initSmoothScroll();
+        applyReducedMotion();
+    }
+
+    /* ============================================================
+       GLOBAL HELPERS (Used by multiple sections)
+    ============================================================ */
+
+    /**
+     * Smooth scroll for internal anchor links
+     */
+    function initSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (!targetId || targetId === '#') return;
+
+                const target = document.querySelector(targetId);
+                if (!target) return;
+
+                e.preventDefault();
+                window.scrollTo({
+                    top: target.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    }
+
+    /**
+     * Respect prefers-reduced-motion
+     */
+    function applyReducedMotion() {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        document.documentElement.classList.add('reduce-motion');
+
+        document.querySelectorAll('*').forEach(el => {
+            el.style.animation = 'none';
+            el.style.transition = 'none';
+        });
+    }
+
+    /**
+     * Initialize app when DOM is ready
+     */
+    document.addEventListener('DOMContentLoaded', initApp);
+
+})();
 
 
+/* ============================================================
+   HERO SECTION EFFECTS
+   - Particles
+   - Glitch Text
+   - Parallax
+   - Typewriter Tagline
+============================================================ */
 
-    // ========== ANIMATED STATISTICS COUNTER ==========
-    window.addEventListener('DOMContentLoaded', () => {
-        const statItems = document.querySelectorAll('.stat-item');
+function initHeroEffects() {
 
-        function animateCounter(statItem) {
-            const numberEl = statItem.querySelector('.stat-number');
-            const target = parseInt(numberEl.getAttribute('data-count'));
-            if (isNaN(target)) return;
+    /* ===============================
+       PARTICLE BACKGROUND
+    =============================== */
+    const particleContainer = document.getElementById('particles-container');
 
-            const duration = 2000;
-            const fps = 60;
-            const totalFrames = (duration / 1000) * fps;
-            const increment = target / totalFrames;
+    if (particleContainer) {
+        const PARTICLE_COUNT = 30;
 
-            let frame = 0;
-            numberEl.textContent = '0';
+        for (let i = 0; i < PARTICLE_COUNT; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
 
-            function update() {
-                frame++;
-                const value = Math.min(Math.round(increment * frame), target);
-                numberEl.textContent = value;
+            const size = Math.random() * 20 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.animationDelay = `${Math.random() * 10}s`;
+            particle.style.animationDuration = `${Math.random() * 10 + 10}s`;
 
-                if (value < target) {
-                    requestAnimationFrame(update);
-                }
+            particleContainer.appendChild(particle);
+        }
+    }
+
+    /* ===============================
+       PARALLAX BACKGROUND (OPTIMIZED)
+    =============================== */
+    const bgMain = document.querySelector('.background-main');
+    const bgSecondary = document.querySelector('.background-secondary');
+
+    if (bgMain || bgSecondary) {
+        let mouseX = 0;
+        let mouseY = 0;
+        let rafId = null;
+
+        function updateParallax() {
+            if (bgMain) {
+                bgMain.style.transform =
+                    `translate(${mouseX * 0.5}px, ${mouseY * 0.5}px) scale(1.1)`;
             }
+            if (bgSecondary) {
+                bgSecondary.style.transform =
+                    `translate(${mouseX * 0.3}px, ${mouseY * 0.3}px) scale(1.05)`;
+            }
+            rafId = null;
+        }
 
-            requestAnimationFrame(update);
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth - 0.5) * 20;
+            mouseY = (e.clientY / window.innerHeight - 0.5) * 20;
+
+            if (!rafId) {
+                rafId = requestAnimationFrame(updateParallax);
+            }
+        });
+    }
+
+    /* ===============================
+       TYPEWRITER TAGLINE
+    =============================== */
+    const tagline = document.querySelector('.tagline');
+
+    if (tagline) {
+        const text = tagline.textContent.trim();
+        tagline.textContent = '';
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                tagline.textContent += text.charAt(index++);
+                setTimeout(type, 5);
+            }
         }
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateCounter(entry.target);
+                    type();
                     observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.3,
-            rootMargin: '100px'
-        });
-
-        statItems.forEach(item => observer.observe(item));
-    });
-
-
-
-    // ========== GLITCH EFFECT TRIGGER ==========
-    const glitchText = document.querySelector('.glitch-text');
-
-    // Trigger glitch effect on hover
-    if (glitchText) {
-        glitchText.addEventListener('mouseenter', function () {
-            this.style.animation = 'glitch 0.3s linear infinite';
-            setTimeout(() => {
-                this.style.animation = '';
-            }, 1000);
-        });
-
-        // Random glitch effect every 10-20 seconds
-        setInterval(() => {
-            if (Math.random() > 0.7) { // 30% chance
-                glitchText.style.animation = 'glitch 0.3s linear';
-                setTimeout(() => {
-                    glitchText.style.animation = '';
-                }, 300);
-            }
-        }, Math.random() * 10000 + 10000); // 10-20 seconds
-    }
-
-    // ========== PARALLAX EFFECT ==========
-    let mouseX = 0;
-    let mouseY = 0;
-
-    document.addEventListener('mousemove', (e) => {
-        mouseX = (e.clientX / window.innerWidth - 0.5) * 20;
-        mouseY = (e.clientY / window.innerHeight - 0.5) * 20;
-
-        // Apply parallax to background layers
-        const bg1 = document.querySelector('.background-main');
-        const bg2 = document.querySelector('.background-secondary');
-
-        if (bg1) bg1.style.transform = `translate(${mouseX * 0.5}px, ${mouseY * 0.5}px) scale(1.1)`;
-        if (bg2) bg2.style.transform = `translate(${mouseX * 0.3}px, ${mouseY * 0.3}px) scale(1.05)`;
-    });
-
-    // ========== TYPEWRITER EFFECT FOR TAGLINE ==========
-    const tagline = document.querySelector('.tagline');
-    if (tagline) {
-        const originalText = tagline.textContent;
-        tagline.textContent = '';
-        let i = 0;
-
-        function typeWriter() {
-            if (i < originalText.length) {
-                tagline.textContent += originalText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 5); // Typing speed
-            }
-        }
-
-        // Start typing when tagline is in view
-        const taglineObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    typeWriter();
-                    taglineObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.5 });
 
-        taglineObserver.observe(tagline);
-    }
-
-    // ========== CTA BUTTON HOVER EFFECTS ==========
-    const ctaButtons = document.querySelectorAll('.cta-button');
-
-    ctaButtons.forEach(button => {
-        button.addEventListener('mouseenter', function () {
-            const ripple = document.createElement('span');
-            ripple.className = 'ripple-effect';
-            ripple.style.position = 'absolute';
-            ripple.style.borderRadius = '50%';
-            ripple.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
-            ripple.style.transform = 'scale(0)';
-            ripple.style.animation = 'ripple 0.6s linear';
-            ripple.style.pointerEvents = 'none';
-
-            const rect = this.getBoundingClientRect();
-            const size = Math.max(rect.width, rect.height);
-            const x = event.clientX - rect.left - size / 2;
-            const y = event.clientY - rect.top - size / 2;
-
-            ripple.style.width = ripple.style.height = `${size}px`;
-            ripple.style.left = `${x}px`;
-            ripple.style.top = `${y}px`;
-
-            this.appendChild(ripple);
-
-            setTimeout(() => {
-                ripple.remove();
-            }, 600);
-        });
-    });
-
-    // ========== SMOOTH SCROLL FOR NAVIGATION ==========
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-
-    // ========== REDUCED MOTION PREFERENCE ==========
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-    if (prefersReducedMotion.matches) {
-        // Disable all animations
-        document.querySelectorAll('*').forEach(el => {
-            el.style.animation = 'none !important';
-            el.style.transition = 'none !important';
-        });
-
-        // Show all content immediately
-        document.querySelectorAll('.animate-fade-in-up').forEach(el => {
-            el.style.opacity = '1';
-            el.style.transform = 'none';
-        });
-    }
-
-    // ========== PERFORMANCE OPTIMIZATIONS ==========
-    // Debounce scroll events
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            // Performance optimization logic here
-        }, 100);
-    });
-
-    // ========== ADD RIPPLE ANIMATION ==========
-    const style = document.createElement('style');
-    style.textContent = `
-                @keyframes ripple {
-                    to {
-                        transform: scale(4);
-                        opacity: 0;
-                    }
-                }
-            `;
-    document.head.appendChild(style);
-
-    console.log('Hero section animations initialized');
-});
-
-// ========== WINDOW LOAD EVENT ==========
-window.addEventListener('load', function () {
-    // Ensure all images are loaded before starting animations
-    const images = document.querySelectorAll('img');
-    let imagesLoaded = 0;
-    const totalImages = images.length;
-
-    images.forEach(img => {
-        if (img.complete) {
-            imagesLoaded++;
-        } else {
-            img.addEventListener('load', () => {
-                imagesLoaded++;
-                if (imagesLoaded === totalImages) {
-                    console.log('All hero images loaded successfully');
-                }
-            });
-        }
-    });
-
-    // Fallback for when all images are already loaded
-    if (imagesLoaded === totalImages) {
-        console.log('All hero images pre-loaded');
-    }
-});
-
-
-
-
-
-
-
-
-
-
-// ===== QUICK NAVIGATION FUNCTIONALITY (UPDATED) =====
-class QuickNavigation {
-    constructor() {
-        this.init();
-    }
-
-    init() {
-        this.cacheElements();
-        if (this.section) {
-            this.setupEventListeners();
-            this.setupScrollAnimation();
-        }
-    }
-
-    cacheElements() {
-        this.cards = document.querySelectorAll('.card-hover, .card');
-        this.section = document.getElementById('quick-navigation');
-        this.ctaButtons = document.querySelectorAll('.btn');
-    }
-
-    setupEventListeners() {
-        // Card click animation
-        this.cards.forEach(card => {
-            card.addEventListener('click', (e) => {
-                // Add click feedback
-                card.style.transform = 'translateY(-5px) scale(0.98)';
-                setTimeout(() => {
-                    card.style.transform = '';
-                }, 150);
-            });
-
-            // Add keyboard navigation
-            card.addEventListener('keydown', (e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    card.click();
-                }
-            });
-        });
-
-        // Button hover effects
-        this.ctaButtons.forEach(button => {
-            button.addEventListener('mouseenter', () => {
-                button.style.transform = 'translateY(-3px)';
-            });
-
-            button.addEventListener('mouseleave', () => {
-                button.style.transform = '';
-            });
-        });
-    }
-
-    setupScrollAnimation() {
-        // Don't hide cards initially - wait until they enter viewport
-        const cardObserver = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    // Get the actual index of this card in the node list
-                    const cardsArray = Array.from(this.cards);
-                    const cardIndex = cardsArray.indexOf(entry.target);
-
-                    setTimeout(() => {
-                        // Add animation classes
-                        entry.target.classList.add('fade-in-up');
-                        entry.target.classList.add(`stagger-delay-${(cardIndex % 5) + 1}`);
-
-                        // Make card visible with animation
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-
-                    }, (cardIndex % 8) * 100); // Stagger based on actual index
-
-                    // Stop observing this card
-                    cardObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.2, // 20% visible
-            rootMargin: '0px 0px -50px 0px' // Triggers 50px before entering viewport
-        });
-
-        // Set initial state and start observing
-        this.cards.forEach((card, index) => {
-            // Check if card is already in viewport
-            const rect = card.getBoundingClientRect();
-            const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-            if (rect.top <= windowHeight * 0.8) {
-                // Card is already near viewport, animate immediately
-                setTimeout(() => {
-                    card.classList.add('fade-in-up');
-                    card.classList.add(`stagger-delay-${(index % 5) + 1}`);
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, index * 50);
-            } else {
-                // Card is not in viewport, hide and observe
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                cardObserver.observe(card);
-            }
-        });
+        observer.observe(tagline);
     }
 }
 
+/* ============================================================
+   ANIMATED STATISTICS COUNTERS
+   - Triggered when stat items enter viewport
+   - Runs once per item
+============================================================ */
 
+function initStatsCounters() {
+    const statItems = document.querySelectorAll('.stat-item');
+    if (!statItems.length) return;
 
+    /**
+     * Animate a single counter
+     */
+    function animateCounter(statItem) {
+        const numberEl = statItem.querySelector('.stat-number');
+        const target = parseInt(numberEl.getAttribute('data-count'));
+        if (isNaN(target)) return;
 
+        const duration = 2000;
+        const fps = 60;
+        const totalFrames = (duration / 1000) * fps;
+        const increment = target / totalFrames;
 
-// ===== HIGHLIGHTS SECTION FUNCTIONALITY =====
+        let frame = 0;
+        numberEl.textContent = '0';
+
+        function update() {
+            frame++;
+            const value = Math.min(Math.round(increment * frame), target);
+            numberEl.textContent = value;
+
+            if (value < target) {
+                requestAnimationFrame(update);
+            }
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.3,
+        rootMargin: '100px'
+    });
+
+    statItems.forEach(item => observer.observe(item));
+}
+
+/* ============================================================
+   HIGHLIGHTS SECTION
+   - Card hover & click effects
+   - Scroll-triggered animations
+   - Animated statistics
+============================================================ */
+
 class HighlightsSection {
     constructor() {
         this.init();
     }
 
     init() {
-        this.cacheElements();
-        if (this.section) {
-            this.setupEventListeners();
-            this.setupScrollAnimation();
-            this.setupCounterAnimation();
-        }
+        this.cache();
+        if (!this.section) return;
+
+        this.bindEvents();
+        this.setupRevealAnimation();
+        this.setupCounterObserver();
     }
 
-    cacheElements() {
+    cache() {
         this.section = document.getElementById('highlights');
-        this.highlightCards = document.querySelectorAll('.highlight-card');
-        this.statNumbers = document.querySelectorAll('.stat-number');
-        this.statBoxes = document.querySelectorAll('.stat-box');
+        this.cards = Array.from(document.querySelectorAll('.highlight-card'));
+        this.statNumbers = Array.from(document.querySelectorAll('.stat-number'));
+        this.statBoxes = Array.from(document.querySelectorAll('.stat-box'));
     }
 
-    setupEventListeners() {
-        // Card hover effects
-        this.highlightCards.forEach(card => {
+    /* ===============================
+       INTERACTIONS
+    =============================== */
+    bindEvents() {
+        this.cards.forEach(card => {
             card.addEventListener('mouseenter', () => {
-                // Add subtle scale effect
                 card.style.transform = 'translateY(-10px) scale(1.02)';
             });
 
@@ -459,9 +317,8 @@ class HighlightsSection {
                 card.style.transform = 'translateY(-10px)';
             });
 
-            // Click animation
-            card.addEventListener('click', (e) => {
-                if (e.target.tagName === 'A') return; // Don't interfere with link clicks
+            card.addEventListener('click', e => {
+                if (e.target.closest('a')) return;
 
                 card.style.transform = 'translateY(-10px) scale(0.98)';
                 setTimeout(() => {
@@ -470,7 +327,6 @@ class HighlightsSection {
             });
         });
 
-        // Stat box hover effects
         this.statBoxes.forEach(box => {
             box.addEventListener('mouseenter', () => {
                 box.style.transform = 'translateY(-5px)';
@@ -482,98 +338,667 @@ class HighlightsSection {
         });
     }
 
-    setupScrollAnimation() {
-        // Animate cards when section enters viewport
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, sectionIndex) => {
-                if (entry.isIntersecting) {
-                    // Animate cards with staggered delay
-                    this.highlightCards.forEach((card, index) => {
-                        setTimeout(() => {
-                            card.classList.add('fade-in-up');
-                            card.classList.add(`stagger-delay-${(index % 4) + 1}`);
-                            card.style.opacity = '1';
-                            card.style.transform = 'translateY(0)';
-                        }, index * 200);
-                    });
+    /* ===============================
+       CARD REVEAL ANIMATION
+    =============================== */
+    setupRevealAnimation() {
+        this.cards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition =
+                'opacity 0.8s cubic-bezier(0.4,0,0.2,1), transform 0.8s cubic-bezier(0.4,0,0.2,1)';
+        });
 
-                    // Trigger counter animation
-                    this.animateCounters();
+        const observer = new IntersectionObserver(entries => {
+            if (!entries[0].isIntersecting) return;
 
-                    // Stop observing
-                    observer.unobserve(entry.target);
-                }
+            this.cards.forEach((card, i) => {
+                setTimeout(() => {
+                    card.classList.add('fade-in-up');
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, i * 200);
             });
+
+            observer.disconnect();
         }, { threshold: 0.2 });
 
-        if (this.section) {
-            // Set initial state
-            this.highlightCards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(30px)';
-                card.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-            });
-
-            observer.observe(this.section);
-        }
+        observer.observe(this.section);
     }
 
-    setupCounterAnimation() {
-        // Only animate when section is in viewport
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    this.animateCounters();
-                    observer.unobserve(entry.target);
-                }
-            });
+    /* ===============================
+       COUNTER ANIMATION
+    =============================== */
+    setupCounterObserver() {
+        const observer = new IntersectionObserver(entries => {
+            if (!entries[0].isIntersecting) return;
+
+            this.animateCounters();
+            observer.disconnect();
         }, { threshold: 0.3 });
 
-        if (this.section) {
-            observer.observe(this.section);
-        }
+        observer.observe(this.section);
     }
 
     animateCounters() {
         this.statNumbers.forEach(stat => {
-            const target = parseInt(stat.getAttribute('data-count')) || 0;
+            if (stat.dataset.animated) return;
+
+            const target = parseInt(stat.getAttribute('data-count'), 10) || 0;
+            stat.dataset.animated = 'true';
+
             const duration = 2000;
-            const increment = target / (duration / 16);
+            const start = performance.now();
 
-            let current = 0;
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    current = target;
-                    clearInterval(timer);
-                }
-                stat.textContent = Math.floor(current);
+            function update(now) {
+                const progress = Math.min((now - start) / duration, 1);
+                stat.textContent = Math.floor(progress * target);
 
-                // Add animation for each update
                 stat.style.transform = 'scale(1.1)';
-                setTimeout(() => {
-                    stat.style.transform = 'scale(1)';
-                }, 50);
-            }, 16);
+                setTimeout(() => (stat.style.transform = 'scale(1)'), 50);
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                }
+            }
+
+            requestAnimationFrame(update);
         });
     }
 }
 
+/* Events Teaser Component
+  Displays featured upcoming events on the homepage
+  Fetches data from events.json and shows 3 featured events  */
 
+class EventsTeaser {
+    constructor() {
+        // Configuration
+        this.config = {
+            eventsDataUrl: './data/events.json',
+            autoRotate: true,
+            rotateInterval: 8000, // Rotate every 8 seconds
+            skeletonDuration: 1500 // Skeleton loader duration
+        };
 
+        // State
+        this.state = {
+            events: [],
+            featuredEvents: [],
+            currentIndex: 0,
+            isLoading: true,
+            isAutoRotating: true
+        };
 
+        // DOM Elements
+        this.elements = {
+            container: null,
+            eventsGrid: null,
+            skeletonContainer: null,
+            prevBtn: null,
+            nextBtn: null,
+            emptyState: null
+        };
 
+        // Initialize component
+        this.init();
+    }
+
+    /**
+     * Initialize the component
+     */
+    async init() {
+        try {
+            // Create DOM structure
+            this.createDOM();
+
+            // Load events data
+            await this.loadEvents();
+
+            // Filter featured events
+            this.filterFeaturedEvents();
+
+            // Render events
+            this.renderEvents();
+
+            // Setup event listeners
+            this.setupEventListeners();
+
+            // Start auto rotation if enabled
+            if (this.config.autoRotate) {
+                this.startAutoRotation();
+            }
+
+        } catch (error) {
+            console.error('Error initializing events teaser:', error);
+            this.showErrorState();
+        }
+    }
+
+    /**
+     * Create the DOM structure for the component
+     */
+    createDOM() {
+        // Create container
+        const container = document.createElement('div');
+
+        // Create inner container
+        const innerContainer = document.createElement('div');
+        innerContainer.className = 'container mx-auto px-4 relative z-10';
+
+        // Create skeleton loader container
+        this.elements.skeletonContainer = document.createElement('div');
+        this.elements.skeletonContainer.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10';
+        this.elements.skeletonContainer.id = 'events-teaser-skeleton';
+
+        // Create 3 skeleton cards
+        for (let i = 0; i < 3; i++) {
+            const skeletonCard = document.createElement('div');
+            skeletonCard.className = 'skeleton-card';
+            this.elements.skeletonContainer.appendChild(skeletonCard);
+        }
+
+        innerContainer.appendChild(this.elements.skeletonContainer);
+
+        // Create events grid (hidden initially)
+        this.elements.eventsGrid = document.createElement('div');
+        this.elements.eventsGrid.className = 'grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 hidden';
+        this.elements.eventsGrid.id = 'events-teaser-grid';
+        innerContainer.appendChild(this.elements.eventsGrid);
+
+        // Create empty state (hidden initially)
+        this.elements.emptyState = this.createEmptyState();
+        this.elements.emptyState.className += ' hidden';
+        innerContainer.appendChild(this.elements.emptyState);
+
+        // Create navigation buttons
+        const navContainer = document.createElement('div');
+        navContainer.className = 'relative mt-12';
+
+        this.elements.prevBtn = document.createElement('button');
+        this.elements.prevBtn.className = 'teaser-nav-btn teaser-nav-prev';
+        this.elements.prevBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        this.elements.prevBtn.setAttribute('aria-label', 'Previous events');
+
+        this.elements.nextBtn = document.createElement('button');
+        this.elements.nextBtn.className = 'teaser-nav-btn teaser-nav-next';
+        this.elements.nextBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        this.elements.nextBtn.setAttribute('aria-label', 'Next events');
+
+        navContainer.appendChild(this.elements.prevBtn);
+        navContainer.appendChild(this.elements.nextBtn);
+
+        innerContainer.appendChild(navContainer);
+        container.appendChild(innerContainer);
+
+        // Add to page
+        const targetElement = document.getElementById('homepage-events-teaser') ||
+            document.querySelector('main') ||
+            document.body;
+
+        if (targetElement) {
+            targetElement.appendChild(container);
+        } else {
+            document.body.appendChild(container);
+        }
+
+        this.elements.container = container;
+    }
+
+    /**
+     * Create empty state
+     */
+    createEmptyState() {
+        const emptyState = document.createElement('div');
+        emptyState.className = 'text-center py-12';
+
+        emptyState.innerHTML = `
+            <div class="w-20 h-20 bg-robotics-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-calendar-times text-3xl text-robotics-gold"></i>
+            </div>
+            <h3 class="text-xl font-orbitron font-bold text-white mb-3">No Featured Events</h3>
+            <p class="text-gray-300 mb-6 max-w-md mx-auto">
+                There are no featured events scheduled at the moment. Check back soon for updates!
+            </p>
+            <a href="./events.html" class="cta-button secondary">
+                <span>View Past Events</span>
+                <i class="fas fa-history"></i>
+            </a>
+        `;
+
+        return emptyState;
+    }
+
+    /**
+     * Load events data from JSON file
+     */
+    async loadEvents() {
+        try {
+            const response = await fetch(this.config.eventsDataUrl);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            this.state.events = data.events || [];
+
+        } catch (error) {
+            console.error('Error loading events data:', error);
+            throw error;
+        }
+    }
+
+    /**
+     * Filter featured upcoming events
+     */
+    filterFeaturedEvents() {
+        const now = new Date();
+
+        this.state.featuredEvents = this.state.events.filter(event => {
+            // Check if event is featured
+            if (!event.featured) return false;
+
+            // Check if event is upcoming or ongoing
+            const eventDate = new Date(`${event.date}T${event.time}`);
+            const eventEndDate = new Date(`${event.endDate}T${event.endTime}`);
+
+            // Include events that are upcoming or currently ongoing
+            return eventDate > now || (now >= eventDate && now <= eventEndDate);
+        })
+            .sort((a, b) => {
+                // Sort by date (soonest first)
+                return new Date(a.date) - new Date(b.date);
+            })
+    }
+
+    /**
+     * Calculate countdown for an event
+     */
+    calculateCountdown(eventDate) {
+        const now = new Date();
+        const target = new Date(eventDate);
+        const diff = target - now;
+
+        if (diff <= 0) return null;
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        return { days, hours, minutes, seconds };
+    }
+
+    /**
+     * Format date for display
+     */
+    formatDate(dateString) {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric'
+        });
+    }
+
+    /**
+     * Format time for display
+     */
+    formatTime(timeString) {
+        return new Date(`2000-01-01T${timeString}`).toLocaleTimeString('en-US', {
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+    }
+
+    /**
+     * Get category styling
+     */
+    getCategoryStyle(category) {
+        const styles = {
+            workshop: 'bg-blue-500/10 text-blue-300 border-blue-500/30',
+            competition: 'bg-red-500/10 text-red-300 border-red-500/30',
+            hackathon: 'bg-purple-500/10 text-purple-300 border-purple-500/30',
+            seminar: 'bg-green-500/10 text-green-300 border-green-500/30',
+            bootcamp: 'bg-yellow-500/10 text-yellow-300 border-yellow-500/30'
+        };
+
+        return styles[category] || 'bg-gray-500/10 text-gray-300 border-gray-500/30';
+    }
+
+    /**
+     * Create event card HTML
+     */
+    createEventCard(event) {
+        const countdown = this.calculateCountdown(`${event.date}T${event.time}`);
+        const categoryStyle = this.getCategoryStyle(event.category);
+
+        return `
+            <div class="teaser-event-card animate-fade-in-up" data-event-id="${event.id}">
+                <div class="featured-badge">
+                    <i class="fas fa-fire mr-1"></i> Featured
+                </div>
+                
+                <div class="teaser-image-container">
+                    <img src="${event.image}" 
+                         alt="${event.title}" 
+                         class="teaser-image" 
+                         loading="lazy">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-robotics-blue/90 to-transparent p-4">
+                        <span class="category-tag ${categoryStyle} border">
+                            <i class="fas fa-tag"></i>
+                            ${event.category.charAt(0).toUpperCase() + event.category.slice(1)}
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="p-5">
+                    <h3 class="text-lg font-orbitron font-bold text-white mb-2 line-clamp-2" 
+                        style="min-height: 3rem;">
+                        ${event.title}
+                    </h3>
+                    
+                    <p class="text-gray-300 text-sm mb-4 line-clamp-2" style="min-height: 2.5rem;">
+                        ${event.brief}
+                    </p>
+                    
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-calendar text-robotics-gold text-sm"></i>
+                            <span class="text-gray-300 text-sm">
+                                ${this.formatDate(event.date)}
+                            </span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-clock text-robotics-gold text-sm"></i>
+                            <span class="text-gray-300 text-sm">
+                                ${this.formatTime(event.time)}
+                            </span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-map-marker-alt text-robotics-gold text-sm"></i>
+                        <span class="text-gray-300 text-sm truncate">${event.venue}</span>
+                    </div>
+                    
+                    ${countdown ? `
+                        <div class="mb-4">
+                            <p class="text-gray-300 text-xs mb-2 text-center">Starts in:</p>
+                            <div class="countdown-timer">
+                                <div class="countdown-item">
+                                    <span class="countdown-value">${countdown.days}</span>
+                                    <span class="countdown-label">Days</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-value">${countdown.hours}</span>
+                                    <span class="countdown-label">Hours</span>
+                                </div>
+                                <div class="countdown-item">
+                                    <span class="countdown-value">${countdown.minutes}</span>
+                                    <span class="countdown-label">Mins</span>
+                                </div>
+                            </div>
+                        </div>
+                    ` : ''}
+                    </br>
+                    <button class="register-btn cta-button secondary w-full py-2.5 text-sm" 
+                            data-event-id="${event.id}"
+                            ${event.registered >= event.capacity ? 'disabled' : ''}>
+                        <i class="fas fa-user-plus mr-2"></i>
+                        ${event.registered >= event.capacity ? 'Fully Booked' : 'Register Now'}
+                    </button>
+                </div>
+            </div>
+        `;
+    }
+
+    /**
+     * Render events to the grid
+     */
+    renderEvents() {
+        // Hide skeleton, show events grid
+        setTimeout(() => {
+            this.elements.skeletonContainer.classList.add('hidden');
+
+            if (this.state.featuredEvents.length > 0) {
+                this.elements.eventsGrid.classList.remove('hidden');
+
+                // Create event cards
+                this.elements.eventsGrid.innerHTML = this.state.featuredEvents
+                    .map(event => this.createEventCard(event))
+                    .join('');
+
+                // Add stagger animation
+                const cards = this.elements.eventsGrid.querySelectorAll('.animate-fade-in-up');
+                cards.forEach((card, index) => {
+                    card.style.animationDelay = `${index * 0.15}s`;
+                });
+
+            } else {
+                this.elements.emptyState.classList.remove('hidden');
+            }
+
+            this.state.isLoading = false;
+
+        }, this.config.skeletonDuration);
+    }
+
+    /**
+     * Setup event listeners
+     */
+    setupEventListeners() {
+        // Previous button
+        this.elements.prevBtn.addEventListener('click', () => {
+            this.navigate(-1);
+            this.resetAutoRotation();
+        });
+
+        // Next button
+        this.elements.nextBtn.addEventListener('click', () => {
+            this.navigate(1);
+            this.resetAutoRotation();
+        });
+
+        // Register button clicks (event delegation)
+        this.elements.eventsGrid.addEventListener('click', (e) => {
+            const registerBtn = e.target.closest('.register-btn');
+            if (registerBtn && !registerBtn.disabled) {
+                this.handleRegistration(registerBtn.dataset.eventId);
+            }
+
+            const eventCard = e.target.closest('.teaser-event-card');
+            if (eventCard && !e.target.closest('.register-btn')) {
+                this.handleCardClick(eventCard.dataset.eventId);
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                this.navigate(-1);
+                this.resetAutoRotation();
+            } else if (e.key === 'ArrowRight') {
+                this.navigate(1);
+                this.resetAutoRotation();
+            }
+        });
+
+        // Pause auto-rotation on hover
+        this.elements.container.addEventListener('mouseenter', () => {
+            this.pauseAutoRotation();
+        });
+
+        this.elements.container.addEventListener('mouseleave', () => {
+            if (this.state.isAutoRotating) {
+                this.startAutoRotation();
+            }
+        });
+    }
+
+    /**
+     * Navigate between events (for future carousel implementation)
+     */
+    navigate(direction) {
+        if (this.state.featuredEvents.length <= 1) return;
+
+        this.state.currentIndex += direction;
+
+        if (this.state.currentIndex < 0) {
+            this.state.currentIndex = this.state.featuredEvents.length - 1;
+        } else if (this.state.currentIndex >= this.state.featuredEvents.length) {
+            this.state.currentIndex = 0;
+        }
+
+        // For now, just update active state
+        this.updateActiveState();
+    }
+
+    /**
+     * Update active state of events
+     */
+    updateActiveState() {
+        const cards = this.elements.eventsGrid.querySelectorAll('.teaser-event-card');
+        cards.forEach((card, index) => {
+            if (index === this.state.currentIndex) {
+                card.classList.add('ring-2', 'ring-robotics-gold');
+            } else {
+                card.classList.remove('ring-2', 'ring-robotics-gold');
+            }
+        });
+    }
+
+    /**
+     * Handle registration button click
+     */
+    handleRegistration(eventId) {
+        const event = this.state.featuredEvents.find(e => e.id == eventId);
+        if (!event) return;
+
+        // In a real implementation, this would redirect to registration page
+        // For demo, we'll show a toast message
+        this.showToast(`Redirecting to registration for "${event.title}"`);
+
+        // Simulate API call
+        setTimeout(() => {
+            window.location.href = event.registrationLink || './events.html';
+        }, 500);
+    }
+
+    /**
+     * Handle event card click
+     */
+    handleCardClick(eventId) {
+        // Navigate to event details page
+        window.location.href = `./events.html#event-${eventId}`;
+    }
+
+    /**
+     * Start auto rotation of events
+     */
+    startAutoRotation() {
+        if (this.rotationTimer) clearInterval(this.rotationTimer);
+
+        this.rotationTimer = setInterval(() => {
+            this.navigate(1);
+        }, this.config.rotateInterval);
+
+        this.state.isAutoRotating = true;
+    }
+
+    /**
+     * Pause auto rotation
+     */
+    pauseAutoRotation() {
+        if (this.rotationTimer) {
+            clearInterval(this.rotationTimer);
+            this.state.isAutoRotating = false;
+        }
+    }
+
+    /**
+     * Reset auto rotation timer
+     */
+    resetAutoRotation() {
+        this.pauseAutoRotation();
+        if (this.config.autoRotate) {
+            setTimeout(() => this.startAutoRotation(), 2000);
+        }
+    }
+
+    /**
+     * Show toast notification
+     */
+    showToast(message) {
+        // Create toast element
+        const toast = document.createElement('div');
+        toast.className = 'fixed top-4 right-4 bg-robotics-blue border border-robotics-gold/30 text-white px-4 py-3 rounded-lg shadow-lg z-50 animate-fade-in-up';
+        toast.innerHTML = `
+            <div class="flex items-center gap-3">
+                <i class="fas fa-info-circle text-robotics-gold"></i>
+                <span>${message}</span>
+            </div>
+        `;
+
+        document.body.appendChild(toast);
+
+        // Remove toast after 3 seconds
+        setTimeout(() => {
+            toast.classList.add('opacity-0', 'transition-opacity', 'duration-300');
+            setTimeout(() => toast.remove(), 300);
+        }, 3000);
+    }
+
+    /**
+     * Show error state
+     */
+    showErrorState() {
+        this.elements.skeletonContainer.classList.add('hidden');
+
+        const errorState = document.createElement('div');
+        errorState.className = 'text-center py-12';
+        errorState.innerHTML = `
+            <div class="w-20 h-20 bg-red-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-exclamation-triangle text-3xl text-red-400"></i>
+            </div>
+            <h3 class="text-xl font-orbitron font-bold text-white mb-3">Unable to Load Events</h3>
+            <p class="text-gray-300 mb-6 max-w-md mx-auto">
+                There was an error loading the featured events. Please try refreshing the page.
+            </p>
+            <button class="cta-button secondary" onclick="window.location.reload()">
+                <span>Refresh Page</span>
+                <i class="fas fa-redo"></i>
+            </button>
+        `;
+
+        this.elements.container.querySelector('.container').appendChild(errorState);
+    }
+
+    /**
+     * Clean up component
+     */
+    destroy() {
+        if (this.rotationTimer) clearInterval(this.rotationTimer);
+
+        // Remove event listeners
+        this.elements.prevBtn?.removeEventListener('click', () => { });
+        this.elements.nextBtn?.removeEventListener('click', () => { });
+
+        // Remove container from DOM
+        this.elements.container?.remove();
+    }
+}
 
 // ===== SIMPLE & MODULAR IMAGE SLIDER =====
 class SimpleImageSlider {
     constructor() {
-        this.currentIndex = 0;
+        this.currentIndex = 1;
         this.images = [];
-        this.totalImages = 0;
+        this.totalImages = 1;
         this.isAnimating = false;
         this.autoPlayInterval = null;
         this.isAutoPlaying = true;
-        this.autoPlayDelay = 4000; // 4 seconds
+        this.autoPlayDelay = 3000; // 3 seconds
 
         this.init();
     }
@@ -594,7 +1019,6 @@ class SimpleImageSlider {
         // Controls
         this.prevBtn = document.querySelector('.slider-prev');
         this.nextBtn = document.querySelector('.slider-next');
-        this.autoPlayToggle = document.getElementById('auto-play-toggle');
 
         // Display elements
         this.currentSlideEl = document.getElementById('current-slide');
@@ -619,8 +1043,6 @@ class SimpleImageSlider {
 
         } catch (error) {
             console.error('Error loading images:', error);
-            // Fallback to default images
-            this.useDefaultImages();
         } finally {
             // Hide loading
             if (this.loadingIndicator) {
@@ -636,36 +1058,90 @@ class SimpleImageSlider {
         // For now, we'll create images from data
         const imageData = [
             {
-                id: 1,
-                title: "AI powered VTOL-UAV",
-                description: "2nd Prize Winner among 25000+ teams at Idea Festival 2025",
-                url: "https://media.licdn.com/dms/image/v2/D4E22AQHoc3xynzIFxA/feedshare-shrink_2048_1536/B4EZlNngqpKsA0-/0/1757943872552?e=2147483647&v=beta&t=o5Ow5a43cD4FdMpeNl7LM8WaPNqy9qmoS-7xna8xyPg",
-                alt: "Idea Festival 2025",
-                category: "Prize Won"
+                "id": 1,
+                "title": "Robotics Club",
+                "description": "Our club activities",
+                "url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80",
+                "alt": "Robotics club",
+                "category": "Club"
+            },
+            {
+                "id": 2,
+                "title": "Technical Workshop",
+                "description": "Hands-on learning sessions",
+                "url": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80",
+                "alt": "Technical workshop",
+                "category": "Workshop"
+            },
+            {
+                "id": 3,
+                "title": "Coding Event",
+                "description": "Competitive programming and hackathons",
+                "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+                "alt": "Coding event",
+                "category": "Event"
+            },
+            {
+                "id": 4,
+                "title": "Mechanical Lab",
+                "description": "Practical mechanical engineering experiments",
+                "url": "https://images.unsplash.com/photo-1581091012184-5c7d7b6d3c98?auto=format&fit=crop&w=800&q=80",
+                "alt": "Mechanical engineering lab",
+                "category": "Laboratory"
+            },
+            {
+                "id": 5,
+                "title": "Electronics Project",
+                "description": "Innovative electronics and PCB design",
+                "url": "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80",
+                "alt": "Electronics project",
+                "category": "Project"
+            },
+            {
+                "id": 6,
+                "title": "Team Collaboration",
+                "description": "Students working together on projects",
+                "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
+                "alt": "Team collaboration",
+                "category": "Team"
+            },
+            {
+                "id": 7,
+                "title": "Innovation Showcase",
+                "description": "Displaying student innovations",
+                "url": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+                "alt": "Innovation showcase",
+                "category": "Exhibition"
+            },
+            {
+                "id": 8,
+                "title": "AI & Robotics",
+                "description": "Artificial intelligence and robotics research",
+                "url": "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80",
+                "alt": "AI robotics",
+                "category": "Research"
+            },
+            {
+                "id": 9,
+                "title": "Campus Event",
+                "description": "Annual technical fest",
+                "url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
+                "alt": "Campus technical event",
+                "category": "Festival"
+            },
+            {
+                "id": 10,
+                "title": "Student Presentation",
+                "description": "Knowledge sharing sessions",
+                "url": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80",
+                "alt": "Student presentation",
+                "category": "Seminar"
             }
-
-            // ADD MORE IMAGES DATA HERE FOR INDEX PAGE SLIDER
-
-        ];
+        ]
+            ;
 
         this.images = imageData;
         this.totalImages = this.images.length;
-        this.renderSlides();
-    }
-
-    useDefaultImages() {
-        // Fallback if JSON/API fails
-        this.images = [
-            {
-                id: 1,
-                title: "Robotics Club",
-                description: "Our club activities",
-                url: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-                alt: "Robotics club",
-                category: "Club"
-            }
-        ];
-        this.totalImages = 1;
         this.renderSlides();
     }
 
@@ -757,11 +1233,6 @@ class SimpleImageSlider {
                 this.goToSlide(index);
             }
         });
-
-        // Auto-play toggle
-        if (this.autoPlayToggle) {
-            this.autoPlayToggle.addEventListener('click', () => this.toggleAutoPlay());
-        }
 
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
@@ -859,7 +1330,6 @@ class SimpleImageSlider {
         }, this.autoPlayDelay);
 
         this.isAutoPlaying = true;
-        this.updateAutoPlayToggle();
     }
 
     pauseAutoPlay() {
@@ -868,7 +1338,6 @@ class SimpleImageSlider {
             this.autoPlayInterval = null;
         }
         this.isAutoPlaying = false;
-        this.updateAutoPlayToggle();
     }
 
     resumeAutoPlay() {
@@ -892,43 +1361,169 @@ class SimpleImageSlider {
         }
     }
 
-    updateAutoPlayToggle() {
-        if (this.autoPlayToggle) {
-            if (this.isAutoPlaying) {
-                this.autoPlayToggle.classList.add('active');
-                this.autoPlayToggle.setAttribute('aria-label', 'Pause auto-play');
-            } else {
-                this.autoPlayToggle.classList.remove('active');
-                this.autoPlayToggle.setAttribute('aria-label', 'Start auto-play');
-            }
-        }
-    }
-
-    // API Integration Helper Methods
-    async fetchImagesFromAPI(endpoint) {
-        // API INTEGRATION POINT
-        try {
-            const response = await fetch(endpoint);
-            if (!response.ok) throw new Error('API request failed');
-            const data = await response.json();
-            return data.images || [];
-        } catch (error) {
-            console.error('API Error:', error);
-            return [];
-        }
-    }
-
-    async updateImages(newImages) {
-        // Method to dynamically update images
-        this.images = newImages;
-        this.totalImages = this.images.length;
-        this.renderSlides();
-        this.showSlide(0);
-    }
-
     // Cleanup method
     destroy() {
         this.pauseAutoPlay();
         // Remove event listeners if needed
     }
+}
+
+/* ============================================================
+   RECENT ACHIEVEMENTS LOADER
+   - Loads featured achievements from JSON
+   - Fallback data if fetch fails
+   - Hover glow & click navigation
+============================================================ */
+
+const ACHIEVEMENTS_CONFIG = {
+    jsonPath: './data/achievements.json',
+    animationDelay: 200
+};
+
+let achievementsData = [];
+
+/* ===============================
+   INITIALIZATION
+=============================== */
+async function initRecentAchievements() {
+    try {
+        await loadAchievements();
+        renderAchievements();
+        bindAchievementEvents();
+    } catch (err) {
+        console.error('Achievements init failed:', err);
+        showAchievementsError();
+    }
+}
+
+/* ===============================
+   DATA LOADING
+=============================== */
+async function loadAchievements() {
+    try {
+        const res = await fetch(ACHIEVEMENTS_CONFIG.jsonPath);
+        if (!res.ok) throw new Error('Achievements JSON failed');
+
+        const data = await res.json();
+        achievementsData = data.achievements || [];
+
+    } catch (err) {
+        console.warn('Data Loading Failed');
+    }
+}
+
+/* ===============================
+   RENDERING
+=============================== */
+function renderAchievements() {
+    const container = document.getElementById('featured-achievements-container');
+    if (!container) return;
+
+    const featured = achievementsData
+        .filter(a => a.featured)
+        .sort((a, b) => b.year - a.year);
+
+    if (!featured.length) {
+        container.innerHTML = `
+            <div class="col-span-full text-center py-16 text-gray-400">
+                No featured achievements yet
+            </div>
+        `;
+        return;
+    }
+
+    container.innerHTML = featured
+        .map((a, i) => renderAchievementCard(a, i))
+        .join('');
+
+    enableAchievementGlow();
+}
+
+function renderAchievementCard(achievement, index) {
+    return `
+        <div class="featured-achievement-card animate-card-rise"
+             style="animation-delay:${index * ACHIEVEMENTS_CONFIG.animationDelay}ms"
+             data-id="${achievement.id}">
+            
+            <div class="featured-card-image">
+                <img src="${achievement.thumbnail}"
+                     alt="${achievement.name}"
+                     loading="lazy">
+            </div>
+
+            <div class="featured-card-content">
+                <h3 class="featured-card-title">
+                    ${achievement.name}
+                </h3>
+
+                <div class="featured-achievement-type">
+                    <i class="fas fa-${getAchievementIcon(achievement.category)}"></i>
+                    ${achievement.achievement}
+                </div>
+
+                <p class="featured-card-description">
+                    ${achievement.brief_description}
+                </p>
+
+                <div class="mt-6 pt-4 border-t border-gray-700/50 text-sm text-gray-400">
+                    <i class="fas fa-users mr-2"></i>
+                    ${achievement.team_members.slice(0, 2).join(', ')}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+/* ===============================
+   UI ENHANCEMENTS
+=============================== */
+function enableAchievementGlow() {
+    document.querySelectorAll('.featured-achievement-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            card.style.setProperty(
+                '--mouse-x',
+                `${((e.clientX - rect.left) / rect.width) * 100}%`
+            );
+            card.style.setProperty(
+                '--mouse-y',
+                `${((e.clientY - rect.top) / rect.height) * 100}%`
+            );
+        });
+
+        card.addEventListener('click', () => {
+            window.location.href = 'achievements.html';
+        });
+    });
+}
+
+function bindAchievementEvents() {
+    const viewMore = document.querySelector('.view-more-card');
+    viewMore?.addEventListener('click', () => {
+        window.location.href = 'achievements.html';
+    });
+}
+
+/* ===============================
+   UTILITIES
+=============================== */
+function getAchievementIcon(category) {
+    const icons = {
+        competition: 'flag-checkered',
+        research: 'book',
+        innovation: 'lightbulb',
+        grants_awards: 'award'
+    };
+    return icons[category] || 'trophy';
+}
+
+function showAchievementsError() {
+    const container = document.getElementById('featured-achievements-container');
+    if (!container) return;
+
+    container.innerHTML = `
+        <div class="col-span-full text-center py-16 text-red-400">
+            Failed to load achievements
+        </div>
+    `;
 }

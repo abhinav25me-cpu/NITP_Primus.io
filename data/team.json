@@ -1,0 +1,316 @@
+{
+  "facultyAdvisors": [
+    {
+      "id": 1,
+      "name": "Dr. Rajesh Kumar Singh",
+      "designation": "Associate Professor",
+      "department": "Department of Electronics & Communication Engineering",
+      "photo": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "message": "Robotics is not just about building machines; it's about creating solutions that can change the world. At Robotics Club NIT Patna, we foster innovation, critical thinking, and hands-on learning to prepare students for the technological challenges of tomorrow.",
+      "quote": "Innovation distinguishes between a leader and a follower.",
+      "email": "rksingh@nitp.ac.in",
+      "linkedin": "https://linkedin.com/in/prof-rajesh-kumar",
+      "researchGate": "https://researchgate.net/profile/rajesh_kumar"
+    },
+    {
+      "id": 2,
+      "name": "Dr. Priya Sharma",
+      "designation": "Assistant Professor",
+      "department": "Department of Computer Science & Engineering",
+      "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "message": "The fusion of AI with robotics opens endless possibilities. Our club provides the perfect platform for students to explore this synergy and develop cutting-edge solutions.",
+      "quote": "The best way to predict the future is to invent it.",
+      "email": "priya.sharma@nitp.ac.in",
+      "linkedin": "https://linkedin.com/in/dr-priya-sharma",
+      "researchGate": "https://researchgate.net/profile/priya_sharma"
+    }
+  ],
+  
+  "coreTeam": {
+    "academicYear": "2024-25",
+    "members": [
+      {
+        "id": 1,
+        "name": "Aryan Sharma",
+        "role": "President",
+        "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "department": "Mechanical Engineering",
+        "year": "4th Year",
+        "email": "aryan.s@student.nitp.ac.in",
+        "linkedin": "https://linkedin.com/in/aryan-sharma-robotics",
+        "github": "https://github.com/aryansharma-robotics",
+        "responsibilities": [
+          "Overall club management",
+          "Strategic planning",
+          "External collaborations"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Priya Patel",
+        "role": "Vice President",
+        "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "department": "Computer Science & Engineering",
+        "year": "3rd Year",
+        "email": "priya.p@student.nitp.ac.in",
+        "linkedin": "https://linkedin.com/in/priyapatel-cse",
+        "github": "https://github.com/priyapatel-ai",
+        "responsibilities": [
+          "Assisting President",
+          "Workshop coordination",
+          "Team management"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Rahul Verma",
+        "role": "Technical Coordinator",
+        "photo": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "department": "Electronics & Communication",
+        "year": "3rd Year",
+        "email": "rahul.v@student.nitp.ac.in",
+        "linkedin": "https://linkedin.com/in/rahulverma-ec",
+        "github": "https://github.com/rahulverma-embedded",
+        "responsibilities": [
+          "Technical workshops",
+          "Project guidance",
+          "Resource management"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Neha Gupta",
+        "role": "Treasurer",
+        "photo": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "department": "Electrical Engineering",
+        "year": "3rd Year",
+        "email": "neha.g@student.nitp.ac.in",
+        "linkedin": "https://linkedin.com/in/nehagupta-ee",
+        "github": "https://github.com/nehagupta-finance",
+        "responsibilities": [
+          "Budget management",
+          "Fund allocation",
+          "Expense tracking"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Siddharth Rao",
+        "role": "PR & Outreach Coordinator",
+        "photo": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "department": "Civil Engineering",
+        "year": "2nd Year",
+        "email": "siddharth.r@student.nitp.ac.in",
+        "linkedin": "https://linkedin.com/in/siddharthrao-pr",
+        "github": "https://github.com/siddharthrao",
+        "responsibilities": [
+          "Public relations",
+          "Social media",
+          "Industry partnerships"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Ananya Singh",
+        "role": "Events Coordinator",
+        "photo": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "department": "Chemical Engineering",
+        "year": "2nd Year",
+        "email": "ananya.s@student.nitp.ac.in",
+        "linkedin": "https://linkedin.com/in/ananyasingh-events",
+        "github": "https://github.com/ananyasingh",
+        "responsibilities": [
+          "Event planning",
+          "Competition coordination",
+          "Logistics management"
+        ]
+      }
+    ]
+  },
+  
+  "teamMembers": {
+    "hardware": [
+      {
+        "id": 101,
+        "name": "Vikram Joshi",
+        "role": "Hardware Specialist",
+        "department": "Mechanical Engineering",
+        "year": "2nd Year",
+        "github": "https://github.com/vikramjoshi-hw",
+        "linkedin": "https://linkedin.com/in/vikramjoshi-mech",
+        "skills": ["PCB Design", "Embedded Systems", "3D Modeling"]
+      },
+      {
+        "id": 102,
+        "name": "Aditya Nair",
+        "role": "Circuit Design",
+        "department": "Electronics Engineering",
+        "year": "2nd Year",
+        "github": "https://github.com/adityanair-circuits",
+        "linkedin": "https://linkedin.com/in/adityanair-ee",
+        "skills": ["Analog Circuits", "Power Systems", "Sensor Integration"]
+      },
+      {
+        "id": 103,
+        "name": "Rohit Mehra",
+        "role": "Mechatronics Engineer",
+        "department": "Mechanical Engineering",
+        "year": "3rd Year",
+        "github": "https://github.com/rohitmehra-mech",
+        "linkedin": "https://linkedin.com/in/rohitmehra",
+        "skills": ["Robot Kinematics", "Control Systems", "Actuators"]
+      }
+    ],
+    "software": [
+      {
+        "id": 201,
+        "name": "Karan Malhotra",
+        "role": "Software Developer",
+        "department": "Computer Science",
+        "year": "2nd Year",
+        "github": "https://github.com/karanmalhotra-dev",
+        "linkedin": "https://linkedin.com/in/karanmalhotra-cs",
+        "skills": ["Python", "C++", "ROS", "Algorithms"]
+      },
+      {
+        "id": 202,
+        "name": "Sneha Reddy",
+        "role": "Embedded Programmer",
+        "department": "ECE",
+        "year": "3rd Year",
+        "github": "https://github.com/snehareddy-embedded",
+        "linkedin": "https://linkedin.com/in/snehareddy-ece",
+        "skills": ["Arduino", "STM32", "RTOS", "Device Drivers"]
+      }
+    ],
+    "aiMl": [
+      {
+        "id": 301,
+        "name": "Arjun Kapoor",
+        "role": "AI Research Lead",
+        "department": "Computer Science",
+        "year": "4th Year",
+        "github": "https://github.com/arjunkapoor-ai",
+        "linkedin": "https://linkedin.com/in/arjunkapoor-ai",
+        "skills": ["Computer Vision", "Deep Learning", "Reinforcement Learning"]
+      },
+      {
+        "id": 302,
+        "name": "Meera Iyer",
+        "role": "ML Engineer",
+        "department": "Data Science",
+        "year": "3rd Year",
+        "github": "https://github.com/meeraiyer-ml",
+        "linkedin": "https://linkedin.com/in/meeraiyer-ds",
+        "skills": ["TensorFlow", "PyTorch", "NLP", "Model Optimization"]
+      }
+    ],
+    "web": [
+      {
+        "id": 401,
+        "name": "Rohan Desai",
+        "role": "Full Stack Developer",
+        "department": "IT",
+        "year": "2nd Year",
+        "github": "https://github.com/rohandesai-web",
+        "linkedin": "https://linkedin.com/in/rohandesai-it",
+        "skills": ["React", "Node.js", "MongoDB", "UI/UX"]
+      },
+      {
+        "id": 402,
+        "name": "Pooja Menon",
+        "role": "Frontend Developer",
+        "department": "Computer Science",
+        "year": "2nd Year",
+        "github": "https://github.com/poojamenon-ui",
+        "linkedin": "https://linkedin.com/in/poojamenon-cs",
+        "skills": ["JavaScript", "Tailwind", "React", "Web Design"]
+      }
+    ],
+    "design": [
+      {
+        "id": 501,
+        "name": "Aishwarya Roy",
+        "role": "CAD Designer",
+        "department": "Mechanical Engineering",
+        "year": "3rd Year",
+        "github": "https://github.com/aishwaryaroy-cad",
+        "linkedin": "https://linkedin.com/in/aishwaryaroy-design",
+        "skills": ["SolidWorks", "Fusion 360", "3D Printing", "Prototyping"]
+      },
+      {
+        "id": 502,
+        "name": "Tanmay Bhatt",
+        "role": "Graphics Designer",
+        "department": "Architecture",
+        "year": "2nd Year",
+        "github": "https://github.com/tanmaybhatt-design",
+        "linkedin": "https://linkedin.com/in/tanmaybhatt-arch",
+        "skills": ["UI/UX", "Photoshop", "Illustrator", "Branding"]
+      }
+    ]
+  },
+  
+  "alumni": [
+    {
+      "id": 1001,
+      "name": "Dr. Sanjay Mehta",
+      "batch": "2010-2014",
+      "currentPosition": "Senior Robotics Engineer at Boston Dynamics",
+      "photo": "https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "achievements": [
+        "Led development of Spot robot's navigation system",
+        "Published 15+ research papers in robotics journals",
+        "Awarded 'Young Roboticist of the Year 2021'",
+        "5 patents in robotic locomotion"
+      ],
+      "testimonial": "My journey in robotics began at NIT Patna Robotics Club. The hands-on experience and mentorship shaped my career. The club's culture of innovation and collaboration is truly exceptional.",
+      "linkedin": "https://linkedin.com/in/sanjaymehta-robotics"
+    },
+    {
+      "id": 1002,
+      "name": "Anjali Choudhary",
+      "batch": "2012-2016",
+      "currentPosition": "Founder & CEO, RoboTech Solutions",
+      "photo": "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "achievements": [
+        "Founded successful robotics startup (₹50Cr valuation)",
+        "Forbes 30 Under 30 Asia 2022",
+        "Developed agricultural robots deployed in 500+ farms",
+        "TEDx Speaker on 'Robotics for Social Impact'"
+      ],
+      "testimonial": "The Robotics Club was my playground for innovation. It taught me that with the right team and persistence, any complex problem can be solved through robotics.",
+      "linkedin": "https://linkedin.com/in/anjalichoudhary-entrepreneur"
+    },
+    {
+      "id": 1003,
+      "name": "Rahul Bajaj",
+      "batch": "2014-2018",
+      "currentPosition": "Research Scientist, Google Robotics",
+      "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "achievements": [
+        "Part of team that developed Google's robot learning algorithms",
+        "PhD from MIT in Robotics",
+        "Best Paper Award at ICRA 2022",
+        "Contributed to OpenAI Robotics projects"
+      ],
+      "testimonial": "The late nights at the robotics lab, debugging code and testing prototypes, were the most valuable learning experiences of my college life. The club's resources and mentorship were instrumental in my career.",
+      "linkedin": "https://linkedin.com/in/rahulbajaj-research"
+    },
+    {
+      "id": 1004,
+      "name": "Priyanka Nair",
+      "batch": "2015-2019",
+      "currentPosition": "Robotics Professor, IIT Delhi",
+      "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      "achievements": [
+        "Youngest faculty in IIT Delhi Robotics Department",
+        "Recipient of DST Young Scientist Award",
+        "Research grant of ₹2Cr for human-robot interaction",
+        "Author of textbook 'Modern Robotics Principles'"
+      ],
+      "testimonial": "The club's interdisciplinary approach—combining mechanical, electronics, and computer science—gave me a holistic understanding of robotics that I now pass on to my students.",
+      "linkedin": "https://linkedin.com/in/priyankanair-academia"
+    }
+  ]
+}

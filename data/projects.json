@@ -1,0 +1,126 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Autonomous Delivery Drone",
+      "year": 2024,
+      "type": "drone",
+      "shortDescription": "AI-powered autonomous drone for last-mile delivery with obstacle avoidance",
+      "longDescription": "A fully autonomous delivery drone system that uses computer vision and machine learning for navigation, obstacle detection, and safe package delivery. The drone can fly up to 10km range and carry payloads of up to 2kg with real-time tracking capabilities.",
+      "thumbnail": "https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1473968512647-3e447244af8f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      ],
+      "technologies": ["Python", "ROS", "OpenCV", "TensorFlow", "Arduino"],
+      "tools": ["DJI SDK", "Gazebo Simulator", "3D Printer"],
+      "team": ["Rajesh Kumar", "Priya Sharma", "Amit Patel", "Neha Singh"],
+      "achievements": ["1st Prize - National Drone Competition 2023", "Best Innovation Award"],
+      "github": "https://github.com/nitp-robotics/delivery-drone",
+      "demo": "https://youtube.com/watch?v=example",
+      "status": "completed",
+      "duration": "6 months"
+    },
+    {
+      "id": 2,
+      "title": "Humanoid Robot - NITP BOT",
+      "year": 2023,
+      "type": "humanoid",
+      "shortDescription": "Advanced humanoid robot capable of walking, object recognition, and basic interactions",
+      "longDescription": "A bipedal humanoid robot with 20 degrees of freedom, equipped with stereo cameras for vision and AI algorithms for object recognition and human interaction. The robot can walk on uneven surfaces, recognize faces, and perform basic tasks through voice commands.",
+      "thumbnail": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
+        "https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      ],
+      "technologies": ["C++", "ROS2", "OpenCV", "PyTorch", "ESP32"],
+      "tools": ["SolidWorks", "3D Printer", "Servo Motors", "IMU Sensors"],
+      "team": ["Vikram Singh", "Anjali Verma", "Rohit Mehta", "Sneha Reddy", "Karan Sharma"],
+      "achievements": ["Finalist - ROBOCON India 2023", "Published Research Paper"],
+      "github": "https://github.com/nitp-robotics/humanoid-2023",
+      "demo": "https://youtube.com/watch?v=example2",
+      "status": "completed",
+      "duration": "8 months"
+    },
+    {
+      "id": 3,
+      "title": "Smart Agriculture Robot",
+      "year": 2023,
+      "type": "agriculture",
+      "shortDescription": "Autonomous robot for precision agriculture with soil analysis and weed detection",
+      "longDescription": "An autonomous ground robot equipped with multispectral cameras and sensors for soil analysis, weed detection, and crop health monitoring. The robot can navigate through crop rows autonomously and provide real-time data to farmers via a mobile application.",
+      "thumbnail": "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1593642532842-98d0fd5ebc1a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      ],
+      "technologies": ["Python", "TensorFlow Lite", "IoT", "Flutter", "Raspberry Pi"],
+      "tools": ["Multispectral Camera", "Soil Sensors", "GPS Module", "Mobile App"],
+      "team": ["Suresh Yadav", "Meera Nair", "Arjun Das", "Pooja Gupta"],
+      "achievements": ["Selected for Smart India Hackathon 2023", "Grant from Agriculture Department"],
+      "github": "https://github.com/nitp-robotics/agri-bot",
+      "demo": null,
+      "status": "ongoing",
+      "duration": "5 months"
+    },
+    {
+      "id": 4,
+      "title": "Autonomous Underwater Vehicle",
+      "year": 2022,
+      "type": "underwater",
+      "shortDescription": "ROV for underwater exploration and data collection in marine environments",
+      "longDescription": "A remotely operated underwater vehicle designed for marine research and exploration. Equipped with HD cameras, sonar, and environmental sensors, the AUV can dive up to 50 meters and transmit real-time video and sensor data to the surface station.",
+      "thumbnail": "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      ],
+      "technologies": ["C++", "Arduino", "ROS", "Python", "OpenCV"],
+      "tools": ["Waterproof Cameras", "Pressure Sensors", "Thrusters", "Waterproof Housing"],
+      "team": ["Deepak Joshi", "Shweta Rao", "Manish Kumar", "Anita Desai"],
+      "achievements": ["2nd Prize - National AUV Competition 2022"],
+      "github": "https://github.com/nitp-robotics/auv-2022",
+      "demo": "https://youtube.com/watch?v=example3",
+      "status": "completed",
+      "duration": "7 months"
+    },
+    {
+      "id": 5,
+      "title": "Swarm Robotics Platform",
+      "year": 2024,
+      "type": "swarm",
+      "shortDescription": "Multi-robot system for cooperative tasks using swarm intelligence algorithms",
+      "longDescription": "A platform consisting of 10 identical small robots that can work cooperatively using swarm intelligence algorithms. The system demonstrates collective behaviors like pattern formation, object transportation, and area coverage through local communication between robots.",
+      "thumbnail": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      ],
+      "technologies": ["Python", "ROS2", "Swarm Algorithms", "IoT", "MQTT"],
+      "tools": ["ESP32", "IR Sensors", "WiFi Mesh", "Custom PCB"],
+      "team": ["Rahul Jain", "Tanvi Shah", "Vikas Reddy", "Nisha Patel"],
+      "achievements": ["Ongoing Research Project", "Conference Paper Submitted"],
+      "github": null,
+      "demo": null,
+      "status": "ongoing",
+      "duration": "4 months"
+    },
+    {
+      "id": 6,
+      "title": "Assistive Robotic Arm",
+      "year": 2022,
+      "type": "robotic-arm",
+      "shortDescription": "6-DOF robotic arm for assistive applications with EMG control interface",
+      "longDescription": "A 6-degree-of-freedom robotic arm designed to assist people with mobility challenges. The arm can be controlled through multiple interfaces including EMG signals, voice commands, and a mobile app. It features force feedback and object recognition capabilities.",
+      "thumbnail": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      "images": [
+        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
+      ],
+      "technologies": ["C++", "Arduino", "Python", "EMG Signal Processing", "OpenCV"],
+      "tools": ["Servo Motors", "Force Sensors", "3D Printed Parts", "Custom Gripper"],
+      "team": ["Aarav Mehta", "Ishita Nair", "Rohan Deshmukh", "Kavya Sharma"],
+      "achievements": ["Social Impact Award", "Featured in Local Newspaper"],
+      "github": "https://github.com/nitp-robotics/assistive-arm",
+      "demo": "https://youtube.com/watch?v=example4",
+      "status": "completed",
+      "duration": "9 months"
+    }
+  ]
+}

@@ -1,0 +1,139 @@
+{
+  "lastUpdated": "2024-01-15T10:30:00Z",
+  "clubNews": [
+    {
+      "id": 1,
+      "title": "Annual General Meeting 2024",
+      "type": "meeting",
+      "date": "2024-01-10",
+      "summary": "Successfully conducted the Annual General Meeting for 2024. Discussed yearly achievements, budget allocation, and upcoming events.",
+      "content": "The AGM was attended by 150+ members. Key decisions included budget allocation for new equipment, planning for ROBOCON 2024, and electing new office bearers.",
+      "author": "Club Secretary",
+      "important": true,
+      "tags": ["meeting", "agm", "planning"]
+    },
+    {
+      "id": 2,
+      "title": "New 3D Printer Installation",
+      "type": "announcement",
+      "date": "2024-01-05",
+      "summary": "Successfully installed two new industrial-grade 3D printers in our prototyping lab.",
+      "content": "The new Creality CR-10 and Prusa i3 MK3S+ printers will significantly enhance our rapid prototyping capabilities. Training sessions will be conducted next week.",
+      "author": "Lab Manager",
+      "important": true,
+      "tags": ["equipment", "lab", "3d-printing"]
+    },
+    {
+      "id": 3,
+      "title": "Winter Workshop Series Completion",
+      "type": "update",
+      "date": "2024-01-03",
+      "summary": "Successfully completed the 4-week winter workshop series on ROS2 and Autonomous Navigation.",
+      "content": "Over 80 students participated in the workshop series. Final projects included autonomous line followers and SLAM implementations.",
+      "author": "Workshop Coordinator",
+      "important": false,
+      "tags": ["workshop", "ros2", "training"]
+    },
+    {
+      "id": 4,
+      "title": "Call for ROBOCON 2024 Team Members",
+      "type": "announcement",
+      "date": "2023-12-28",
+      "summary": "Applications open for ROBOCON 2024 team members. Deadline: January 20, 2024.",
+      "content": "We're looking for passionate members for mechanical design, electronics, programming, and AI/ML roles. Interviews will be conducted in the last week of January.",
+      "author": "Competition Head",
+      "important": true,
+      "tags": ["competition", "robocon", "recruitment"]
+    },
+    {
+      "id": 5,
+      "title": "Weekly Coding Session Resumes",
+      "type": "update",
+      "date": "2023-12-25",
+      "summary": "Weekly coding sessions resume from January 8, 2024. Focus on algorithms for robotics.",
+      "content": "Sessions every Monday 5-7 PM in Lab 3. Topics include path planning algorithms, computer vision basics, and optimization techniques.",
+      "author": "Technical Head",
+      "important": false,
+      "tags": ["session", "coding", "algorithm"]
+    },
+    {
+      "id": 6,
+      "title": "Alumni Interaction Session",
+      "type": "meeting",
+      "date": "2023-12-20",
+      "summary": "Successful alumni interaction session with former club presidents.",
+      "content": "Alumni shared industry experiences, career guidance, and pledged support for club projects. Networking opportunities were created.",
+      "author": "Alumni Coordinator",
+      "important": false,
+      "tags": ["alumni", "networking", "career"]
+    }
+  ],
+  "industryNews": [
+    {
+      "id": 101,
+      "title": "Boston Dynamics Unveils New Humanoid Robot",
+      "source": "TechRobotics",
+      "date": "2024-01-12",
+      "summary": "Boston Dynamics reveals Atlas 2.0 with enhanced mobility and AI capabilities.",
+      "content": "The new Atlas demonstrates unprecedented agility and can now handle complex manipulation tasks. Features improved power efficiency and learning algorithms.",
+      "readMoreLink": "https://example.com/boston-dynamics-atlas",
+      "category": "humanoid",
+      "tags": ["humanoid", "ai", "boston-dynamics"]
+    },
+    {
+      "id": 102,
+      "title": "OpenAI Develops Robotics-Specific AI Model",
+      "source": "AI Robotics Journal",
+      "date": "2024-01-10",
+      "summary": "OpenAI announces RoboGPT, a specialized model for robotics applications.",
+      "content": "RoboGPT shows significant improvements in robot task planning and natural language interaction. Expected to accelerate robotics research.",
+      "readMoreLink": "https://example.com/openai-robogpt",
+      "category": "ai-ml",
+      "tags": ["ai", "openai", "research"]
+    },
+    {
+      "id": 103,
+      "title": "Tesla Optimus Production Update",
+      "source": "Electric Future",
+      "date": "2024-01-08",
+      "summary": "Tesla announces Optimus humanoid robot production timeline.",
+      "content": "Elon Musk reveals plans for limited production in 2024, with mass production targeted for 2025. Focus on manufacturing and domestic applications.",
+      "readMoreLink": "https://example.com/tesla-optimus-update",
+      "category": "commercial",
+      "tags": ["tesla", "humanoid", "commercial"]
+    },
+    {
+      "id": 104,
+      "title": "Breakthrough in Soft Robotics",
+      "source": "Science Robotics",
+      "date": "2024-01-05",
+      "summary": "MIT researchers develop self-healing soft robotic actuators.",
+      "content": "New material allows soft robots to repair minor damage autonomously. Potential applications in medical devices and hazardous environments.",
+      "readMoreLink": "https://example.com/soft-robotics-breakthrough",
+      "category": "research",
+      "tags": ["research", "soft-robotics", "mit"]
+    },
+    {
+      "id": 105,
+      "title": "Drone Delivery Expansion in Urban Areas",
+      "source": "Drone Weekly",
+      "date": "2024-01-03",
+      "summary": "Major companies expand urban drone delivery networks.",
+      "content": "Amazon, Wing, and Zipline announce expanded operations in multiple cities. Regulatory approvals accelerating commercial adoption.",
+      "readMoreLink": "https://example.com/drone-delivery-expansion",
+      "category": "drones",
+      "tags": ["drones", "delivery", "commercial"]
+    },
+    {
+      "id": 106,
+      "title": "New ROS2 Humble Release",
+      "source": "Open Robotics",
+      "date": "2023-12-28",
+      "summary": "ROS2 Humble Hawksbill long-term support release announced.",
+      "content": "Latest LTS release brings improved performance, security features, and better Windows support. Recommended for production systems.",
+      "readMoreLink": "https://example.com/ros2-humble",
+      "category": "software",
+      "tags": ["ros2", "software", "open-source"]
+    }
+  ]
+}

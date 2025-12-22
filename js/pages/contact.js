@@ -3,7 +3,6 @@
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function () {
-    console.log('Contact page script loaded successfully');
 
     // ========== FORM VALIDATION & SUBMISSION ==========
     const contactForm = document.getElementById('contact-form');
@@ -105,8 +104,6 @@ document.addEventListener('DOMContentLoaded', function () {
             message: document.getElementById('message').value,
             timestamp: new Date().toISOString()
         };
-
-        console.log('Form submitted:', formData);
 
         // Show loading state on button
         const submitBtn = this.querySelector('.submit-btn');

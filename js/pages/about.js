@@ -122,12 +122,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.add('loaded');
     }, 100);
 
-    console.log('About page script loaded successfully');
-
-
-
-
-
     // ========== ANIMATION ON SCROLL ==========
     const animateOnScroll = () => {
         const elements = document.querySelectorAll('.animate-fade-in-up, .specialized-lab, .equipment-category');
@@ -200,5 +194,4 @@ document.addEventListener('DOMContentLoaded', function () {
         progressObserver.observe(item);
     });
 
-    console.log('Information sections loaded successfully');
 });

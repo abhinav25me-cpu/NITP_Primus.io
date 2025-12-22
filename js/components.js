@@ -126,14 +126,10 @@ function handleNavbarScroll() {
 // Load all components when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     // Load navbar
-    loadComponent('navbar-placeholder', './components/navbar.html', function() {
-        console.log('Navbar loaded successfully');
-    });
+    loadComponent('navbar-placeholder', './components/navbar.html');
     
     // Load footer
-    loadComponent('footer-placeholder', './components/footer.html', function() {
-        console.log('Footer loaded successfully');
-    });
+    loadComponent('footer-placeholder', './components/footer.html');
     
     // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
