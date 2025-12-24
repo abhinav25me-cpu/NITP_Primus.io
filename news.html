@@ -6,6 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News & Updates | Robotics Club NIT Patna</title>
 
+    <meta name="description" content="Stay updated with the latest Robotics Club announcements and global robotics industry news, innovations, and breakthroughs.">
+
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#0a1a3a">
+
+    <!-- Open Graph Meta Tags (for Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Achievements | Robotics Club NIT Patna">
+    <meta property="og:description" content="Stay updated with the latest Robotics Club announcements and global robotics industry news, innovations, and breakthroughs.">
+    <meta property="og:image" content="./images/favicon/favicon-32x32.png">
+    <meta property="og:image:alt" content="Robotics Club NIT Patna Logo">
+    <meta property="og:url" content="https://abhinav25me-cpu.github.io/NITP_Primus.io/news.html">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://abhinav25me-cpu.github.io/NITP_Primus.io/news.html">
+
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="./images/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./images/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="./images/favicon/android-chrome-512x512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/favicon/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -40,7 +70,9 @@
     </script>
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -69,27 +101,32 @@
             <!-- Background elements -->
             <div class="absolute inset-0 overflow-hidden">
                 <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-robotics-gold/5 rounded-full blur-3xl"></div>
-                <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-robotics-light-blue/5 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-robotics-light-blue/5 rounded-full blur-3xl">
+                </div>
             </div>
-            
+
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-4xl mx-auto text-center">
                     <!-- Badge -->
-                    <div class="inline-flex items-center gap-3 bg-robotics-blue/80 backdrop-blur-sm border border-robotics-gold/30 rounded-full px-6 py-3 mb-8 animate-fade-in-up">
+                    <div
+                        class="inline-flex items-center gap-3 bg-robotics-blue/80 backdrop-blur-sm border border-robotics-gold/30 rounded-full px-6 py-3 mb-8 animate-fade-in-up">
                         <div class="w-2 h-2 bg-robotics-gold rounded-full animate-pulse"></div>
                         <span class="font-orbitron text-robotics-gold text-sm tracking-widest">LATEST UPDATES</span>
                     </div>
-                    
+
                     <!-- Main Heading -->
-                    <h1 class="text-4xl md:text-6xl font-orbitron font-bold mb-6 animate-fade-in-up" style="animation-delay: 0.2s">
-                        
+                    <h1 class="text-4xl md:text-6xl font-orbitron font-bold mb-6 animate-fade-in-up"
+                        style="animation-delay: 0.2s">
+
                         <span class="text-robotics-gold">News</span>
                         <span class="text-white">& Updates</span>
                     </h1>
-                    
+
                     <!-- Subtitle -->
-                    <p class="text-xl text-gray-300 mb-10 max-w-3xl mx-auto animate-fade-in-up" style="animation-delay: 0.4s">
-                        Stay updated with the latest club activities, industry news, announcements, and robotics innovations from around the world.
+                    <p class="text-xl text-gray-300 mb-10 max-w-3xl mx-auto animate-fade-in-up"
+                        style="animation-delay: 0.4s">
+                        Stay updated with the latest club activities, industry news, announcements, and robotics
+                        innovations from around the world.
                     </p>
                 </div>
             </div>
@@ -107,7 +144,7 @@
                         Internal updates, meeting summaries, announcements, and important information for club members.
                     </p>
                 </div>
-                
+
                 <!-- Filters -->
                 <div class="mb-10 animate-fade-in-up" style="animation-delay: 0.2s">
                     <h3 class="text-xl font-semibold text-white mb-4">Filter by:</h3>
@@ -115,18 +152,18 @@
                         <!-- Filters will be populated by JavaScript -->
                     </div>
                 </div>
-                
+
                 <!-- Loading Indicator -->
                 <div id="club-news-loading" class="flex justify-center items-center py-20">
                     <div class="loading-spinner"></div>
                     <span class="ml-4 text-gray-300">Loading club news...</span>
                 </div>
-                
+
                 <!-- Club News Grid -->
                 <div id="club-news-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- News cards will be populated by JavaScript -->
                 </div>
-                
+
                 <!-- No Results Message -->
                 <div id="club-no-results" class="hidden text-center py-12">
                     <i class="fas fa-newspaper text-5xl text-gray-500 mb-4"></i>
@@ -145,10 +182,11 @@
                         <span class="text-robotics-light-blue">Robotics Industry</span> News
                     </h2>
                     <p class="text-gray-300 max-w-3xl mx-auto">
-                        Latest developments, breakthroughs, and trends in the robotics industry from trusted sources worldwide.
+                        Latest developments, breakthroughs, and trends in the robotics industry from trusted sources
+                        worldwide.
                     </p>
                 </div>
-                
+
                 <!-- Filters -->
                 <div class="mb-10 animate-fade-in-up" style="animation-delay: 0.2s">
                     <h3 class="text-xl font-semibold text-white mb-4">Filter by Source:</h3>
@@ -156,18 +194,18 @@
                         <!-- Filters will be populated by JavaScript -->
                     </div>
                 </div>
-                
+
                 <!-- Loading Indicator -->
                 <div id="industry-news-loading" class="flex justify-center items-center py-20">
                     <div class="loading-spinner"></div>
                     <span class="ml-4 text-gray-300">Loading industry news...</span>
                 </div>
-                
+
                 <!-- Industry News Grid -->
                 <div id="industry-news-container" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- News cards will be populated by JavaScript -->
                 </div>
-                
+
                 <!-- No Results Message -->
                 <div id="industry-no-results" class="hidden text-center py-12">
                     <i class="fas fa-globe-americas text-5xl text-gray-500 mb-4"></i>
@@ -183,33 +221,29 @@
                 <div class="max-w-4xl mx-auto">
                     <div class="newsletter-form rounded-2xl p-8 md:p-12 text-center animate-fade-in-up">
                         <!-- Icon -->
-                        <div class="w-20 h-20 bg-robotics-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <div
+                            class="w-20 h-20 bg-robotics-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
                             <i class="fas fa-paper-plane text-3xl text-robotics-gold"></i>
                         </div>
-                        
+
                         <!-- Heading -->
                         <h2 class="text-3xl md:text-4xl font-orbitron font-bold text-white mb-4">
                             Stay <span class="text-robotics-gold">Updated</span>
                         </h2>
-                        
+
                         <!-- Description -->
                         <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
-                            Subscribe to our newsletter to receive weekly updates about club activities, industry news, upcoming events, and exclusive content.
+                            Subscribe to our newsletter to receive weekly updates about club activities, industry news,
+                            upcoming events, and exclusive content.
                         </p>
-                        
+
                         <!-- Subscription Form -->
                         <form id="newsletter-form" class="max-w-md mx-auto">
                             <div class="flex flex-col sm:flex-row gap-4 mb-6">
-                                <input 
-                                    type="email" 
-                                    id="email-input"
-                                    placeholder="Enter your email address" 
+                                <input type="email" id="email-input" placeholder="Enter your email address"
                                     class="flex-grow px-6 py-4 bg-white/10 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-robotics-gold transition"
-                                    required
-                                >
-                                <button 
-                                    type="submit" 
-                                    class="px-8 py-4 cta-button primary">
+                                    required>
+                                <button type="submit" class="px-8 py-4 cta-button primary">
                                     Subscribe
                                 </button>
                             </div>
@@ -217,17 +251,20 @@
                                 We respect your privacy. Unsubscribe at any time.
                             </p>
                         </form>
-                        
+
                         <!-- Success Message -->
-                        <div id="newsletter-success" class="hidden mt-6 p-4 bg-green-900/30 border border-green-700 rounded-xl">
+                        <div id="newsletter-success"
+                            class="hidden mt-6 p-4 bg-green-900/30 border border-green-700 rounded-xl">
                             <div class="flex items-center justify-center gap-3">
                                 <i class="fas fa-check-circle text-green-400 text-xl"></i>
-                                <p class="text-green-300">Thank you for subscribing! Please check your email to confirm.</p>
+                                <p class="text-green-300">Thank you for subscribing! Please check your email to confirm.
+                                </p>
                             </div>
                         </div>
-                        
+
                         <!-- Error Message -->
-                        <div id="newsletter-error" class="hidden mt-6 p-4 bg-red-900/30 border border-red-700 rounded-xl">
+                        <div id="newsletter-error"
+                            class="hidden mt-6 p-4 bg-red-900/30 border border-red-700 rounded-xl">
                             <div class="flex items-center justify-center gap-3">
                                 <i class="fas fa-exclamation-circle text-red-400 text-xl"></i>
                                 <p class="text-red-300" id="error-message">Something went wrong. Please try again.</p>
@@ -239,7 +276,7 @@
         </section>
     </main>
 
-<!-- Footer Placeholder -->
+    <!-- Footer Placeholder -->
     <div id="footer-placeholder"></div>
 
     <!-- Component Loader Script -->
@@ -250,6 +287,7 @@
 
     <!-- Index Page specific Script-->
     <script src="./js/pages/news.js"></script>
-    
+
 </body>
+
 </html>
