@@ -460,9 +460,9 @@ function initializeTimeline() {
                         </div>
                         
                         <!-- Achievement Name -->
-                        <h4 class="text-xl font-orbitron font-bold text-white mb-2 hover:text-robotics-gold transition-colors">
+                        <h3 class="text-xl font-orbitron font-bold text-white mb-2 hover:text-robotics-gold transition-colors">
                             ${achievement.name}
-                        </h4>
+                        </h3>
                         
                         <!-- Achievement Type -->
                         <div class="flex items-center gap-2 text-robotics-gold font-semibold mb-3">

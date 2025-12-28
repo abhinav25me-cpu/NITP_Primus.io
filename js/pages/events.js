@@ -187,9 +187,9 @@ const Templates = {
                         <span class="category-badge category-${event.category}">
                             ${event.category.toUpperCase()}
                         </span>
-                        <h4 class="text-xl font-orbitron font-bold text-white mt-2">
+                        <h3 class="text-xl font-orbitron font-bold text-white mt-2">
                             ${event.title}
-                        </h4>
+                        </h3>
                     </div>
                     
                     <!-- Date container with better separation -->
