@@ -251,9 +251,9 @@ const Templates = {
                 <span class="category-badge category-${event.category} mb-2">
                     ${event.category.toUpperCase()}
                 </span>
-                <h4 class="text-lg font-orbitron font-bold text-white mb-2">
+                <h3 class="text-lg font-orbitron font-bold text-white mb-2">
                     ${event.title}
-                </h4>
+                </h3>
                 <p class="text-gray-300 text-sm mb-2">${Utils.formatDate(event.date)}</p>
                 <p class="text-gray-300 text-xs">${event.brief}</p>
             </div>
