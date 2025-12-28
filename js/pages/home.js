@@ -130,7 +130,6 @@
    HERO SECTION EFFECTS
    - Particles
    - Glitch Text
-   - Parallax
    - Typewriter Tagline
 ============================================================ */
 
@@ -159,38 +158,24 @@ function initHeroEffects() {
         }
     }
 
-    /* ===============================
-       PARALLAX BACKGROUND (OPTIMIZED)
-    =============================== */
-    const bgMain = document.querySelector('.background-main');
-    const bgSecondary = document.querySelector('.background-secondary');
+    const wrapper = document.querySelector('.background-wrapper');
 
-    if (bgMain || bgSecondary) {
-        let mouseX = 0;
-        let mouseY = 0;
-        let rafId = null;
+    if (wrapper && window.matchMedia('(pointer: fine)').matches) {
+        let x = 0, y = 0, raf = null;
 
-        function updateParallax() {
-            if (bgMain) {
-                bgMain.style.transform =
-                    `translate(${mouseX * 0.5}px, ${mouseY * 0.5}px) scale(1.1)`;
-            }
-            if (bgSecondary) {
-                bgSecondary.style.transform =
-                    `translate(${mouseX * 0.3}px, ${mouseY * 0.3}px) scale(1.05)`;
-            }
-            rafId = null;
-        }
+        const update = () => {
+            wrapper.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+            raf = null;
+        };
 
         document.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth - 0.5) * 20;
-            mouseY = (e.clientY / window.innerHeight - 0.5) * 20;
+            x = (e.clientX / window.innerWidth - 0.5) * 8;
+            y = (e.clientY / window.innerHeight - 0.5) * 8;
 
-            if (!rafId) {
-                rafId = requestAnimationFrame(updateParallax);
-            }
+            if (!raf) raf = requestAnimationFrame(update);
         });
     }
+
 
     /* ===============================
        TYPEWRITER TAGLINE

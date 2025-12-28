@@ -8,14 +8,16 @@
 
     <!-- Primary Meta Tags -->
     <title>Robotics Club | NIT Patna - Innovating the Future</title>
-    <meta name="description" content="Official website of Robotics Club, NIT Patna. Explore our projects, events, team, and achievements in robotics technology and innovation.">
+    <meta name="description"
+        content="Official website of Robotics Club, NIT Patna. Explore our projects, events, team, and achievements in robotics technology and innovation.">
 
     <!-- Theme Color for Mobile Browsers -->
     <meta name="theme-color" content="#0a1a3a">
 
     <!-- Open Graph Meta Tags (for Facebook, LinkedIn, etc.) -->
     <meta property="og:title" content="Robotics Club | NIT Patna">
-    <meta property="og:description" content="Official website of Robotics Club, NIT Patna. Innovating the future with cutting-edge robotics technology.">
+    <meta property="og:description"
+        content="Official website of Robotics Club, NIT Patna. Innovating the future with cutting-edge robotics technology.">
     <meta property="og:image" content="./images/favicon/favicon-32x32.png">
     <meta property="og:image:alt" content="Robotics Club NIT Patna Logo">
     <meta property="og:url" content="https://abhinav25me-cpu.github.io/NITP_Primus.io/index.html">
@@ -139,6 +141,10 @@
 
     <!-- index page specific CSS -->
     <link rel="stylesheet" href="./css/pages/home.css">
+
+    <!-- Preload Hero images -->
+    <link rel="preload" as="image" href="./images/background/index_hero.webp">
+    <link rel="preload" as="image" href="./images/background/index_hero-overlay.webp">
 </head>
 
 <body class="font-roboto bg-gray-900 text-white flex flex-col min-h-screen">
@@ -155,8 +161,14 @@
         <!-- Hero Section -->
         <section class="hero-section">
             <!-- Animated Background Layers -->
-            <div class="background-layer background-main"></div>
-            <div class="background-layer background-secondary"></div>
+            <div class="background-wrapper">
+                <img class="background-layer background-main" src="./images/background/index_hero.webp" alt=""
+                    width="360" height="640" loading="eager" fetchpriority="high" decoding="async" />
+
+                <img class="background-layer background-secondary" src="./images/background/index_hero-overlay.webp"
+                    alt="" width="360" height="640" loading="lazy" decoding="async" />
+            </div>
+
 
             <!-- Gradient Overlays -->
             <div class="gradient-overlay"></div>
@@ -636,7 +648,7 @@
             </div>
         </section>
 
-         <!-- ====================
+        <!-- ====================
      RECENT ACHIEVEMENTS SECTION
 ===================== -->
         <section id="recent-achievements" class="recent-achievements-section relative overflow-hidden">
@@ -790,4 +802,3 @@
 
 
 </html>
-
