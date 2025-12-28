@@ -60,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
             projectsData = getFallbackProjectsData();
             filteredProjects = [...projectsData];
 
-            console.log(`Using fallback data with ${projectsData.length} projects`);
         }
     }
 

@@ -46,8 +46,7 @@ function initNewsPage() {
  */
 async function initialize() {
     try {
-        console.log('Initializing news page...');
-        
+      
         // Initialize DOM element references
         initializeDOMElements();
         
@@ -66,8 +65,6 @@ async function initialize() {
         
         // Hide loading indicators
         hideLoadingIndicators();
-        
-        console.log('News page initialized successfully');
         
         // Add CSS animations for newly loaded content
         addContentAnimations();
@@ -103,8 +100,6 @@ function initializeDOMElements() {
  */
 async function loadNewsData() {
     try {
-        console.log('Loading news data from:', CONFIG.jsonPath);
-        
         // For development: Load from local JSON file
         const response = await fetch(CONFIG.jsonPath);
         
@@ -118,8 +113,6 @@ async function loadNewsData() {
         appState.clubNews = data.clubNews || [];
         appState.industryNews = data.industryNews || [];
         
-        console.log(`Loaded ${appState.clubNews.length} club news and ${appState.industryNews.length} industry news items`);
-    } catch (error) {
         console.error('Error loading news data:', error);
         
         // Fallback to sample data if JSON file not found
@@ -541,9 +534,6 @@ function handleNewsletterSubmit(e) {
         
         // Reset form
         emailInput.value = '';
-        
-        // Log subscription (in production, this would be a backend call)
-        console.log(`New newsletter subscriber: ${email}`);
         
     } catch (error) {
         console.error('Newsletter subscription error:', error);
