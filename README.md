@@ -60,6 +60,27 @@ Chosen for simplicity, performance, and ease of future backend/API integration w
 
 ---
 
+## 📊 Performance Monitoring
+
+### Vercel Speed Insights
+
+This project includes **Vercel Speed Insights** for real-time performance monitoring and metrics tracking:
+
+- **Implementation**: Speed Insights scripts are integrated into all HTML pages
+- **Tracking**: Automatic performance metrics collection (Core Web Vitals, etc.)
+- **Dashboard**: View performance data on [Vercel Dashboard](/dashboard)
+- **Privacy**: Data collection respects privacy and compliance standards
+
+**Setup Details:**
+- Speed Insights is enabled on Vercel deployment
+- No additional package installation required (static HTML implementation)
+- Scripts are included before closing `</body>` tags in all pages
+- Route tracking: `/_vercel/speed-insights/*`
+
+For more information, visit [Vercel Speed Insights Documentation](/docs/speed-insights).
+
+---
+
 ## 🚀 Future Readiness
 
 - Sections structured for API-based data fetching
