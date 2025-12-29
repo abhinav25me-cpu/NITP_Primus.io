@@ -1,292 +1,291 @@
- /* Team Page Specific Styles */
+/* Team Page Specific Styles */
 
- /* Hero Section */
- .team-hero {
-     background: linear-gradient(135deg, rgba(10, 26, 58, 0.9) 0%, rgba(15, 23, 42, 0.8) 100%),
-         url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-     background-size: cover;
-     background-position: center;
-     background-attachment: fixed;
- }
+/* Hero Section */
+.team-hero {
+    background: linear-gradient(135deg, rgba(10, 26, 58, 0.9) 0%, rgba(15, 23, 42, 0.8) 100%);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
- /* Section background gradients */
- .section-bg-gradient {
-     background: linear-gradient(135deg, #0a1a3a 0%, #0f172a 100%);
- }
+/* Section background gradients */
+.section-bg-gradient {
+    background: linear-gradient(135deg, #0a1a3a 0%, #0f172a 100%);
+}
 
- .section-alt-gradient {
-     background: linear-gradient(135deg, #0f172a 0%, #0a1a3a 100%);
- }
+.section-alt-gradient {
+    background: linear-gradient(135deg, #0f172a 0%, #0a1a3a 100%);
+}
 
- /* Card Styles */
- .team-card {
-     background: rgba(26, 40, 70, 0.6);
-     border: 1px solid rgba(255, 215, 0, 0.1);
-     border-radius: 16px;
-     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-     overflow: hidden;
-     position: relative;
- }
+/* Card Styles */
+.team-card {
+    background: rgba(26, 40, 70, 0.6);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: 16px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+}
 
- .team-card::before {
-     content: '';
-     position: absolute;
-     top: 0;
-     left: 0;
-     right: 0;
-     height: 4px;
-     background: linear-gradient(90deg, #ffd700, #00b4d8);
-     opacity: 0;
-     transition: opacity 0.3s ease;
- }
+.team-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ffd700, #00b4d8);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
- .team-card:hover::before {
-     opacity: 1;
- }
+.team-card:hover::before {
+    opacity: 1;
+}
 
- .team-card:hover {
-     transform: translateY(-10px);
-     border-color: rgba(255, 215, 0, 0.3);
-     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
- }
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
 
- /* Faculty Advisor Card */
- .faculty-card {
-     background: linear-gradient(145deg, rgba(26, 40, 70, 0.8), rgba(10, 26, 58, 0.9));
-     border: 1px solid rgba(255, 215, 0, 0.2);
- }
+/* Faculty Advisor Card */
+.faculty-card {
+    background: linear-gradient(145deg, rgba(26, 40, 70, 0.8), rgba(10, 26, 58, 0.9));
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
 
- /* Core Team Role Badges */
- .role-badge {
-     display: inline-block;
-     padding: 6px 15px;
-     border-radius: 20px;
-     font-size: 0.85rem;
-     font-weight: 600;
-     letter-spacing: 0.5px;
- }
+/* Core Team Role Badges */
+.role-badge {
+    display: inline-block;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
 
- .role-president {
-     background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
-     color: #ffd700;
-     border: 1px solid rgba(255, 215, 0, 0.3);
- }
+.role-president {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.1));
+    color: #ffd700;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+}
 
- .role-vice-president {
-     background: linear-gradient(135deg, rgba(0, 180, 216, 0.2), rgba(0, 180, 216, 0.1));
-     color: #00b4d8;
-     border: 1px solid rgba(0, 180, 216, 0.3);
- }
+.role-vice-president {
+    background: linear-gradient(135deg, rgba(0, 180, 216, 0.2), rgba(0, 180, 216, 0.1));
+    color: #00b4d8;
+    border: 1px solid rgba(0, 180, 216, 0.3);
+}
 
- .role-coordinator {
-     background: linear-gradient(135deg, rgba(255, 100, 100, 0.2), rgba(255, 100, 100, 0.1));
-     color: #ff6464;
-     border: 1px solid rgba(255, 100, 100, 0.3);
- }
+.role-coordinator {
+    background: linear-gradient(135deg, rgba(255, 100, 100, 0.2), rgba(255, 100, 100, 0.1));
+    color: #ff6464;
+    border: 1px solid rgba(255, 100, 100, 0.3);
+}
 
- .role-treasurer {
-     background: linear-gradient(135deg, rgba(100, 255, 100, 0.2), rgba(100, 255, 100, 0.1));
-     color: #64ff64;
-     border: 1px solid rgba(100, 255, 100, 0.3);
- }
+.role-treasurer {
+    background: linear-gradient(135deg, rgba(100, 255, 100, 0.2), rgba(100, 255, 100, 0.1));
+    color: #64ff64;
+    border: 1px solid rgba(100, 255, 100, 0.3);
+}
 
- /* Team Member Specialization Tabs */
- .specialization-tab {
-     display: flex;
-     align-items: center;
-     background: rgba(26, 40, 70, 0.5);
-     border: 1px solid rgba(255, 255, 255, 0.1);
-     border-radius: 12px;
-     padding: 12px 20px;
-     cursor: pointer;
-     transition: all 0.3s ease;
-     color: rgba(255, 255, 255, 0.7);
-     font-weight: 500;
-     border: none;
-     font-family: inherit;
- }
+/* Team Member Specialization Tabs */
+.specialization-tab {
+    display: flex;
+    align-items: center;
+    background: rgba(26, 40, 70, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 500;
+    border: none;
+    font-family: inherit;
+}
 
- .specialization-tab:hover {
-     background: rgba(255, 215, 0, 0.1);
-     border-color: rgba(255, 215, 0, 0.3);
-     color: rgba(255, 255, 255, 0.9);
- }
+.specialization-tab:hover {
+    background: rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+}
 
- .specialization-tab.active {
-     background: rgba(255, 215, 0, 0.2);
-     border-color: #ffd700;
-     color: #ffd700;
-     box-shadow: 0 4px 12px rgba(255, 215, 0, 0.1);
- }
+.specialization-tab.active {
+    background: rgba(255, 215, 0, 0.2);
+    border-color: #ffd700;
+    color: #ffd700;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.1);
+}
 
 
- /* Alumni Card */
- .alumni-card {
-     background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(10, 26, 58, 0.9));
-     border: 1px solid rgba(255, 215, 0, 0.1);
- }
+/* Alumni Card */
+.alumni-card {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.8), rgba(10, 26, 58, 0.9));
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
 
- /* Profile Image */
- .profile-img {
-     width: 180px;
-     height: 180px;
-     object-fit: cover;
-     border-radius: 50%;
-     border: 4px solid rgba(255, 215, 0, 0.3);
- }
+/* Profile Image */
+.profile-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 215, 0, 0.3);
+}
 
- /* Achievement List */
- .achievement-list li {
-     position: relative;
-     padding-left: 1.5rem;
-     margin-bottom: 0.75rem;
- }
+/* Achievement List */
+.achievement-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
 
- .achievement-list li::before {
-     content: '✓';
-     position: absolute;
-     left: 0;
-     color: #ffd700;
-     font-weight: bold;
- }
+.achievement-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-weight: bold;
+}
 
- /* Loading Animation */
- .loading-spinner {
-     border: 4px solid rgba(255, 215, 0, 0.1);
-     border-top: 4px solid #ffd700;
-     border-radius: 50%;
-     width: 50px;
-     height: 50px;
-     animation: spin 1s linear infinite;
- }
+/* Loading Animation */
+.loading-spinner {
+    border: 4px solid rgba(255, 215, 0, 0.1);
+    border-top: 4px solid #ffd700;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
 
- @keyframes spin {
-     0% {
-         transform: rotate(0deg);
-     }
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
 
-     100% {
-         transform: rotate(360deg);
-     }
- }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
- /* Responsive Adjustments */
- @media (max-width: 768px) {
-     .profile-img {
-         width: 140px;
-         height: 140px;
-     }
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
 
-     .team-card {
-         margin-bottom: 1.5rem;
-     }
- }
+    .team-card {
+        margin-bottom: 1.5rem;
+    }
+}
 
- @media (max-width: 640px) {
-     .profile-img {
-         width: 120px;
-         height: 120px;
-     }
- }
+@media (max-width: 640px) {
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+}
 
- /* Filter Chips */
- .filter-chip {
-     display: inline-flex;
-     align-items: center;
-     background: rgba(255, 215, 0, 0.1);
-     border: 1px solid rgba(255, 215, 0, 0.3);
-     border-radius: 20px;
-     padding: 6px 12px;
-     font-size: 0.875rem;
-     color: #ffd700;
- }
+/* Filter Chips */
+.filter-chip {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-size: 0.875rem;
+    color: #ffd700;
+}
 
- /* Badges */
- .department-badge,
- .year-badge,
- .specialization-badge {
-     display: inline-flex;
-     align-items: center;
-     background: rgba(26, 40, 70, 0.5);
-     border-radius: 15px;
-     padding: 4px 10px;
-     font-size: 0.75rem;
-     color: rgba(255, 255, 255, 0.8);
- }
+/* Badges */
+.department-badge,
+.year-badge,
+.specialization-badge {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(26, 40, 70, 0.5);
+    border-radius: 15px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+}
 
- .specialization-badge {
-     background: rgba(255, 215, 0, 0.1);
-     color: #ffd700;
- }
+.specialization-badge {
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+}
 
- /* Skill Badges */
- .skill-badge {
-     display: inline-block;
-     background: rgba(0, 180, 216, 0.1);
-     border: 1px solid rgba(0, 180, 216, 0.2);
-     border-radius: 12px;
-     padding: 4px 10px;
-     font-size: 0.75rem;
-     color: rgba(0, 180, 216, 0.9);
-     margin: 2px;
- }
+/* Skill Badges */
+.skill-badge {
+    display: inline-block;
+    background: rgba(0, 180, 216, 0.1);
+    border: 1px solid rgba(0, 180, 216, 0.2);
+    border-radius: 12px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    color: rgba(0, 180, 216, 0.9);
+    margin: 2px;
+}
 
- /* Social Links */
- .social-links {
-     border-top: 1px solid rgba(255, 255, 255, 0.1);
-     padding-top: 12px;
- }
+/* Social Links */
+.social-links {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 12px;
+}
 
- .social-link {
-     color: rgba(255, 255, 255, 0.5);
-     transition: all 0.3s ease;
-     font-size: 1.1rem;
- }
+.social-link {
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+}
 
- .social-link:hover {
-     color: #ffd700;
-     transform: translateY(-2px);
- }
+.social-link:hover {
+    color: #ffd700;
+    transform: translateY(-2px);
+}
 
- /* Animation for filter changes */
- @keyframes fadeIn {
-     from {
-         opacity: 0;
-         transform: translateY(10px);
-     }
+/* Animation for filter changes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
 
-     to {
-         opacity: 1;
-         transform: translateY(0);
-     }
- }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
- .team-card {
-     animation: fadeIn 0.4s ease forwards;
- }
+.team-card {
+    animation: fadeIn 0.4s ease forwards;
+}
 
- /* Responsive adjustments */
- @media (max-width: 768px) {
-     .specialization-tab {
-         padding: 10px 15px;
-         font-size: 0.9rem;
-     }
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .specialization-tab {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
 
-     .skills-container {
-         max-height: 100px;
-         overflow-y: auto;
-     }
- }
+    .skills-container {
+        max-height: 100px;
+        overflow-y: auto;
+    }
+}
 
- @media (max-width: 640px) {
-     #specialization-tabs {
-         overflow-x: auto;
-         flex-wrap: nowrap;
-         justify-content: flex-start;
-         padding-bottom: 10px;
-     }
+@media (max-width: 640px) {
+    #specialization-tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+    }
 
-     .specialization-tab {
-         flex-shrink: 0;
-     }
- }
+    .specialization-tab {
+        flex-shrink: 0;
+    }
+}

@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', async function () {
         animateTimelineItems();
 
     } catch (error) {
-        console.error('Error initializing achievements page:', error);
         showErrorMessage('Failed to load achievements data. Please try again later.');
     }
 });
@@ -62,7 +61,6 @@ async function loadAchievementsData() {
  * Create sample data if JSON file is not available
  */
 function createSampleData() {
-    console.log('Creating sample achievements data for demo...');
 
     achievementsData = [
         {
@@ -73,7 +71,7 @@ function createSampleData() {
             achievement: '1st Place Overall',
             description: 'Secured first position in autonomous robotics category.',
             brief_description: 'Won national robotics championship',
-            thumbnail: 'https://images.unsplash.com/photo-1620712947143-79a67c8e023f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            thumbnail: '',
             team_members: ['Rahul Sharma', 'Priya Singh', 'Amit Kumar'],
             details: {
                 competition_name: 'National Robotics Championship 2023',
@@ -92,7 +90,7 @@ function createSampleData() {
             achievement: 'Research Paper Published',
             description: 'Published research paper in IEEE Journal.',
             brief_description: 'Published IEEE paper on agricultural robotics',
-            thumbnail: 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            thumbnail: '',
             team_members: ['Dr. A. K. Sharma', 'Vikram Reddy'],
             details: {
                 journal_name: 'IEEE Transactions on Robotics',
@@ -235,7 +233,7 @@ function getCategoryColor(category) {
     const colors = {
         competition: 'robotics-light-blue',
         research: 'green-500',
-        innovation: 'purple-500',
+        innovation: 'robotics-light-blue',
         grants_awards: 'robotics-gold'
     };
     return colors[category] || 'robotics-gold';
@@ -368,11 +366,6 @@ function animateCounter(element, target) {
  * Initialize timeline with ALL FEATURED achievements for every year
  */
 function initializeTimeline() {
-    if (!timelineContainer) {
-        console.error('Timeline container not found');
-        return;
-    }
-
     // Show loading state
     timelineContainer.innerHTML = `
         <div class="flex justify-center py-10">
@@ -576,7 +569,7 @@ function getCategoryGradient(category) {
     const gradients = {
         competition: 'robotics-light-blue',
         research: 'green-500',
-        innovation: 'purple-500',
+        innovation: 'robotics-light-blue',
         grants_awards: 'orange-500'
     };
     return gradients[category] || 'robotics-gold';
@@ -662,7 +655,7 @@ function generateModalContent(achievement) {
                         src="${achievement.thumbnail}" 
                         alt="${achievement.name}"
                         class="w-full h-64 object-cover"
-                        onerror="this.src='https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'"
+                        loading="lazy"
                     >
                 </div>
                 

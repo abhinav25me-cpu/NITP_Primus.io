@@ -10,7 +10,7 @@
       "achievement": "1st Place Overall",
       "description": "Secured first position in the autonomous robotics category against 50+ teams from across India with our self-navigating robot.",
       "brief_description": "Won national robotics championship with autonomous robot",
-      "thumbnail": "https://images.unsplash.com/photo-1620712947143-79a67c8e023f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "thumbnail": "./images/background/1.webp",
       "team_members": [
         "Rahul Sharma",
         "Priya Singh",
@@ -156,7 +156,7 @@
       "achievement": "2nd Place International",
       "description": "Secured second position in International Autonomous Drone Racing Championship held in Singapore.",
       "brief_description": "Second place in international drone racing",
-      "thumbnail": "https://images.unsplash.com/photo-1506947411487-a56738267384?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      "thumbnail": "./images/background/7.webp",
       "team_members": [
         "Ravi Shastri",
         "Anita Desai",

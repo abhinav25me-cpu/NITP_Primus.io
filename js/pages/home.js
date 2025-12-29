@@ -1046,7 +1046,7 @@ class SimpleImageSlider {
                 "id": 1,
                 "title": "Robotics Club",
                 "description": "Our club activities",
-                "url": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80",
+                "url": "./images/background/1.webp",
                 "alt": "Robotics club",
                 "category": "Club"
             },
@@ -1054,7 +1054,7 @@ class SimpleImageSlider {
                 "id": 2,
                 "title": "Technical Workshop",
                 "description": "Hands-on learning sessions",
-                "url": "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=800&q=80",
+                "url": "./images/background/2.webp",
                 "alt": "Technical workshop",
                 "category": "Workshop"
             },
@@ -1062,7 +1062,7 @@ class SimpleImageSlider {
                 "id": 3,
                 "title": "Coding Event",
                 "description": "Competitive programming and hackathons",
-                "url": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+                "url": "./images/background/3.webp",
                 "alt": "Coding event",
                 "category": "Event"
             },
@@ -1070,7 +1070,7 @@ class SimpleImageSlider {
                 "id": 4,
                 "title": "Mechanical Lab",
                 "description": "Practical mechanical engineering experiments",
-                "url": "https://images.unsplash.com/photo-1581091012184-5c7d7b6d3c98?auto=format&fit=crop&w=800&q=80",
+                "url": "./images/background/4.webp",
                 "alt": "Mechanical engineering lab",
                 "category": "Laboratory"
             },
@@ -1078,49 +1078,9 @@ class SimpleImageSlider {
                 "id": 5,
                 "title": "Electronics Project",
                 "description": "Innovative electronics and PCB design",
-                "url": "https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=800&q=80",
+                "url": "./images/background/5.webp",
                 "alt": "Electronics project",
                 "category": "Project"
-            },
-            {
-                "id": 6,
-                "title": "Team Collaboration",
-                "description": "Students working together on projects",
-                "url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80",
-                "alt": "Team collaboration",
-                "category": "Team"
-            },
-            {
-                "id": 7,
-                "title": "Innovation Showcase",
-                "description": "Displaying student innovations",
-                "url": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
-                "alt": "Innovation showcase",
-                "category": "Exhibition"
-            },
-            {
-                "id": 8,
-                "title": "AI & Robotics",
-                "description": "Artificial intelligence and robotics research",
-                "url": "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?auto=format&fit=crop&w=800&q=80",
-                "alt": "AI robotics",
-                "category": "Research"
-            },
-            {
-                "id": 9,
-                "title": "Campus Event",
-                "description": "Annual technical fest",
-                "url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80",
-                "alt": "Campus technical event",
-                "category": "Festival"
-            },
-            {
-                "id": 10,
-                "title": "Student Presentation",
-                "description": "Knowledge sharing sessions",
-                "url": "https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=800&q=80",
-                "alt": "Student presentation",
-                "category": "Seminar"
             }
         ]
             ;
@@ -1160,8 +1120,7 @@ class SimpleImageSlider {
         slide.innerHTML = `
             <img src="${image.url}" 
                  alt="${image.alt}" 
-                 loading="lazy"
-                 onerror="this.src='https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
+                 loading="lazy">
             <div class="slide-overlay">
                 <span class="slide-category">${image.category}</span>
                 <h3 class="slide-title">${image.title}</h3>

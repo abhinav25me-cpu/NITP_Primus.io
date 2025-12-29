@@ -1,414 +1,413 @@
-        /* ===== ABOUT PAGE SPECIFIC STYLES ===== */
-
-        /* Hero Section */
-        .about-hero {
-            position: relative;
-            min-height: 70vh;
-            background: linear-gradient(rgba(10, 26, 58, 0.9), rgba(10, 26, 58, 0.7)),
-                url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-
-        /* Timeline Styles */
-        .timeline-container {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .timeline-container::after {
-            content: '';
-            position: absolute;
-            width: 6px;
-            background: linear-gradient(to bottom, #ffd700, #00b4d8);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -3px;
-            border-radius: 3px;
-        }
-
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            box-sizing: border-box;
-        }
-
-        .timeline-item:nth-child(odd) {
-            left: 0;
-        }
-
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
-
-        .timeline-content {
-            padding: 20px 30px;
-            background: rgba(26, 40, 70, 0.8);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 16px;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .timeline-content:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 215, 0, 0.4);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: #ffd700;
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg);
-            border-radius: 3px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            left: -10px;
-            background-color: #00b4d8;
-            top: 50%;
-            transform: translateY(-50%) rotate(45deg);
-            border-radius: 3px;
-        }
-
-        /* Mission Vision Cards */
-        .mv-card {
-            background: linear-gradient(145deg, rgba(26, 40, 70, 0.8), rgba(10, 26, 58, 0.9));
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 20px;
-            padding: 40px 30px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 100%;
-        }
-
-        .mv-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 215, 0, 0.4);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Objective List */
-        .objective-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 20px;
-            padding: 15px;
-            background: rgba(26, 40, 70, 0.4);
-            border-radius: 12px;
-            border-left: 4px solid #ffd700;
-            transition: all 0.3s ease;
-        }
-
-        .objective-item:hover {
-            background: rgba(26, 40, 70, 0.6);
-            transform: translateX(5px);
-        }
-
-        /* Responsive Timeline */
-        @media (max-width: 768px) {
-            .timeline-container::after {
-                left: 31px;
-            }
-
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
-            }
-
-            .timeline-item:nth-child(even) {
-                left: 0;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-content::after,
-            .timeline-item:nth-child(even) .timeline-content::after {
-                left: -10px;
-                right: auto;
-            }
-        }
-
-        /* Statistics Counter */
-        .stat-number {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3rem;
-            font-weight: 700;
-            color: #ffd700;
-            line-height: 1;
-        }
-
-        /* Section Dividers */
-        .section-divider {
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #ffd700, #00b4d8, transparent);
-            margin: 60px auto;
-            max-width: 300px;
-            border-radius: 3px;
-        }
-
-        /* Reduced Motion */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-
-
-
-        /* ===== CLUB ACTIVITIES STYLES ===== */
-
-        .competition-item {
-            padding: 15px;
-            background: rgba(26, 40, 70, 0.3);
-            border-radius: 12px;
-            border-left: 4px solid #00b4d8;
-            transition: all 0.3s ease;
-        }
-
-        .competition-item:hover {
-            background: rgba(26, 40, 70, 0.5);
-            transform: translateX(5px);
-        }
-
-        .competition-gallery-item {
-            transition: transform 0.3s ease;
-        }
-
-        .competition-gallery-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .competition-gallery-item img {
-            transition: transform 0.5s ease;
-        }
-
-        .competition-gallery-item:hover img {
-            transform: scale(1.05);
-        }
-
-        /* ===== INFRASTRUCTURE STYLES ===== */
-
-        .lab-feature {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-
-        .lab-feature:hover {
-            background: rgba(255, 215, 0, 0.1);
-        }
-
-        .lab-feature-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lab-feature-icon i {
-            color: #ffd700;
-            font-size: 1.2rem;
-        }
-
-        .lab-feature-title {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.85rem;
-        }
-
-        .lab-feature-value {
-            color: white;
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-
-        /* Specialized Labs */
-        .specialized-lab {
-            background: rgba(26, 40, 70, 0.6);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 100%;
-        }
-
-        .specialized-lab:hover {
-            transform: translateY(-10px);
-            border-color: rgba(255, 215, 0, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .specialized-lab-header {
-            padding: 20px;
-            background: rgba(10, 26, 58, 0.8);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-        }
-
-        .specialized-lab-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 180, 216, 0.1));
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 15px;
-        }
-
-        .specialized-lab-icon i {
-            font-size: 1.5rem;
-            color: #ffd700;
-        }
-
-        .specialized-lab-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .specialized-lab-image {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .specialized-lab-image img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .specialized-lab:hover .specialized-lab-image img {
-            transform: scale(1.05);
-        }
-
-        .specialized-lab-content {
-            padding: 20px;
-        }
-
-        .specialized-lab-description {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-
-        .specialized-lab-equipment {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .specialized-lab-equipment span {
-            display: inline-block;
-            background: rgba(255, 215, 0, 0.1);
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            border-radius: 15px;
-            padding: 4px 10px;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.8);
-        }
-
-        /* Equipment Categories */
-        .equipment-category {
-            background: rgba(26, 40, 70, 0.4);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            border-radius: 16px;
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .equipment-category:hover {
-            border-color: rgba(255, 215, 0, 0.3);
-            transform: translateY(-5px);
-        }
-
-        .equipment-category-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-        }
-
-        .equipment-category-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: white;
-        }
-
-        .equipment-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .equipment-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .equipment-item:last-child {
-            border-bottom: none;
-        }
-
-        .equipment-name {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 0.95rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .grid.grid-cols-2.md\:grid-cols-4 {
-                grid-template-columns: 1fr;
-            }
-
-            .specialized-lab {
-                margin-bottom: 20px;
-            }
-
-            .equipment-category {
-                margin-bottom: 20px;
-            }
-
-            .competition-gallery-item {
-                margin-bottom: 20px;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .grid.grid-cols-1.lg\:grid-cols-2 {
-                grid-template-columns: 1fr;
-            }
-
-            .grid.grid-cols-2 {
-                grid-template-columns: 1fr;
-            }
-        }
+/* ===== ABOUT PAGE SPECIFIC STYLES ===== */
+
+/* Hero Section */
+.about-hero {
+    position: relative;
+    min-height: 70vh;
+    background: linear-gradient(rgba(10, 26, 58, 0.9), rgba(10, 26, 58, 0.7));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Timeline Styles */
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background: linear-gradient(to bottom, #ffd700, #00b4d8);
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 3px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-content {
+    padding: 20px 30px;
+    background: rgba(26, 40, 70, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 16px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 215, 0, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-item:nth-child(odd) .timeline-content::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #ffd700;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    border-radius: 3px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: -10px;
+    background-color: #00b4d8;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    border-radius: 3px;
+}
+
+/* Mission Vision Cards */
+.mv-card {
+    background: linear-gradient(145deg, rgba(26, 40, 70, 0.8), rgba(10, 26, 58, 0.9));
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 20px;
+    padding: 40px 30px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+}
+
+.mv-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 215, 0, 0.4);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Objective List */
+.objective-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(26, 40, 70, 0.4);
+    border-radius: 12px;
+    border-left: 4px solid #ffd700;
+    transition: all 0.3s ease;
+}
+
+.objective-item:hover {
+    background: rgba(26, 40, 70, 0.6);
+    transform: translateX(5px);
+}
+
+/* Responsive Timeline */
+@media (max-width: 768px) {
+    .timeline-container::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::after,
+    .timeline-item:nth-child(even) .timeline-content::after {
+        left: -10px;
+        right: auto;
+    }
+}
+
+/* Statistics Counter */
+.stat-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffd700;
+    line-height: 1;
+}
+
+/* Section Dividers */
+.section-divider {
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ffd700, #00b4d8, transparent);
+    margin: 60px auto;
+    max-width: 300px;
+    border-radius: 3px;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+
+
+/* ===== CLUB ACTIVITIES STYLES ===== */
+
+.competition-item {
+    padding: 15px;
+    background: rgba(26, 40, 70, 0.3);
+    border-radius: 12px;
+    border-left: 4px solid #00b4d8;
+    transition: all 0.3s ease;
+}
+
+.competition-item:hover {
+    background: rgba(26, 40, 70, 0.5);
+    transform: translateX(5px);
+}
+
+.competition-gallery-item {
+    transition: transform 0.3s ease;
+}
+
+.competition-gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.competition-gallery-item img {
+    transition: transform 0.5s ease;
+}
+
+.competition-gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ===== INFRASTRUCTURE STYLES ===== */
+
+.lab-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.lab-feature:hover {
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.lab-feature-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lab-feature-icon i {
+    color: #ffd700;
+    font-size: 1.2rem;
+}
+
+.lab-feature-title {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+}
+
+.lab-feature-value {
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Specialized Labs */
+.specialized-lab {
+    background: rgba(26, 40, 70, 0.6);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+}
+
+.specialized-lab:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.specialized-lab-header {
+    padding: 20px;
+    background: rgba(10, 26, 58, 0.8);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.specialized-lab-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(0, 180, 216, 0.1));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.specialized-lab-icon i {
+    font-size: 1.5rem;
+    color: #ffd700;
+}
+
+.specialized-lab-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+}
+
+.specialized-lab-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.specialized-lab-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.specialized-lab:hover .specialized-lab-image img {
+    transform: scale(1.05);
+}
+
+.specialized-lab-content {
+    padding: 20px;
+}
+
+.specialized-lab-description {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.specialized-lab-equipment {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.specialized-lab-equipment span {
+    display: inline-block;
+    background: rgba(255, 215, 0, 0.1);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 15px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Equipment Categories */
+.equipment-category {
+    background: rgba(26, 40, 70, 0.4);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: 16px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.equipment-category:hover {
+    border-color: rgba(255, 215, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.equipment-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.equipment-category-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+}
+
+.equipment-list {
+    list-style: none;
+    padding: 0;
+}
+
+.equipment-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.equipment-item:last-child {
+    border-bottom: none;
+}
+
+.equipment-name {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .grid.grid-cols-2.md\:grid-cols-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .specialized-lab {
+        margin-bottom: 20px;
+    }
+
+    .equipment-category {
+        margin-bottom: 20px;
+    }
+
+    .competition-gallery-item {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .grid.grid-cols-1.lg\:grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid.grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}

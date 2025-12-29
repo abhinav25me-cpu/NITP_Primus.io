@@ -69,7 +69,6 @@ async function initialize() {
         // Add CSS animations for newly loaded content
         addContentAnimations();
     } catch (error) {
-        console.error('Error initializing news page:', error);
         showError('Failed to load news. Please refresh the page.');
     }
 }
@@ -112,14 +111,9 @@ async function loadNewsData() {
         // Store data in state
         appState.clubNews = data.clubNews || [];
         appState.industryNews = data.industryNews || [];
-        
-        console.error('Error loading news data:', error);
-        
-        // Fallback to sample data if JSON file not found
-        if (error.message.includes('Failed to fetch')) {
-            console.warn('Using fallback data - JSON file not found at specified path');
-            useFallbackData();
-        }
+    
+    }
+    catch (error) {
     }
 }
 
@@ -482,10 +476,6 @@ function createIndustryNewsCard(newsItem) {
  * Setup newsletter subscription form
  */
 function setupNewsletter() {
-    if (!elements.newsletterForm) {
-        console.warn('Newsletter form not found');
-        return;
-    }
     
     elements.newsletterForm.addEventListener('submit', handleNewsletterSubmit);
     
@@ -536,7 +526,6 @@ function handleNewsletterSubmit(e) {
         emailInput.value = '';
         
     } catch (error) {
-        console.error('Newsletter subscription error:', error);
         showNewsletterError('Subscription failed. Please try again.');
     }
 }
