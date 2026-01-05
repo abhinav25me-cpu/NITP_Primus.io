@@ -140,15 +140,6 @@
     }
 }
 
-/* Statistics Counter */
-.stat-number {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #ffd700;
-    line-height: 1;
-}
-
 /* Section Dividers */
 .section-divider {
     height: 3px;

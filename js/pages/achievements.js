@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         // Initialize page components
         initializeFilterButtons();
         renderAchievementsGrid();
-        initializeStats();
+        initStatsCounters();
         initializeTimeline();
 
         // Add scroll event listener for timeline animation
@@ -323,23 +323,6 @@ function addAchievementCardClickHandlers() {
             }
         });
     });
-}
-
-/**
- * Initialize stats counters with animation
- */
-function initializeStats() {
-    if (!statsNumbers.length) return;
-
-    // Calculate statistics from data
-    const totalAchievements = parseInt(document.getElementById('total-achievements').getAttribute('data-count'))
-    const competitionWins = parseInt(document.getElementById('competition-wins').getAttribute('data-count'));
-    const projectsCompleted = parseInt(document.getElementById('projects-completed').getAttribute('data-count'));
-
-    // Animate stats counters
-    animateCounter(document.getElementById('total-achievements'), totalAchievements);
-    animateCounter(document.getElementById('competition-wins'), competitionWins);
-    animateCounter(document.getElementById('projects-completed'), projectsCompleted);
 }
 
 /**
@@ -899,7 +882,7 @@ if (typeof module !== 'undefined' && module.exports) {
         loadAchievementsData,
         initializeFilterButtons,
         renderAchievementsGrid,
-        initializeStats,
+        initStatsCounters,
         initializeTimeline,
         openAchievementModal,
         closeAchievementModal

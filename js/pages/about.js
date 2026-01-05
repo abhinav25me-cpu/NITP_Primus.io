@@ -3,25 +3,7 @@
 // ============================================
 
 document.addEventListener('DOMContentLoaded', function () {
-    // ========== STATISTICS COUNTER ANIMATION ==========
-    const statElements = document.querySelectorAll('.stat-number');
-
-    const animateCounter = (element) => {
-        const target = parseInt(element.getAttribute('data-count'));
-        const duration = 2000; // 2 seconds
-        const step = Math.ceil(target / (duration / 16)); // 60fps
-        let current = 0;
-
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= target) {
-                element.textContent = target;
-                clearInterval(timer);
-            } else {
-                element.textContent = current;
-            }
-        }, 16);
-    };
+    initStatsCounters();
 
     // Intersection Observer for counter animation
     const observer = new IntersectionObserver((entries) => {

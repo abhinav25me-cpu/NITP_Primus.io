@@ -250,49 +250,6 @@
     animation: gradientShift 3s ease infinite;
 }
 
-/* Animated Stats */
-.stats-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    max-width: 600px;
-    animation: fadeInUp 0.8s ease 1.4s both;
-}
-
-.stat-item {
-    background: rgba(10, 26, 58, 0.7);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 215, 0, 0.2);
-    border-radius: 15px;
-    padding: 25px;
-    text-align: center;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.stat-item:hover {
-    border-color: rgba(255, 215, 0, 0.4);
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-.stat-number {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3rem;
-    font-weight: 700;
-    color: #ffd700;
-    margin-bottom: 5px;
-    line-height: 1;
-}
-
-.stat-label {
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.8);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
 @keyframes scrollDown {
     0% {
         opacity: 0;
