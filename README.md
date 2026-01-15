@@ -56,7 +56,7 @@ Chosen for simplicity, performance, and ease of future backend/API integration w
 - Page-specific CSS for maintainability  
 - Reusable component styles (navbar, footer)  
 - Modular JavaScript files by responsibility  
-- Data and UI logic kept loosely coupled  
+- Data of some pages in Json files
 
 ---
 
@@ -74,6 +74,11 @@ Chosen for simplicity, performance, and ease of future backend/API integration w
 **Saurabh Chaurasia**
 
 ---
+
+
+## Screenshots 📸
+
+
 
 ## 📜 Note
 
