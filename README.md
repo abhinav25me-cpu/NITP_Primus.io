@@ -149,6 +149,14 @@ Unlike many typical frontend submissions, this project focuses not only on visua
 
 ![Achievement Page](Screenshots/IMG-20260115-WA0014.jpg)
 
+![Home Page](Screenshots/Home.jpg)
+
+![Event Page](Screenshots/Events.jpg)
+
+![Events Page Footer](Screenshots/Events2.jpg)
+
+![Achievement Timeline Section](Screenshots/Achievement.jpg)
+
 ---
 
 ## 📜 Disclaimer
