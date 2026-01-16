@@ -143,7 +143,12 @@ Unlike many typical frontend submissions, this project focuses not only on visua
 
 ## 🖼️ Screenshots
 
- 
+![Home Page](Screenshots/IMG-20260115-WA0009.jpg)
+
+![About Page](Screenshots/IMG-20260115-WA0015.jpg)
+
+![Achievement Page](Screenshots/IMG-20260115-WA0014.jpg)
+
 ---
 
 ## 📜 Disclaimer
